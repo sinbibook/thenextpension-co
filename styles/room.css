@@ -87,13 +87,13 @@
     top: 50%;
     transform: translateY(-50%);
     z-index: 20;
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(12px);
     border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    display: none; /* 모바일에서 숨김 */
+    display: flex; /* 모바일에서도 표시 */
     align-items: center;
     justify-content: center;
     color: white;
@@ -103,8 +103,8 @@
 }
 
 .nav-button svg {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
 }
 
 .nav-button:hover {
@@ -114,11 +114,11 @@
 }
 
 .nav-button.prev {
-    left: 16px;
+    left: 12px;
 }
 
 .nav-button.next {
-    right: 16px;
+    right: 12px;
 }
 
 .hero-overlay {
