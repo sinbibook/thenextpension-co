@@ -188,13 +188,13 @@ class FacilityMapper extends BaseDataMapper {
             }
         };
 
-        // Small image (두 번째 이미지 또는 첫 번째)
+        // Small image (두 번째 이미지)
         const smallImage = this.safeSelect('[data-facility-small-image]');
-        applyImage(smallImage, selectedImages.length > 1 ? selectedImages[1] : selectedImages[0]);
+        applyImage(smallImage, selectedImages[1]);
 
-        // Large image (첫 번째 이미지)
+        // Large image (세 번째 이미지)
         const largeImage = this.safeSelect('[data-facility-large-image]');
-        applyImage(largeImage, selectedImages[0]);
+        applyImage(largeImage, selectedImages[2]);
     }
 
 
@@ -234,10 +234,13 @@ class FacilityMapper extends BaseDataMapper {
 
         sliderSection.style.display = 'block';
 
-        this.createSlides(selectedImages, facility.name);
-        this.createIndicators(selectedImages);
+        // 역순으로 변경 (마지막부터 첫 번째까지)
+        const reversedImages = [...selectedImages].reverse();
 
-        window.facilityTotalSlides = selectedImages.length;
+        this.createSlides(reversedImages, facility.name);
+        this.createIndicators(reversedImages);
+
+        window.facilityTotalSlides = reversedImages.length;
     }
 
     /**
@@ -339,11 +342,38 @@ class FacilityMapper extends BaseDataMapper {
 
         // 메타 태그 업데이트 (페이지별 SEO 적용)
         const property = this.data.property;
-        const pageSEO = (facility?.name && property?.name) ? { title: `${facility.name} - ${property.name}` } : null;
+        const pageSEO = {
+            title: (facility?.name && property?.name) ? `${facility.name} - ${property.name}` : 'SEO 타이틀',
+            description: facility?.description || property?.description || 'SEO 설명'
+        };
         this.updateMetaTags(pageSEO);
+
+        // OG 이미지 업데이트 (시설 이미지 사용)
+        this.updateOGImage(facility);
 
         // E-commerce registration 매핑
         this.mapEcommerceRegistration();
+    }
+
+    /**
+     * OG 이미지 업데이트 (시설 이미지 사용, 없으면 로고)
+     * @param {Object} facility - 현재 시설 데이터
+     */
+    updateOGImage(facility) {
+        if (!this.isDataLoaded || !facility) return;
+
+        const ogImage = this.safeSelect('meta[property="og:image"]');
+        if (!ogImage) return;
+
+        // 우선순위: 시설 이미지 > 로고 이미지
+        if (facility.images && facility.images.length > 0 && facility.images[0]?.url) {
+            ogImage.setAttribute('content', facility.images[0].url);
+        } else {
+            const defaultImage = this.getDefaultOGImage();
+            if (defaultImage) {
+                ogImage.setAttribute('content', defaultImage);
+            }
+        }
     }
 
     /**

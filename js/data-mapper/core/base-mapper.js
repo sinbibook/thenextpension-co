@@ -209,17 +209,43 @@ class BaseDataMapper {
         if (seo.title) {
             const title = this.safeSelect('title');
             if (title) title.textContent = seo.title;
+
+            // OG Title도 같이 업데이트
+            const ogTitle = this.safeSelect('meta[property="og:title"]');
+            if (ogTitle) ogTitle.setAttribute('content', seo.title);
         }
 
         if (seo.description) {
             const metaDescription = this.safeSelect('meta[name="description"]');
             if (metaDescription) metaDescription.setAttribute('content', seo.description);
+
+            // OG Description도 같이 업데이트
+            const ogDescription = this.safeSelect('meta[property="og:description"]');
+            if (ogDescription) ogDescription.setAttribute('content', seo.description);
         }
 
         if (seo.keywords) {
             const metaKeywords = this.safeSelect('meta[name="keywords"]');
             if (metaKeywords) metaKeywords.setAttribute('content', seo.keywords);
         }
+
+        // OG URL은 현재 페이지 URL로 설정
+        const ogUrl = this.safeSelect('meta[property="og:url"]');
+        if (ogUrl) ogUrl.setAttribute('content', window.location.href);
+    }
+
+    /**
+     * 기본 OG 이미지 가져오기 (로고 이미지 사용)
+     */
+    getDefaultOGImage() {
+        if (!this.isDataLoaded) return null;
+
+        const logoImages = this.safeGet(this.data, 'homepage.images.0.logo');
+        if (logoImages && logoImages.length > 0 && logoImages[0]?.url) {
+            return logoImages[0].url;
+        }
+
+        return null;
     }
 
     // ============================================================================
