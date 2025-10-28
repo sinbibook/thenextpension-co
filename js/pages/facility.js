@@ -5,7 +5,7 @@
 
 // Navigation function
 function navigateToHome() {
-    window.location.href = './index.html';
+    window.location.href = 'index.html';
 }
 
 // Facility Slider Functions
@@ -98,17 +98,24 @@ function handleFacilityTouchEnd(e) {
     }
 }
 
+// FacilityMapper 초기화
+async function initializeFacilityMapper() {
+    try {
+        const facilityMapper = new FacilityMapper();
+        await facilityMapper.initialize();
+        facilityMapper.setupNavigation();
+    } catch (error) {
+    }
+}
+
 // Mouse hover와 Touch 이벤트 설정
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize FacilityMapper (PreviewHandler가 없을 때만)
-    if (!window.previewHandler) {
-        const facilityMapper = new FacilityMapper();
-        facilityMapper.initialize().then(() => {
-            facilityMapper.setupNavigation();
-        }).catch(error => {
-            console.error('❌ FacilityMapper initialization failed:', error);
-        });
+    // iframe 환경(어드민 미리보기)에서는 PreviewHandler가 초기화 담당
+    if (!window.APP_CONFIG.isInIframe()) {
+        // 일반 환경: FacilityMapper가 직접 초기화
+        initializeFacilityMapper();
     }
+    // iframe 환경에서는 PreviewHandler가 FacilityMapper 호출
 
     setTimeout(() => {
         const sliderWrapper = document.querySelector('.facility-slider-wrapper');
