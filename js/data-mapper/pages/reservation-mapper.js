@@ -95,7 +95,7 @@ class ReservationMapper extends BaseDataMapper {
         const rules = text.split('\n').filter(rule => rule.trim());
         rules.forEach(rule => {
             const ruleElement = document.createElement('p');
-            ruleElement.textContent = rule.startsWith('•') ? rule : `• ${rule}`;
+            ruleElement.textContent = rule;
             container.appendChild(ruleElement);
         });
     }
