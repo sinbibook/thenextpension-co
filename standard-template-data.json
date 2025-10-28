@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.11.0",
-    "generatedAt": "2025-10-28T03:24:52.768Z",
+    "version": "1.12.0",
+    "generatedAt": "2025-10-28T03:34:56.672Z",
     "templateType": "center_slider",
     "propertyId": "641d3328-82ac-420f-95d9-6a21f1e8d6bf",
     "homepageId": "1b2c1df0-f06c-47ec-a244-99aa070f7e7e"
@@ -775,6 +775,34 @@
                     "sortOrder": 3,
                     "description": "",
                     "isSelected": false
+                  },
+                  {
+                    "id": "baa4d455-8f2b-4a2f-aaa0-636348ebbc56",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_hero/1761622412927-hm12o3nsuym.jpg",
+                    "sortOrder": 4,
+                    "description": "",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "1a6fc525-44a6-4560-8713-6dc1897b5f73",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_hero/1761622308733-91zipy21vgs.jpg",
+                    "sortOrder": 5,
+                    "description": "",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "73b304db-d44b-4e2a-a904-f59e7f754904",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_hero/1761622308733-78wj0dtavsy.jpg",
+                    "sortOrder": 6,
+                    "description": "",
+                    "isSelected": true
+                  },
+                  {
+                    "id": "e113382b-d329-4075-ab97-6c5a317052cf",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_hero/1761622308733-2bmsiyfpt38.jpg",
+                    "sortOrder": 7,
+                    "description": "",
+                    "isSelected": true
                   }
                 ],
                 "description": "더 넥스트 독채 펜션에 오신 것을 환영합니다."
