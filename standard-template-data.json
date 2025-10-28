@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.9.0",
-    "generatedAt": "2025-10-28T03:08:48.305Z",
+    "version": "1.10.0",
+    "generatedAt": "2025-10-28T03:13:45.822Z",
     "templateType": "center_slider",
     "propertyId": "641d3328-82ac-420f-95d9-6a21f1e8d6bf",
     "homepageId": "1b2c1df0-f06c-47ec-a244-99aa070f7e7e"
@@ -750,18 +750,18 @@
                     "isSelected": true
                   },
                   {
-                    "id": "c481b590-dd5f-436a-902c-6d5f976aa626",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_hero/1761277599339-281sp13nmwd.jpg",
+                    "id": "d3806211-e34d-457e-a2cb-4e874e508ce4",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_hero/1761277599339-9al4jyy5nri.jpg",
                     "sortOrder": 1,
                     "description": "",
                     "isSelected": true
                   },
                   {
-                    "id": "d3806211-e34d-457e-a2cb-4e874e508ce4",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_hero/1761277599339-9al4jyy5nri.jpg",
+                    "id": "c481b590-dd5f-436a-902c-6d5f976aa626",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_hero/1761277599339-281sp13nmwd.jpg",
                     "sortOrder": 2,
                     "description": "",
-                    "isSelected": true
+                    "isSelected": false
                   },
                   {
                     "id": "10d90bfe-0cbf-42ee-82ed-6189e4e8260a",
@@ -803,15 +803,15 @@
                 "title": "쉼과 힐링이 있는 더 넥스트",
                 "images": [
                   {
-                    "id": "52f56e99-16af-4f96-9a82-54df4613aadf",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_gallery/1761286448222-x7l58vawaza.jpg",
+                    "id": "00821455-b957-4e6f-a58d-3ebcc39dcadb",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_gallery/1761286448222-yfsru5iu9p.jpg",
                     "sortOrder": 0,
                     "description": "",
                     "isSelected": true
                   },
                   {
-                    "id": "00821455-b957-4e6f-a58d-3ebcc39dcadb",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_gallery/1761286448222-yfsru5iu9p.jpg",
+                    "id": "52f56e99-16af-4f96-9a82-54df4613aadf",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_gallery/1761286448222-x7l58vawaza.jpg",
                     "sortOrder": 1,
                     "description": "",
                     "isSelected": true
