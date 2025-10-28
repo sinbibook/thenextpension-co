@@ -239,24 +239,23 @@ class HeaderFooterMapper extends BaseDataMapper {
 
     /**
      * 소셜미디어 링크 매핑
+     * 각 링크 값이 없으면 해당 링크 미노출
      */
     mapSocialMediaLinks() {
         if (!this.isDataLoaded || !this.data.homepage) return;
 
-        const socialLinks = this.data.homepage.socialLinks;
-        if (!socialLinks) return;
+        const socialLinks = this.data.homepage.socialLinks || {};
 
         // 소셜 미디어 플랫폼 배열로 처리
-        const socialMediaPlatforms = ['facebook', 'instagram', 'blog', 'youtube'];
+        const socialMediaPlatforms = ['facebook', 'instagram', 'blog'];
 
         socialMediaPlatforms.forEach(platform => {
             const linkElement = this.safeSelect(`[data-homepage-socialLinks-${platform}]`);
             if (linkElement) {
                 const url = socialLinks[platform];
-                if (url) {
+                if (url && url.trim()) {
                     linkElement.href = url;
-                    linkElement.style.removeProperty('display');  // display 속성 제거하여 CSS 적용
-                    linkElement.classList.remove('hidden');
+                    linkElement.style.removeProperty('display');  // display 속성 제거하여 표시
                 } else {
                     linkElement.style.setProperty('display', 'none', 'important');
                 }
