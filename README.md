@@ -1,1 +1,1 @@
-# template-gamseong-pension
+# template-center-slider
