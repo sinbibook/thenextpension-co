@@ -448,7 +448,9 @@ class IndexMapper extends BaseDataMapper {
 
         const bannerEl = this.safeSelect('[data-homepage-customFields-pages-reservation-sections-0-hero-images-0]');
         if (bannerEl) {
-            const heroImage = Array.isArray(reservationHero.images) ? reservationHero.images[0] : null;
+            // 선택된 이미지 중 첫 번째 사용
+            const selectedImages = reservationHero.images?.filter(img => img.isSelected) || [];
+            const heroImage = selectedImages[0] || null;
             const imageUrl = heroImage?.url || ImageHelpers.EMPTY_IMAGE_WITH_ICON;
 
             bannerEl.style.backgroundImage = `url("${imageUrl}")`;

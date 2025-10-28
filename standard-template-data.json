@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.8.0",
-    "generatedAt": "2025-10-28T03:00:26.045Z",
+    "version": "1.9.0",
+    "generatedAt": "2025-10-28T03:08:48.305Z",
     "templateType": "center_slider",
     "propertyId": "641d3328-82ac-420f-95d9-6a21f1e8d6bf",
     "homepageId": "1b2c1df0-f06c-47ec-a244-99aa070f7e7e"
@@ -611,17 +611,17 @@
               "isSelected": true
             },
             {
-              "id": "8bb3f39a-ebbc-49fa-9955-e09560be0bbb",
-              "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/roomtype/9c1774c2-feb7-4ac1-951b-0927806b5b0e/interior/1761026936696-3hhhwpvcs65.jpg",
+              "id": "c0214628-9d6f-42ac-8093-d5c51e7a3727",
+              "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/roomtype/9c1774c2-feb7-4ac1-951b-0927806b5b0e/interior/1761026936697-rju9f13fv3.jpg",
               "sortOrder": 4,
-              "description": "3.jpg",
+              "description": "12.jpg",
               "isSelected": true
             },
             {
-              "id": "0f0e1957-2e7d-4d35-a4ee-7330fedc7550",
-              "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/roomtype/9c1774c2-feb7-4ac1-951b-0927806b5b0e/interior/1761026936696-opsi1d2oo4.jpg",
+              "id": "8bb3f39a-ebbc-49fa-9955-e09560be0bbb",
+              "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/roomtype/9c1774c2-feb7-4ac1-951b-0927806b5b0e/interior/1761026936696-3hhhwpvcs65.jpg",
               "sortOrder": 5,
-              "description": "5.jpg",
+              "description": "3.jpg",
               "isSelected": true
             },
             {
@@ -632,31 +632,31 @@
               "isSelected": true
             },
             {
-              "id": "effa15aa-1bff-486f-a3dd-03f5e404072c",
-              "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/roomtype/9c1774c2-feb7-4ac1-951b-0927806b5b0e/interior/1761026936696-775a5ygrbm.jpg",
+              "id": "e3f3b6c4-201d-4228-a8aa-d6140a292b60",
+              "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/roomtype/9c1774c2-feb7-4ac1-951b-0927806b5b0e/interior/1761026936697-mtyrmil3zm.jpg",
               "sortOrder": 7,
-              "description": "4.jpg",
+              "description": "10.jpg",
               "isSelected": true
             },
             {
-              "id": "c0214628-9d6f-42ac-8093-d5c51e7a3727",
-              "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/roomtype/9c1774c2-feb7-4ac1-951b-0927806b5b0e/interior/1761026936697-rju9f13fv3.jpg",
+              "id": "0f0e1957-2e7d-4d35-a4ee-7330fedc7550",
+              "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/roomtype/9c1774c2-feb7-4ac1-951b-0927806b5b0e/interior/1761026936696-opsi1d2oo4.jpg",
               "sortOrder": 8,
-              "description": "12.jpg",
+              "description": "5.jpg",
+              "isSelected": true
+            },
+            {
+              "id": "effa15aa-1bff-486f-a3dd-03f5e404072c",
+              "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/roomtype/9c1774c2-feb7-4ac1-951b-0927806b5b0e/interior/1761026936696-775a5ygrbm.jpg",
+              "sortOrder": 9,
+              "description": "4.jpg",
               "isSelected": true
             },
             {
               "id": "bcc29dee-97b0-4ca8-bb8e-b9083ecb1e02",
               "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/roomtype/9c1774c2-feb7-4ac1-951b-0927806b5b0e/interior/1761026936697-mriv63egbv.jpg",
-              "sortOrder": 9,
-              "description": "9.jpg",
-              "isSelected": true
-            },
-            {
-              "id": "e3f3b6c4-201d-4228-a8aa-d6140a292b60",
-              "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/roomtype/9c1774c2-feb7-4ac1-951b-0927806b5b0e/interior/1761026936697-mtyrmil3zm.jpg",
               "sortOrder": 10,
-              "description": "10.jpg",
+              "description": "9.jpg",
               "isSelected": true
             },
             {
