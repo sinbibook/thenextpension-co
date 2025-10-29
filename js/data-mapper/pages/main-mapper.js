@@ -85,10 +85,10 @@ class MainMapper extends BaseDataMapper {
             let imageUrl = null;
             let hasImage = false;
 
-            // Get first SELECTED hero image using helper
-            const selectedImages = this._getSelectedAndSortedImages(heroImages);
-            if (selectedImages.length > 0 && selectedImages[0].url) {
-                imageUrl = selectedImages[0].url;
+            // Get first SELECTED hero image using ImageHelpers
+            const firstSelectedImage = ImageHelpers.getFirstSelectedImage(heroImages);
+            if (firstSelectedImage && firstSelectedImage.url) {
+                imageUrl = firstSelectedImage.url;
                 hasImage = true;
             }
 
@@ -131,8 +131,8 @@ class MainMapper extends BaseDataMapper {
             // Collect images from this about section
             const sectionImages = section?.images || [];
 
-            // Filter selected images and sort by sortOrder using helper
-            const allImages = this._getSelectedAndSortedImages(sectionImages);
+            // Filter selected images and sort by sortOrder using ImageHelpers
+            const allImages = ImageHelpers.filterSelectedImages(sectionImages);
 
             // 홀수 섹션 (1번, 3번...): 왼쪽 크게, 오른쪽 작게
             // 짝수 섹션 (2번, 4번...): 왼쪽 작게, 오른쪽 크게

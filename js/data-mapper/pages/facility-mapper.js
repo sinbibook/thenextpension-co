@@ -131,9 +131,8 @@ class FacilityMapper extends BaseDataMapper {
         const mainImageEl = this.safeSelect('.facility-main-image .imgGrpPic');
         if (!mainImageEl) return;
 
-        // Get first selected image using helper
-        const selectedImages = this._getSelectedAndSortedImages(facility.images);
-        const firstImage = selectedImages.length > 0 ? selectedImages[0] : null;
+        // Get first selected image using ImageHelpers
+        const firstImage = ImageHelpers.getFirstSelectedImage(facility.images);
 
         if (firstImage && firstImage.url) {
             mainImageEl.style.backgroundImage = `url('${firstImage.url}')`;
@@ -164,8 +163,8 @@ class FacilityMapper extends BaseDataMapper {
 
         galleryList.innerHTML = '';
 
-        // Get selected and sorted images using helper
-        const sortedImages = this._getSelectedAndSortedImages(facility.images);
+        // Get selected and sorted images using ImageHelpers
+        const sortedImages = ImageHelpers.filterSelectedImages(facility.images);
 
         // 첫 번째 이미지 제외 (메인 이미지에서 이미 사용 중)
         const galleryImages = sortedImages.slice(1);

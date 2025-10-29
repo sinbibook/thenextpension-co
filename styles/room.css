@@ -130,6 +130,8 @@
   width: 100%;
   margin-bottom: clamp(2rem, 6vw, 3.5rem);
   position: relative;
+  height: auto;
+  overflow: hidden;
 }
 
 /* Gallery navigation buttons */
@@ -221,15 +223,19 @@
 .room-thumbnail-wrapper {
   list-style: none;
   margin: 0;
-  padding: 20px;
+  padding: 20px 20px 15px 20px;
   display: flex;
   gap: clamp(0.75rem, 2vw, 1rem);
   overflow-x: auto;
+  overflow-y: hidden;
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
   width: 100%;
   box-sizing: border-box;
+  height: auto;
+  max-height: calc(20vw + 40px);
+  min-height: 80px;
 }
 
 .roomGalleryList::-webkit-scrollbar,
@@ -251,6 +257,8 @@
   position: relative;
   flex: 0 0 auto;
   width: calc((100% - 4 * clamp(0.75rem, 2vw, 1rem)) / 5);
+  max-width: 20vw;
+  min-width: 60px;
 }
 
 .roomGalleryThumb {
@@ -277,6 +285,19 @@
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* 썸네일 개수에 따른 그리드 조정 */
+/* 4개일 때 */
+.room-thumbnail-wrapper[data-thumbnail-count="4"] .roomGalleryItem {
+  width: calc((100% - 3 * clamp(0.75rem, 2vw, 1rem)) / 4);
+}
+
+/* 3개 이하일 때 */
+.room-thumbnail-wrapper[data-thumbnail-count="1"] .roomGalleryItem,
+.room-thumbnail-wrapper[data-thumbnail-count="2"] .roomGalleryItem,
+.room-thumbnail-wrapper[data-thumbnail-count="3"] .roomGalleryItem {
+  width: calc((100% - 2 * clamp(0.75rem, 2vw, 1rem)) / 3);
 }
 
 /* Moved from common.css - room specific hover and active states */
@@ -315,7 +336,7 @@
   flex-direction: column;
   gap: 10px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .roomHighlight::after {
   content: "";
@@ -333,13 +354,18 @@
 .roomHighlight:hover::after {
   opacity: 1;
 }
-.roomHighlightLabel {
-  font-size: 0.82rem;
+.roomHighlightLabel,
+.roomGuideSection h4 {
+  font-size: 1.1rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #6b7a8f;
   font-weight: 600;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(107, 122, 143, 0.3);
+  margin-bottom: 5px;
 }
+
 .roomHighlightValue {
   font-size: clamp(0.9rem, 2.2vw, 1rem);
   color: #1f2937;
@@ -529,6 +555,18 @@
     aspect-ratio: 4 / 3;  /* 모바일에서는 4:3 비율이 더 적합 */
   }
 
+  .roomGalleryList,
+  .room-thumbnail-wrapper {
+    max-height: calc(25vw + 30px);
+    min-height: 70px;
+    padding: 15px 15px 10px 15px;
+  }
+
+  .roomGalleryItem {
+    max-width: 25vw;
+    min-width: 50px;
+  }
+
   .roomWrap .con1 {
     height: auto !important;
   }
@@ -591,4 +629,92 @@
 }
 .roomTap  .roomSubWrap li {
   width: 33.3%;  float: left
+}
+
+/* Room Exterior Section */
+.roomExteriorSection {
+  margin-top: 60px;
+}
+
+.roomExteriorSection h4 {
+  margin-bottom: 30px;
+}
+
+/* Image Accordion */
+.exteriorAccordion {
+  display: flex;
+  height: 500px;
+  gap: 20px;
+}
+
+.accordionItem {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 16px;
+  transition: flex 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.accordionItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease, object-position 0.5s ease;
+}
+
+/* 호버 시 이미지 포지션 조정 - 더 많은 부분 보이게 */
+.accordionItem:hover img {
+  object-position: center center;
+}
+
+/* 호버되지 않은 이미지들은 일부만 보이게 */
+.accordionItem:not(:hover) img {
+  transform: scale(1.2);
+  object-position: center center;
+}
+
+/* 이미지 개수에 따른 호버 확대 비율 조정 */
+.exteriorAccordion[data-image-count="1"] .accordionItem:hover {
+  flex: 1; /* 1개일 때는 변화 없음 */
+}
+
+.exteriorAccordion[data-image-count="2"] .accordionItem:hover {
+  flex: 3.5;
+}
+
+.exteriorAccordion[data-image-count="3"] .accordionItem:hover {
+  flex: 3;
+}
+
+.exteriorAccordion[data-image-count="4"] .accordionItem:hover {
+  flex: 2.5;
+}
+
+.accordionItem:hover img {
+  transform: scale(1);
+}
+
+
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .exteriorAccordion {
+    flex-direction: column;
+    height: auto;
+    gap: 15px;
+  }
+
+  .accordionItem {
+    flex: 1;
+    height: 150px;
+    min-height: 150px;
+    border-radius: 12px;
+  }
+
+  .accordionItem:hover {
+    flex: 1;
+    height: 300px;
+  }
 }

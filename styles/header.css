@@ -1,4 +1,9 @@
 /*header and navigation styles*/
+
+.header {
+  height: 110px;
+}
+
 .mobile-toggle {
   display: none;
   align-items: center;
@@ -16,6 +21,12 @@
   .mobile-toggle {
     display: inline-flex;
   }
+
+  .header .logo {
+    display: inline-block;
+    opacity: 1;
+  }
+
 }
 
 .mobile-toggle:focus-visible {
@@ -285,7 +296,7 @@ body.mobile-menu-open {
   opacity: 0
 }
 .header .gnb {
-  position: relative; top: 29px; left: 80px
+  position: relative; top: 45px; left: 80px
 }
 .header .mainMenu {
   width: 1260px
@@ -316,7 +327,7 @@ body.mobile-menu-open {
   transform: translate(-50%, -6px);
   min-width: 180px;
   padding: 16px 22px;
-  background: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.9);
   border-radius: 14px;
   box-shadow: 0 18px 44px rgba(0,0,0,0.12);
   backdrop-filter: blur(6px);
@@ -350,7 +361,7 @@ body.mobile-menu-open {
   font-family: 'abigail'; color: #666; font-weight: 400; font-size: 26px;text-align: center; margin-top: 10px; opacity: 1
 }
 .header .logo {
-  font-family: 'abigail'; color: #666; font-weight: 400; font-size: 26px;text-align: center;  width: 100%;margin-top: 10px
+  font-family: 'abigail'; color: #666; font-weight: 400; font-size: 26px;text-align: center;  width: 100%;margin-top: 5px
 }
 .logoSub {
   text-align: left; position: relative; transition: 0.5s;top: -80px; left: 20px
@@ -376,7 +387,10 @@ body.mobile-menu-open {
   width: 140px; margin-top: -15px;margin-left: 14px
 }
 .header .sns {
-  float: right; margin-right: 80px; margin-top: 29px
+  position: relative;
+  float: right;
+  margin-right: 80px;
+  top: 50px;
 }
 .header .sns li {
   margin: 0px 10px; float: left
@@ -584,9 +598,17 @@ body.mobile-menu-open {
     backdrop-filter: blur(14px);
     border-bottom: 1px solid rgba(255,255,255,0.35);
   }
-  .mHd .logo {
-    position: static;
-    width: auto;
+  .mHd .logo,
+  .mHd .logo.mMainLogo {
+    position: static !important;
+    width: auto !important;
+    display: inline-block !important;
+    opacity: 1 !important;
+    transform: none !important;
+    text-align: left !important;
+    left: auto !important;
+    font-size: 1.3rem !important;
+    color: #333 !important;
   }
   .mHd .logo img {
     width: clamp(70px, 24vw, 110px);
@@ -594,7 +616,14 @@ body.mobile-menu-open {
   .mHd h1 {
     position: static;
     margin: 0;
+    transform: none !important;
+    left: auto !important;
+    text-align: left !important;
     text-align: left;
+  }
+  .mHd h1 .logo {
+    display: inline-block;
+    width: auto;
   }
   .mHd .gnb {
     display: none;
@@ -695,12 +724,6 @@ body.mobile-menu-open {
   }
   .mHd .mainMenu > li > a {
     text-align: center; margin-left: 0px; font-size: 12px
-  }
-  .mHd .logo {
-    width: auto
-  }
-  .mHd .logo {
-    top: -10px; font-size: 20px; left: 50%; transform: translateX(-50%); text-align: center;
   }
   .mHd .logo img {
     width: 100px

@@ -191,10 +191,11 @@ class IndexMapper extends BaseDataMapper {
             const roomNumber = String(index + 1).padStart(2, '0');
             const isEven = index % 2 === 0;
 
-            // 이미지 URL 가져오기 (interior만 사용)
+            // 이미지 URL 가져오기 (interior만 사용) - isSelected 필터링 적용
             const interiorImages = this.safeGet(room, 'images.0.interior') || [];
-            const interior0 = interiorImages[0];  // interior 첫 번째 이미지
-            const interior1 = interiorImages[1];  // interior 두 번째 이미지
+            const selectedInteriorImages = ImageHelpers.filterSelectedImages(interiorImages);
+            const interior0 = selectedInteriorImages[0] || null;
+            const interior1 = selectedInteriorImages[1] || null;
 
             // 이미지 없을 때 empty placeholder 사용
             const interior0Url = interior0?.url || ImageHelpers.EMPTY_IMAGE_WITH_ICON;

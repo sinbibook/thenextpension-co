@@ -52,10 +52,10 @@ class DirectionsMapper extends BaseDataMapper {
             let imageUrl = null;
             let hasImage = false;
 
-            // Get first SELECTED hero image using helper
-            const selectedImages = this._getSelectedAndSortedImages(heroImages);
-            if (selectedImages.length > 0 && selectedImages[0].url) {
-                imageUrl = selectedImages[0].url;
+            // Get first SELECTED hero image using ImageHelpers
+            const firstSelectedImage = ImageHelpers.getFirstSelectedImage(heroImages);
+            if (firstSelectedImage && firstSelectedImage.url) {
+                imageUrl = firstSelectedImage.url;
                 hasImage = true;
             }
 
