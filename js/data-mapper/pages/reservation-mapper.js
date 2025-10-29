@@ -24,9 +24,9 @@ class ReservationMapper extends BaseDataMapper {
         // Hero 배너 배경 이미지 매핑 (선택된 이미지 중 첫 번째)
         const heroBanner = this.safeSelect('[data-homepage-customFields-pages-reservation-sections-0-hero-images-0-url]');
         if (heroBanner) {
-            // 선택된 이미지만 필터링
-            const selectedImages = reservationData.hero?.images?.filter(img => img.isSelected) || [];
-            const firstSelectedImage = selectedImages[0];
+            // 선택된 이미지만 필터링 - ImageHelpers 사용
+            const heroImages = reservationData.hero?.images || [];
+            const firstSelectedImage = ImageHelpers.getFirstSelectedImage(heroImages);
 
             if (firstSelectedImage?.url) {
                 const imageUrl = firstSelectedImage.url;
