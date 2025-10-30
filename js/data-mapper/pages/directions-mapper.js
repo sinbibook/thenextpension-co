@@ -111,6 +111,37 @@ class DirectionsMapper extends BaseDataMapper {
         }
     }
 
+    /**
+     * Directions notice 매핑
+     */
+    mapDirectionsNotice() {
+        if (!this.isDataLoaded || !this.data.property) return;
+
+        const noticeSection = this.safeSelect('[data-directions-notice-section]');
+        if (!noticeSection) return;
+
+        const property = this.data.property;
+        const directionsNotice = property.directionsNotice;
+        const title = directionsNotice?.title;
+        const description = directionsNotice?.description;
+
+        const titleEl = this.safeSelect('[data-directions-notice-title]');
+        const descriptionEl = this.safeSelect('[data-property-directions-notice-description]');
+
+        if (titleEl) {
+            titleEl.textContent = title || '';
+        }
+        if (descriptionEl) {
+            descriptionEl.textContent = description || '';
+        }
+
+        if (title || description) {
+            noticeSection.style.display = 'block';
+        } else {
+            noticeSection.style.display = 'none';
+        }
+    }
+
 
     // ============================================================================
     // 🔄 TEMPLATE METHODS IMPLEMENTATION
@@ -129,6 +160,7 @@ class DirectionsMapper extends BaseDataMapper {
         this.mapPropertyAddress();
         this.mapHeroImages();
         this.mapMapIframe();
+        this.mapDirectionsNotice();
 
         // 메타 태그 업데이트
         this.updateMetaTags(this.data.property);

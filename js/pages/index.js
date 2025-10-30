@@ -66,53 +66,75 @@ function initHeroSlider() {
 
     sliderWrapper.dataset.sliderInitialized = 'true';
 
-    // Ensure each slide takes full width of the hero area
-    slides.forEach((slide) => {
-        slide.style.flex = '0 0 100%';
+    // 단일 슬라이드인 경우
+    if (slides.length <= 1) {
+        slides.forEach((slide) => {
+            slide.style.position = 'absolute';
+            slide.style.top = '0';
+            slide.style.left = '0';
+            slide.style.width = '100%';
+            slide.style.height = '100%';
+            slide.style.opacity = '1';
+        });
+        return;
+    }
+
+    // fade 슬라이더를 위한 스타일 설정
+    const FADE_DURATION_MS = 800;
+    sliderTrack.style.position = 'relative';
+    slides.forEach((slide, index) => {
+        slide.style.position = 'absolute';
+        slide.style.top = '0';
+        slide.style.left = '0';
+        slide.style.width = '100%';
+        slide.style.height = '100%';
+        slide.style.opacity = index === 0 ? '1' : '0';
+        slide.style.transition = `opacity ${FADE_DURATION_MS / 1000}s ease-in-out`;
+        slide.style.zIndex = index === 0 ? '2' : '1';
     });
 
     let currentIndex = 0;
     let autoSlideTimer = null;
+    let isTransitioning = false;
 
     const prevButton = sliderWrapper.querySelector('.prev');
     const nextButton = sliderWrapper.querySelector('.next');
 
-    const defaultTransition = 'transform 0.6s ease';
-    const getSlideWidth = () => sliderWrapper.getBoundingClientRect().width;
+    const goToSlide = (index) => {
+        if (isTransitioning) return;
 
-    const applyTransform = (animate = true) => {
-        sliderTrack.style.transition = animate ? defaultTransition : 'none';
+        const newIndex = (index + slides.length) % slides.length;
+        if (newIndex === currentIndex) return;
 
-        const slideWidth = getSlideWidth();
-        sliderTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        isTransitioning = true;
 
-        if (!animate) {
-            // Allow layout to settle before restoring transition
-            requestAnimationFrame(() => {
-                sliderTrack.style.transition = defaultTransition;
-            });
-        }
+        // 현재 슬라이드 숨기기
+        slides[currentIndex].style.opacity = '0';
+        slides[currentIndex].style.zIndex = '1';
+
+        // 새 슬라이드 보이기
+        slides[newIndex].style.opacity = '1';
+        slides[newIndex].style.zIndex = '2';
+
+        currentIndex = newIndex;
+
+        setTimeout(() => {
+            isTransitioning = false;
+        }, FADE_DURATION_MS); // 트랜지션 시간과 맞춤
     };
 
-    // 초기 위치만 맞추면 되는 경우 (슬라이드가 1장 이하)
-    if (slides.length <= 1) {
-        applyTransform(false);
-        return;
-    }
+    const nextSlide = () => {
+        goToSlide(currentIndex + 1);
+    };
 
-    const goToSlide = (index) => {
-        const totalSlides = slides.length;
-        if (totalSlides === 0) return;
-
-        currentIndex = (index + totalSlides) % totalSlides;
-        sliderTrack.style.transition = sliderTrack.style.transition || 'transform 0.6s ease';
-        applyTransform(true);
+    const prevSlide = () => {
+        goToSlide(currentIndex - 1);
     };
 
     const startAutoSlide = () => {
         stopAutoSlide();
         autoSlideTimer = setInterval(() => {
-            goToSlide(currentIndex + 1);
+            nextSlide();
         }, 5000);
     };
 
@@ -124,12 +146,12 @@ function initHeroSlider() {
     };
 
     prevButton?.addEventListener('click', () => {
-        goToSlide(currentIndex - 1);
+        prevSlide();
         startAutoSlide();
     });
 
     nextButton?.addEventListener('click', () => {
-        goToSlide(currentIndex + 1);
+        nextSlide();
         startAutoSlide();
     });
 
@@ -167,10 +189,10 @@ function initHeroSlider() {
         if (Math.abs(diff) > swipeThreshold) {
             if (diff > 0) {
                 // Swipe left - next slide
-                goToSlide(currentIndex + 1);
+                nextSlide();
             } else {
                 // Swipe right - previous slide
-                goToSlide(currentIndex - 1);
+                prevSlide();
             }
             // Keep auto-slide running on mobile
             if (window.innerWidth <= 768) {
@@ -179,12 +201,9 @@ function initHeroSlider() {
         }
     };
 
-    window.addEventListener('resize', () => {
-        applyTransform(false);
-    });
+    // resize 이벤트에서는 특별한 처리가 필요하지 않음 (fade 방식)
 
-    // Initial positioning without animation
-    applyTransform(false);
+    // 초기화
     startAutoSlide();
 }
 

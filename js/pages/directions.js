@@ -8,6 +8,7 @@ function navigateToHome() {
     window.location.href = 'index.html';
 }
 
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     // iframe 환경(어드민 미리보기)에서는 PreviewHandler가 초기화 담당
