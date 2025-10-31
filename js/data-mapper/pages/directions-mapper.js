@@ -4,6 +4,10 @@
  * BaseDataMapper를 상속받아 오시는길 페이지 전용 기능 제공
  */
 class DirectionsMapper extends BaseDataMapper {
+    // Kakao Map 설정 상수
+    static KAKAO_MAP_ZOOM_LEVEL = 3;
+    static SDK_WAIT_INTERVAL = 100; // ms
+
     constructor() {
         super();
     }
@@ -89,26 +93,75 @@ class DirectionsMapper extends BaseDataMapper {
 
 
     /**
-     * Map iframe 매핑 (좌표 기반 OpenStreetMap)
+     * 카카오맵 초기화 및 표시
      */
-    mapMapIframe() {
-        if (!this.isDataLoaded || !this.data.property) return;
+    initKakaoMap() {
+        if (!this.isDataLoaded || !this.data.property) {
+            return;
+        }
 
         const property = this.data.property;
-        const iframe = this.safeSelect('iframe[data-property-latitude][data-property-longitude]');
+        const mapContainer = document.getElementById('kakao-map');
 
-        if (iframe && property.latitude && property.longitude) {
-            // OpenStreetMap embed URL 생성
-            const lat = property.latitude;
-            const lon = property.longitude;
-            const zoom = 0.01; // bbox 범위
-
-            const bbox = `${lon - zoom}%2C${lat - zoom}%2C${lon + zoom}%2C${lat + zoom}`;
-            const marker = `${lat}%2C${lon}`;
-
-            iframe.src = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${marker}`;
-            iframe.title = `${property.name} 위치`;
+        if (!mapContainer || !property.latitude || !property.longitude) {
+            return;
         }
+
+        // 지도 생성 함수
+        const createMap = () => {
+            try {
+                // 검색 쿼리 및 URL 생성
+                const searchQuery = property.address || property.name || '선택한 위치';
+                const kakaoMapUrl = `https://map.kakao.com/?q=${encodeURIComponent(searchQuery)}`;
+                const openKakaoMap = () => window.open(kakaoMapUrl, '_blank');
+
+                // 지도 중심 좌표
+                const mapCenter = new kakao.maps.LatLng(property.latitude, property.longitude);
+
+                // 지도 옵션
+                const mapOptions = {
+                    center: mapCenter,
+                    level: DirectionsMapper.KAKAO_MAP_ZOOM_LEVEL,
+                    draggable: false,
+                    scrollwheel: false,
+                    disableDoubleClick: true,
+                    disableDoubleClickZoom: true
+                };
+
+                // 지도 생성
+                const map = new kakao.maps.Map(mapContainer, mapOptions);
+                map.setZoomable(false);
+
+                // 마커 생성 및 클릭 이벤트
+                const marker = new kakao.maps.Marker({
+                    position: mapCenter,
+                    map: map
+                });
+                kakao.maps.event.addListener(marker, 'click', openKakaoMap);
+
+                // 인포윈도우 생성 및 표시
+                const infowindowContent = `<div onclick="window.open('${kakaoMapUrl}', '_blank')" style="padding:5px;font-size:14px;cursor:pointer;">${property.name}<br/><small style="color:#666;">클릭하면 카카오맵으로 이동</small></div>`;
+                const infowindow = new kakao.maps.InfoWindow({
+                    content: infowindowContent
+                });
+                infowindow.open(map, marker);
+            } catch (error) {
+                console.error('Failed to create Kakao Map:', error);
+            }
+        };
+
+        // SDK 로드 확인 및 지도 생성
+        const checkSdkAndLoad = () => {
+            if (window.kakao && window.kakao.maps && window.kakao.maps.load) {
+                // kakao.maps.load() 공식 API 사용
+                window.kakao.maps.load(createMap);
+            } else {
+                // SDK가 아직 로드되지 않았으면 대기
+                setTimeout(checkSdkAndLoad, DirectionsMapper.SDK_WAIT_INTERVAL);
+            }
+        };
+
+        checkSdkAndLoad();
     }
 
     /**
@@ -159,7 +212,7 @@ class DirectionsMapper extends BaseDataMapper {
         this.mapPropertyName();
         this.mapPropertyAddress();
         this.mapHeroImages();
-        this.mapMapIframe();
+        this.initKakaoMap();
         this.mapDirectionsNotice();
 
         // 메타 태그 업데이트

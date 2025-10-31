@@ -83,17 +83,16 @@
           <section class="mapSection" aria-labelledby="map-heading">
             <div class="mapCard">
               <div class="mapCard__body">
-                <iframe
-                  data-property-latitude
-                  data-property-longitude
-                  allowfullscreen
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <!-- Kakao Map -->
+                <div id="kakao-map"></div>
               </div>
             </div>
           </section>
       </main>
     </div>
+    <!-- Kakao Map SDK -->
+    <script src="js/kakao-maps-sdk.js"></script>
+
     <!-- Image Helpers -->
     <script src="js/image-helpers.js"></script>
     <script src="js/image-with-fallback.js"></script>
