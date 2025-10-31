@@ -115,15 +115,15 @@ class DirectionsMapper extends BaseDataMapper {
      * Directions notice 매핑
      */
     mapDirectionsNotice() {
-        if (!this.isDataLoaded || !this.data.property) return;
+        if (!this.isDataLoaded) return;
 
         const noticeSection = this.safeSelect('[data-directions-notice-section]');
         if (!noticeSection) return;
 
-        const property = this.data.property;
-        const directionsNotice = property.directionsNotice;
-        const title = directionsNotice?.title;
-        const description = directionsNotice?.description;
+        // 올바른 경로: homepage.customFields.pages.directions.sections[0].notice
+        const noticeData = this.safeGet(this.data, 'homepage.customFields.pages.directions.sections.0.notice');
+        const title = noticeData?.title;
+        const description = noticeData?.description;
 
         const titleEl = this.safeSelect('[data-directions-notice-title]');
         const descriptionEl = this.safeSelect('[data-property-directions-notice-description]');
