@@ -30,6 +30,16 @@
   min-height: 500px;
   margin-bottom: clamp(1.4rem, 3vw, 2.2rem);
 }
+
+/* Kakao Map 스타일 */
+#kakao-map {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  border-radius: 10px;
+}
+
+/* 레거시 iframe 스타일 (호환성 유지) */
 .mapCard__body iframe {
   position: absolute;
   inset: 0;
