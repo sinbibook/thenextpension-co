@@ -33,6 +33,20 @@ class HeaderFooterMapper extends BaseDataMapper {
                 element.textContent = property.name;
             }
         });
+
+        // gpension_id 매핑 (예약 링크)
+        const gpensionIdElements = this.safeSelectAll('[data-property-gpension-id]');
+        gpensionIdElements.forEach(element => {
+            if (element && property.gpensionId && property.gpensionId.trim() !== '') {
+                const currentHref = element.getAttribute('href');
+                if (currentHref && currentHref.includes('${gpensionId}')) {
+                    element.setAttribute('href', currentHref.replace('${gpensionId}', property.gpensionId));
+                }
+            } else {
+                // gpensionId가 없으면 링크를 숨겨 깨진 링크가 노출되지 않도록 합니다.
+                element.style.display = 'none';
+            }
+        });
     }
 
     /**
@@ -247,7 +261,10 @@ class HeaderFooterMapper extends BaseDataMapper {
         const socialLinks = this.data.homepage.socialLinks || {};
 
         // 소셜 미디어 플랫폼 배열로 처리
-        const socialMediaPlatforms = ['facebook', 'instagram', 'blog'];
+        const socialMediaPlatforms = ['facebook', 'instagram', 'youtube', 'blog'];
+
+        // 유효한 소셜 링크가 있는지 확인
+        let hasAnySocialLink = false;
 
         socialMediaPlatforms.forEach(platform => {
             const linkElement = this.safeSelect(`[data-homepage-socialLinks-${platform}]`);
@@ -256,11 +273,22 @@ class HeaderFooterMapper extends BaseDataMapper {
                 if (url && url.trim()) {
                     linkElement.href = url;
                     linkElement.style.removeProperty('display');  // display 속성 제거하여 표시
+                    hasAnySocialLink = true;
                 } else {
                     linkElement.style.setProperty('display', 'none', 'important');
                 }
             }
         });
+
+        // 소셜 링크가 하나도 없으면 .social-links 컨테이너 숨기기
+        const socialLinksContainer = this.safeSelect('.social-links');
+        if (socialLinksContainer) {
+            if (!hasAnySocialLink) {
+                socialLinksContainer.style.setProperty('display', 'none', 'important');
+            } else {
+                socialLinksContainer.style.removeProperty('display');
+            }
+        }
     }
 
     // ============================================================================

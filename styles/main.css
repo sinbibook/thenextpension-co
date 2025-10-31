@@ -1,5 +1,26 @@
 /* Main page specific styles - overrides for flex layout */
 
+/* About section title styling - mobile only */
+@media (max-width: 768px) {
+  p[data-homepage-customfields-pages-main-sections-0-about-0-title],
+  p[data-homepage-customfields-pages-main-sections-0-about-1-title] {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    margin-top: 1rem !important;
+  }
+
+  /* Reduce subNav padding on mobile */
+  .mainIntroSection .subNav {
+    padding: 1rem 0 !important;
+  }
+
+  /* Reduce mt5 class margin for about description on mobile */
+  [data-homepage-customfields-pages-main-sections-0-about-0-description].mt5,
+  [data-homepage-customfields-pages-main-sections-0-about-1-description].mt5 {
+    margin-top: 0.5rem !important;
+  }
+}
+
 /* Override con2Top for main page only */
 .mainIntroSection .con2Top.about-images-wrapper {
   display: flex;
