@@ -11,7 +11,14 @@
   font-family: 'abigail'; color: #666;font-weight: 400;font-size: 26px
 }
 .mainTitleGrp p {
-  font-family: "GowoonDodum", sans-serif; color: #666; font-weight: 400; font-size: 17px; opacity: 0.8
+  font-family: "GowoonDodum", sans-serif; color: #444; font-weight: 500; font-size: 16px; opacity: 0.8
+}
+
+/* Essence title specific styling */
+.mainTitleGrp p[data-homepage-customFields-pages-index-sections-0-essence-title] {
+  font-size: 26px;
+  font-weight: 600;
+  font-family: "GowoonDodum", sans-serif; 
 }
 
 /*con2 - index page specific overrides*/
@@ -45,6 +52,9 @@
   .IndexWrap .sliderContainer .prev,
   .IndexWrap .sliderContainer .next {
     display: none !important;
+  }
+  .IndexWrap .mainTitleGrp {
+    padding: 0;
   }
 }
 

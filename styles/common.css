@@ -775,6 +775,24 @@ input, button, a {
   background-attachment: fixed !important;
   background-size: cover !important;
 }
+
+/* 모바일 디바이스에서 background-attachment: fixed 비활성화 */
+@media (max-width: 768px) {
+  .fBanner {
+    background-attachment: scroll !important;
+    background-position: center !important;
+    background-size: cover !important;
+  }
+}
+
+/* iOS 디바이스 대응 */
+@supports (-webkit-touch-callout: none) {
+  .fBanner {
+    background-attachment: scroll !important;
+    background-position: center !important;
+    background-size: cover !important;
+  }
+}
 .resTxt {
   text-align: center; display: flex; flex-direction: column; justify-content: center; align-items : center; margin-bottom: 50px
 }
@@ -948,14 +966,14 @@ input, button, a {
   font-size: clamp(2.6rem, 7vw, 3em);
   color: #fff;
   text-transform: uppercase;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .heroHeadingSub {
   font-size: clamp(0.8rem, 4vw, 1.4em) !important;
   color: #fff !important;
   letter-spacing: 0;
   text-transform: uppercase;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
   margin-top: 20px !important;
 }
 
@@ -1792,10 +1810,10 @@ table {
   }
   .heroHeading {
     letter-spacing: 0.06em;
-    font-size: clamp(1.9rem, 8vw, 3rem);
+    font-size: clamp(1.9rem, 7vw, 3rem);
   }
   .heroOverlay {
-    padding: clamp(1rem, 6vw, 2rem);
+    padding: clamp(1rem, 3vw, 2rem);
   }
   .heroSlider .prev,
   .heroSlider .next {
@@ -1926,7 +1944,7 @@ table {
     margin-top: 50px;
   }
   .con2Top .right .txtGrpTxt a {
-    margin-top: 20px; font-size: 12px; font-weight: 400; opacity: 0.9
+    margin-top: 20px; font-size: 15px; font-weight: 400; opacity: 0.9
   }
   .con2 {
     margin-top: 0 !important;
@@ -1961,7 +1979,7 @@ table {
     height: 300px;margin-top: 190px; border-radius: 10px
   }
   .con2Bottom .left .txtGrpTxt a {
-    margin-top: 20px; font-size: 12px; font-weight: 400; opacity: 0.9
+    margin-top: 20px; font-size: 15px; font-weight: 400; opacity: 0.9
   }
   /* .con2Bottom .left {
     height: 550px
