@@ -1,0 +1,315 @@
+/*index.html page specific styles*/
+/*con1 - hero section on index*/
+/* .con1 .slide {
+  height: 800px; background-size: cover; background-position: center; background-repeat: no-repeat
+} */
+
+.mainTitleGrp {
+  /* Common styles in common.css, override here if needed for index */
+}
+.mainTitleGrp>div>h1 {
+  font-family: 'abigail'; color: #666;font-weight: 400;font-size: 26px
+}
+.mainTitleGrp p {
+  font-family: "GowoonDodum", sans-serif; color: #444; font-weight: 500; font-size: 16px; opacity: 0.8
+}
+
+/* Essence title specific styling */
+.mainTitleGrp p[data-homepage-customFields-pages-index-sections-0-essence-title] {
+  font-size: 26px;
+  font-weight: 600;
+  font-family: "GowoonDodum", sans-serif; 
+}
+
+/*con2 - index page specific overrides*/
+.IndexWrap .con2>div {
+  height: auto;
+}
+
+.con2Top .right .txtGrp {
+  width: auto !important;
+}
+
+.IndexWrap .con2Bottom .left .txtGrp {
+  width: auto !important;
+}
+
+/*con3 - index page specific overrides*/
+.IndexWrap .con3 {
+  width: 100%;
+  max-width: var(--layout-max);
+  margin: 0 auto;
+  margin-top: 150px;
+  box-sizing: border-box;
+}
+
+/* .con3::after already defined in common.css with .mainWrap */
+
+/*con4 - styles already defined in common.css with .mainWrap */
+
+/* Hide slider buttons on mobile */
+@media all and (max-width: 768px) {
+  .IndexWrap .sliderContainer .prev,
+  .IndexWrap .sliderContainer .next {
+    display: none !important;
+  }
+  .IndexWrap .mainTitleGrp {
+    padding: 0;
+  }
+}
+
+/*responsive adjustments for index page*/
+@media all and (min-width: 1025px) {
+  .IndexWrap > main > .mainTitleGrp,
+  .IndexWrap > main > .fBanner {
+    margin-left: 0;
+    margin-right: 0;
+    margin: 0 auto;
+  }
+  .IndexWrap > main > .mainTitleGrp .heroSlider,
+  .IndexWrap > main > .fBanner {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    left: auto;
+    transform: none;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .IndexWrap > main > .mainTitleGrp .heroSlider,
+  .IndexWrap > main > .fBanner {
+    width: var(--layout-max);
+    max-width: var(--layout-max);
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    left: auto;
+    transform: none;
+  }
+}
+
+@media all and (max-width:1024px) {
+  .con1 {
+    margin-top: 110px; width: 95%
+  }
+  .IndexWrap .con1 {
+    width: 100%;
+  }
+  .IndexWrap .con1 .slide {
+    height: calc(100vh - 80px)
+  }
+  .IndexWrap .con2>div {
+    min-height: unset;
+  }
+
+  /* 모바일에서 rooms 영역: 큰 이미지만 보이고 작은 이미지 숨기기 */
+  .IndexWrap .con2Top,
+  .IndexWrap .con2Bottom {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 첫 번째 영역: 이미지 먼저 */
+  .IndexWrap .con2Top .left {
+    order: 1; /* 이미지 영역이 먼저 */
+  }
+
+  .IndexWrap .con2Top .right {
+    order: 2; /* 텍스트 영역이 나중에 */
+  }
+
+  /* 두 번째 영역: 이미지 먼저 */
+  .IndexWrap .con2Bottom .right {
+    order: 1; /* 이미지 영역이 먼저 */
+    align-content: end; /* 이미지를 바닥에 정렬 */
+    height: auto;
+  }
+
+  .IndexWrap .con2Bottom .left {
+    order: 2; /* 텍스트 영역이 나중에 */
+  }
+
+  .IndexWrap .con2Top .left .imgGrp,
+  .IndexWrap .con2Bottom .right .imgGrp {
+    width: 100%;
+    height: clamp(260px, 60vw, 520px);
+    margin-top: 0;
+    margin-bottom: 20px;
+    background-position: center;
+    border-radius: 10px;
+  }
+
+  /* 작은 이미지들 숨기기 */
+  .IndexWrap .con2Top .right .txtGrpImg,
+  .IndexWrap .con2Bottom .left .txtGrpImg {
+    display: none;
+  }
+
+  .IndexWrap .con2Top .right .txtGrpTxt,
+  .IndexWrap .con2Bottom .left .txtGrpTxt {
+    width: 100%;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .con2Bottom .left .txtGrpTxt {
+    width: 100%
+  }
+
+  .con2Bottom .left {
+    margin-bottom: 0
+  }
+  .IndexWrap .con3 {
+    width: 100%;
+    max-width: var(--layout-max);
+    margin: clamp(40px, 12vw, 90px) auto 0;
+  }
+  .con2 {
+    width: 100%;
+    max-width: var(--layout-max);
+    margin: clamp(60px, 14vw, 110px) auto 0;
+  }
+  .con2Top .left .imgGrp,
+  .con2Bottom .right .imgGrp,
+  .con2Top .right .txtGrp,
+  .con2Bottom .left .txtGrp {
+    width: 100%;
+    float: none;
+  }
+  .con2Top .left .imgGrp,
+  .con2Bottom .right .imgGrp {
+    height: clamp(260px, 65vw, 540px);
+    margin-bottom: clamp(40px, 12vw, 80px);
+  }
+  .con2Top .right .txtGrp,
+  .con2Bottom .left .txtGrp {
+    height: auto;
+    margin-top: 0;
+  }
+  .con2Top .right .txtGrpImg,
+  .con2Bottom .left .txtGrpImg {
+    width: 100%;
+    height: clamp(240px, 60vw, 480px);
+    margin-top: clamp(24px, 8vw, 48px);
+    margin-bottom: clamp(24px, 8vw, 48px);
+    background-position: center;
+  }
+  .con2Bottom .left {
+    margin-bottom: clamp(24px, 8vw, 40px);
+  }
+  .IndexWrap .con2>div {
+    min-height: unset;
+  }
+}
+
+@media all and (max-width:700px) {
+  .IndexWrap .con2>div {
+    height: auto
+  }
+  .con2Top .right .txtGrpTxt a em {
+    width: 27px
+  }
+  .con2Bottom .left .txtGrpTxt a em {
+    width: 27px
+  }
+  .con3 ul li em {
+    width: 25px
+  }
+  .con2Top .right .txtGrp {
+    width: 100% !important;
+    margin-top: 0 !important;
+  }
+  .con2Top .right .txtGrpTxt a {
+    margin-top: 20px; font-size: 12px; font-weight: 400; opacity: 0.9
+  }
+  .con2 {
+    margin-top: 0 !important;
+  }
+  .con2Top .left .imgGrp {
+    height: 350px !important;
+    margin-top: 0 !important;
+  }
+  .con2Top .left .imgGrp {
+    margin-bottom: 0;
+    width: 100% !important;
+  }
+  .con2Top .right .txtGrpTxt {
+    width: 95%
+  }
+  .con2Top .right .txtGrpTxt h2 {
+    font-size: 18px
+  }
+  .con2Top .right .txtGrpImg {
+    margin-top: 30px;height: 300px; border-radius: 10px
+  }
+  .con2Bottom .right {
+    height: 440px
+  }
+  .con2Bottom .right .imgGrp {
+    height: 350px !important;
+    margin-top: 120px;
+  }
+  .con2Bottom .left .txtGrpImg {
+    height: 300px;margin-top: 190px; border-radius: 10px
+  }
+  .con2Bottom .left .txtGrpTxt a {
+    margin-top: 20px; font-size: 12px; font-weight: 400; opacity: 0.9
+  }
+  .con2Bottom .left .txtGrpTxt {
+    width: 95%
+  }
+  .con2Bottom .left .txtGrpTxt h2 {
+    font-size: 18px
+  }
+  .con3 h3 {
+    font-size: 18px
+  }
+  .con3 ul {
+    margin-top: 20px; margin-bottom: 0px
+  }
+  .con3 ul li {
+    padding-top: 50px
+  }
+  .con3.con3Room ul li {
+    padding-top: 0
+  }
+  .con3 ul li:last-child {
+    border-bottom: 0;padding-bottom: 0
+  }
+  .con3 ul li img {
+    width: 100%
+  }
+  .con3 ul li span {
+    font-size: 12px; margin-top: 0
+  }
+  .con3 ul li h4 {
+    font-size: 13px
+  }
+  .con3 ul li a {
+    margin-top: -10px; font-size: 12px; opacity: 0.9; margin-top: 0px
+  }
+  .con3 ul li .specialBtn {
+    margin-top: -15px
+  }
+  .con3 ul li div {
+    margin-top: -30px !important; width: 150px !important;    height: 100px !important
+  }
+  .IndexWrap .con3 {
+    margin-top: 50px;    width: 85%
+  }
+
+  .IndexWrap .con3.checkinCheckoutSection, .IndexWrap .con3.refundSection, .IndexWrap .con3.usageSection {
+    width: 100% !important;
+  }
+
+  .IndexWrap .con3 aside {
+    width: 100%; float: none
+  }
+  .IndexWrap .con3 .right {
+    padding-left: 0
+  }
+  .IndexWrap .con4 {
+    margin-top: 50px; margin-bottom: 50px
+  }
+}

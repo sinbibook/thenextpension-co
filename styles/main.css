@@ -1,0 +1,264 @@
+/* Main page specific styles - overrides for flex layout */
+
+/* About section title styling - mobile only */
+@media (max-width: 768px) {
+  p[data-homepage-customfields-pages-main-sections-0-about-0-title],
+  p[data-homepage-customfields-pages-main-sections-0-about-1-title] {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    margin-top: 1rem !important;
+  }
+
+  /* Reduce subNav padding on mobile */
+  .mainIntroSection .subNav {
+    padding: 1rem 0 !important;
+  }
+
+  /* Reduce mt5 class margin for about description on mobile */
+  [data-homepage-customfields-pages-main-sections-0-about-0-description].mt5,
+  [data-homepage-customfields-pages-main-sections-0-about-1-description].mt5 {
+    margin-top: 0.5rem !important;
+  }
+}
+
+/* Override con2Top for main page only */
+.mainIntroSection .con2Top.about-images-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 2rem 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  flex-wrap: nowrap;
+}
+
+.mainIntroSection .con2Top .left,
+.mainIntroSection .con2Top .right {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  float: none;
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+
+/* 큰 이미지 (imgGrp) - 위치 무관 */
+.mainIntroSection .con2Top .left .imgGrp,
+.mainIntroSection .con2Top .right .imgGrp {
+  width: 100% !important;
+  max-width: 700px !important;
+  height: 600px !important;
+  float: none;
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.mainIntroSection .con2Top .left .imgGrpPic,
+.mainIntroSection .con2Top .right .imgGrpPic {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+/* 작은 이미지 (txtGrp) - 위치 무관 */
+.mainIntroSection .con2Top .left .txtGrp,
+.mainIntroSection .con2Top .right .txtGrp {
+  width: 100% !important;
+  max-width: 600px !important;
+  float: none;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainIntroSection .con2Top .left .txtGrpImg,
+.mainIntroSection .con2Top .right .txtGrpImg {
+  width: 100%;
+  height: 500px !important;
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.5s ease;
+}
+
+/* Override con2Bottom for main page only */
+.mainIntroSection .con2Bottom {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 2rem 0;
+  max-width: 1400px;
+  margin: 3rem auto 0;
+  flex-wrap: nowrap;
+}
+
+.mainIntroSection .con2Bottom .left,
+.mainIntroSection .con2Bottom .right {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  float: none;
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+
+.mainIntroSection .con2Bottom .left .txtGrp {
+  width: 100%;
+  max-width: 600px;
+  float: none;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainIntroSection .con2Bottom .left .txtGrpImg {
+  width: 100%;
+  height: 500px;
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.5s ease;
+}
+
+.mainIntroSection .con2Bottom .right .imgGrp {
+  width: 100%;
+  max-width: 700px;
+  height: 600px;
+  float: none;
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.mainIntroSection .con2Bottom .right .imgGrpPic {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+
+/* Clear floats (safety) */
+.mainIntroSection .con2Top::after,
+.mainIntroSection .con2Bottom::after {
+  content: none;
+  display: none;
+}
+
+/* Navigation styles */
+.mainIntroSection .subNav {
+  text-align: center;
+  padding: 2rem 0;
+  margin-bottom: 0 !important;
+}
+
+.mainIntroSection .subNav.right {
+  text-align: right;
+}
+
+.mainIntroSection .subNav.left {
+  text-align: left;
+}
+
+/* About section description styles */
+.mainIntroSection .about-section .about-description {
+  border: none !important;
+  padding: 0.5rem 0;
+  margin-bottom: 100px;
+  margin-top: 0px !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .mainIntroSection .con2Top .left .imgGrp,
+  .mainIntroSection .con2Top .right .imgGrp,
+  .mainIntroSection .con2Bottom .left .imgGrp,
+  .mainIntroSection .con2Bottom .right .imgGrp {
+    height: 500px !important;
+  }
+
+  .mainIntroSection .con2Top .left .txtGrpImg,
+  .mainIntroSection .con2Top .right .txtGrpImg,
+  .mainIntroSection .con2Bottom .left .txtGrpImg,
+  .mainIntroSection .con2Bottom .right .txtGrpImg {
+    height: 400px !important;
+  }
+}
+
+@media (max-width: 968px) {
+  .mainIntroSection .con2Top.about-images-wrapper,
+  .mainIntroSection .con2Bottom {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .mainIntroSection .con2Top .left,
+  .mainIntroSection .con2Top .right,
+  .mainIntroSection .con2Bottom .left,
+  .mainIntroSection .con2Bottom .right {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .mainIntroSection .con2Top .left .imgGrp,
+  .mainIntroSection .con2Top .right .imgGrp,
+  .mainIntroSection .con2Top .left .txtGrpImg,
+  .mainIntroSection .con2Top .right .txtGrpImg,
+  .mainIntroSection .con2Bottom .left .txtGrpImg,
+  .mainIntroSection .con2Bottom .right .txtGrpImg,
+  .mainIntroSection .con2Bottom .left .imgGrp,
+  .mainIntroSection .con2Bottom .right .imgGrp {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 400px !important;
+  }
+
+  .mainIntroSection .subNav.right,
+  .mainIntroSection .subNav.left {
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .mainIntroSection .con2Top .left .imgGrp,
+  .mainIntroSection .con2Top .right .imgGrp,
+  .mainIntroSection .con2Top .left .txtGrpImg,
+  .mainIntroSection .con2Top .right .txtGrpImg,
+  .mainIntroSection .con2Bottom .left .txtGrpImg,
+  .mainIntroSection .con2Bottom .right .txtGrpImg,
+  .mainIntroSection .con2Bottom .left .imgGrp,
+  .mainIntroSection .con2Bottom .right .imgGrp {
+    height: 300px !important;
+  }
+}
