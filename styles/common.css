@@ -64,6 +64,12 @@ main > div,
 
 /* Empty Image Placeholder Styles - 모든 페이지 공통 */
 
+/* 빈 이미지 완전히 숨김 - 깜빡임 방지 */
+img[src=""],
+img:not([src]) {
+  visibility: hidden !important;
+}
+
 /* img 태그에 적용되는 empty placeholder */
 img.empty-image-placeholder {
   border: 2px dashed #9ca3af;
