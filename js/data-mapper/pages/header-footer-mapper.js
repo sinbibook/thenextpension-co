@@ -34,16 +34,16 @@ class HeaderFooterMapper extends BaseDataMapper {
             }
         });
 
-        // gpension_id 매핑 (예약 링크)
-        const gpensionIdElements = this.safeSelectAll('[data-property-gpension-id]');
-        gpensionIdElements.forEach(element => {
-            if (element && property.gpensionId && property.gpensionId.trim() !== '') {
+        // realtime_booking_id 매핑 (예약 링크)
+        const realtimeBookingIdElements = this.safeSelectAll('[data-property-realtime-booking-id]');
+        realtimeBookingIdElements.forEach(element => {
+            if (element && property.realtimeBookingId && property.realtimeBookingId.trim() !== '') {
                 const currentHref = element.getAttribute('href');
-                if (currentHref && currentHref.includes('${gpensionId}')) {
-                    element.setAttribute('href', currentHref.replace('${gpensionId}', property.gpensionId));
+                if (currentHref && currentHref.includes('${realtimeBookingId}')) {
+                    element.setAttribute('href', currentHref.replace('${realtimeBookingId}', property.realtimeBookingId));
                 }
             } else {
-                // gpensionId가 없으면 링크를 숨겨 깨진 링크가 노출되지 않도록 합니다.
+                // realtimeBookingId가 없으면 링크를 숨겨 깨진 링크가 노출되지 않도록 합니다.
                 element.style.display = 'none';
             }
         });

@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.1.0",
-    "generatedAt": "2025-11-04T01:37:39.647Z",
+    "version": "1.2.0",
+    "generatedAt": "2025-11-04T07:38:05.645Z",
     "templateType": "center_slider",
     "propertyId": "641d3328-82ac-420f-95d9-6a21f1e8d6bf",
     "homepageId": "1b2c1df0-f06c-47ec-a244-99aa070f7e7e"
@@ -110,7 +110,7 @@
         "name": "반려견 동반",
         "description": "사랑하는 반려견과 함께 이용 가능합니다.\n ",
         "usageGuide": "[애견동반 안내]\n- 이용요금: 1마리당 20,000원 (1박기준/현장결제)\n- 제한무게: 8kg 이하\n- 제한마릿수: 객실당 2마리\n- 애견비품 제공 품목: 애견패드, 애견 식기, 애견하우스\n※ 애견 동반 시 안전에 유의해주시기 바랍니다.",
-        "displayOrder": 0,
+        "displayOrder": 1,
         "images": [
           {
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/48096135-fc37-4848-8a8d-adb954a2e5b3/main/1761033603006-z27ccnvfax.jpg",
@@ -143,7 +143,7 @@
         "name": "주변 관광지",
         "description": "강릉 더넥스트 독채펜션 인근 관광지 안내입니다.",
         "usageGuide": "[주변관광지 안내]\n- 주문진 수산시장 차량 5분\n- 주문진해수욕장 차량 5분\n- 지경리 해수욕장 차량 6분\n- 향호리 저수지 차량 7분\n",
-        "displayOrder": 0,
+        "displayOrder": 2,
         "images": [
           {
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/657ea39b-dfcb-40cd-8577-ec342e464057/main/1761208712253-mg0i9hfgh5.jpg",
@@ -352,7 +352,8 @@
     ],
     "nameEn": "Gangneung thenext pension",
     "domain": "thenextpension.co.kr",
-    "gpensionId": "9596"
+    "realtimeBookingId": "9596",
+    "ybsId": ""
   },
   "rooms": [
     {
@@ -560,7 +561,8 @@
             }
           ]
         }
-      ]
+      ],
+      "displayOrder": 0
     },
     {
       "id": "9c1774c2-feb7-4ac1-951b-0927806b5b0e",
@@ -759,7 +761,8 @@
             }
           ]
         }
-      ]
+      ],
+      "displayOrder": 1
     }
   ],
   "homepage": {
