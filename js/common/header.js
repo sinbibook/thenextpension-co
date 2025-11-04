@@ -10,7 +10,7 @@
         'reservation-info': 'reservation.html',
         room: 'room.html',
     };
-    const RESERVATION_URL = 'https://gpnew.gpension.kr/reser/reservation.php?pension_id=beclassy14';
+    const RESERVATION_URL = 'https://www.bookingplay.co.kr/booking/1/${gpensionId}';
 
     // Initialize variables - will be populated after DOM is ready
     let body;
@@ -108,7 +108,10 @@
         if (!page) return;
 
         if (page === 'reservation-link') {
-            window.open(RESERVATION_URL, '_blank');
+            // DOM에서 동적으로 생성된 예약 링크 URL 가져오기
+            const reservationLink = document.querySelector('[data-property-gpension-id]');
+            const reservationUrl = reservationLink?.getAttribute('href') || RESERVATION_URL;
+            window.open(reservationUrl, '_blank');
             closeMobileMenu();
             return;
         }

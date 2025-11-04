@@ -1,1 +1,1 @@
-# thenextpension-co
+# template-center-slider
