@@ -74,8 +74,8 @@ class HeaderFooterLoader {
                     newLink.onload = () => {
                         loadedCount++;
                         if (loadedCount === totalLinks) {
-                            // 모든 CSS 로드 완료 후 헤더 표시
-                            headerContainer.style.visibility = 'visible';
+                            // CSS 로드 완료 (헤더는 데이터 매핑 후 표시)
+                            headerContainer.dataset.cssLoaded = 'true';
                         }
                     };
                     document.head.appendChild(newLink);
@@ -383,6 +383,11 @@ class HeaderFooterLoader {
 
         // iframe 환경(어드민 미리보기)에서는 PreviewHandler가 매핑 담당
         if (window.APP_CONFIG.isInIframe()) {
+            // 미리보기에서도 헤더는 무조건 보여야 함
+            const headerContainer = document.getElementById('header-container');
+            if (headerContainer) {
+                headerContainer.style.visibility = 'visible';
+            }
             return;
         }
 
@@ -393,6 +398,12 @@ class HeaderFooterLoader {
 
             // Header와 Footer 매핑 실행
             await headerFooterMapper.mapHeaderFooter();
+
+            // 데이터 매핑 완료 후 헤더 표시 (깜빡임 방지)
+            const headerContainer = document.getElementById('header-container');
+            if (headerContainer && headerContainer.dataset.cssLoaded === 'true') {
+                headerContainer.style.visibility = 'visible';
+            }
         } catch (error) {
         }
     }
