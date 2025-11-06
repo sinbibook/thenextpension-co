@@ -47,6 +47,33 @@ class HeaderFooterMapper extends BaseDataMapper {
                 element.style.display = 'none';
             }
         });
+
+        // ybs_id 매핑 (YBS 예약 링크)
+        const ybsIdElements = this.safeSelectAll('[data-property-ybs-id]');
+        ybsIdElements.forEach(element => {
+            if (property.ybsId && property.ybsId.trim() !== '') {
+                const ybsUrl = `https://rev.yapen.co.kr/external?ypIdx=${property.ybsId}`;
+
+                // YBS 버튼 컨테이너 표시 (깜빡임 방지를 위해 class 사용)
+                element.classList.add('visible');
+
+                // YBS 링크 설정
+                const ybsLink = element.querySelector('.ybs-btn');
+                if (ybsLink) {
+                    ybsLink.setAttribute('href', ybsUrl);
+                }
+
+                // 모바일 메뉴의 YBS 버튼 처리
+                if (element.tagName === 'BUTTON') {
+                    element.onclick = () => {
+                        window.open(ybsUrl, '_blank');
+                    };
+                }
+            } else {
+                // ybsId가 없으면 버튼을 숨깁니다.
+                element.classList.remove('visible');
+            }
+        });
     }
 
     /**
