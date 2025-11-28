@@ -104,9 +104,9 @@ class RoomMapper extends BaseDataMapper {
                 // room.id로 해당 객실의 customFields 찾기
                 const roomCustomField = roomPages.find(r => r.id === room.id);
                 const heroTitle = this.safeGet(roomCustomField, 'sections.0.hero.title');
-                if (heroTitle) {
-                    heroTitleEl.innerHTML = this._formatTextWithLineBreaks(heroTitle);
-                }
+                const sanitizedTitle = this.sanitizeText(heroTitle);
+                // 빈 문자열('')도 업데이트하여 이전 값 제거
+                heroTitleEl.innerHTML = this._formatTextWithLineBreaks(sanitizedTitle);
             }
         }
 

@@ -370,7 +370,13 @@ body.mobile-menu-open {
   font-family: 'abigail'; color: #666; font-weight: 400; font-size: 26px;text-align: center; margin-top: 10px; opacity: 1
 }
 .header .logo {
-  font-family: 'abigail'; color: #666; font-weight: 400; font-size: 26px;text-align: center;  width: 100%;margin-top: 5px
+  font-family: 'GowoonDodum', sans-serif !important;
+  color: #666;
+  font-weight: 400;
+  font-size: 26px;
+  text-align: center;
+  width: 100%;
+  margin-top: 5px;
 }
 .logoSub {
   text-align: left; position: relative; transition: 0.5s;top: -80px; left: 20px

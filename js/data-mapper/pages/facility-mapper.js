@@ -99,16 +99,20 @@ class FacilityMapper extends BaseDataMapper {
         const heroTitleElements = document.querySelectorAll("[data-facility-hero-title]");
         heroTitleElements.forEach(heroEl => {
             if (heroEl) {
-                const heroTitle = this.safeGet(facilityCustomField, 'sections.0.hero.title') || facility.description || '';
-                heroEl.textContent = heroTitle;
+                const heroTitle = this.safeGet(facilityCustomField, 'sections.0.hero.title');
+                const sanitizedTitle = this.sanitizeText(heroTitle, this.sanitizeText(facility.description));
+                // 빈 문자열('')도 업데이트하여 이전 값 제거
+                heroEl.innerHTML = this._formatTextWithLineBreaks(sanitizedTitle);
             }
         })
 
         // 커스텀 필드 about.title 매핑 (상세 타이틀)
         const aboutTitleEl = this.safeSelect('[data-facility-about-title]');
         if (aboutTitleEl) {
-            const aboutTitle = this.safeGet(facilityCustomField, 'sections.0.about.title') || facility.description || '';
-            aboutTitleEl.innerHTML = this._formatTextWithLineBreaks(aboutTitle);
+            const aboutTitle = this.safeGet(facilityCustomField, 'sections.0.about.title');
+            const sanitizedAboutTitle = this.sanitizeText(aboutTitle, this.sanitizeText(facility.description));
+            // 빈 문자열('')도 업데이트하여 이전 값 제거
+            aboutTitleEl.innerHTML = this._formatTextWithLineBreaks(sanitizedAboutTitle);
         }
 
         // 이용안내 매핑 (facility.usageGuide)

@@ -28,39 +28,46 @@ class IndexMapper extends BaseDataMapper {
 
 
         // 새로운 구조: homepage.customFields.pages.index.sections[0].hero
-        const heroData = this.safeGet(this.data, 'homepage.customFields.pages.index.sections.0.hero');
-
         const taglineMain = this.safeSelect('[data-hero-title]');
-        if (taglineMain && heroData && heroData.title) {
-            taglineMain.textContent = heroData.title;
+        if (taglineMain) {
+            const heroTitle = this.safeGet(this.data, 'homepage.customFields.pages.index.sections.0.hero.title');
+            // heroData 객체가 없어도 safeGet이 null 반환 → sanitizeText('')로 빈 값 업데이트
+            taglineMain.textContent = this.sanitizeText(heroTitle);
         }
 
 
         // Hero description 섹션 매핑 - index 페이지의 essence 데이터 사용
-        const essenceData = this.safeGet(this.data, 'homepage.customFields.pages.index.sections.0.essence');
-        if (essenceData) {
-            const heroDescriptionTitle = this.safeSelect('[data-homepage-customFields-pages-index-sections-0-essence-title]');
-            if (heroDescriptionTitle && essenceData.title) {
-                heroDescriptionTitle.innerHTML = essenceData.title;
-            }
+        const heroDescriptionTitle = this.safeSelect('[data-homepage-customFields-pages-index-sections-0-essence-title]');
+        const heroDescriptionBody = this.safeSelect('[data-homepage-customFields-pages-index-sections-0-essence-description]');
 
-            const heroDescriptionBody = this.safeSelect('[data-homepage-customFields-pages-index-sections-0-essence-description]');
-            if (heroDescriptionBody && essenceData.description) {
-                heroDescriptionBody.innerHTML = essenceData.description;
-            }
-        } else {
-            // fallback으로 property.description 사용
-            const heroDescriptionTitle = this.safeSelect('[data-homepage-customFields-pages-index-sections-0-essence-title]');
-            const heroDescriptionBody = this.safeSelect('[data-homepage-customFields-pages-index-sections-0-essence-description]');
+        const essenceTitle = this.safeGet(this.data, 'homepage.customFields.pages.index.sections.0.essence.title');
+        const essenceDesc = this.safeGet(this.data, 'homepage.customFields.pages.index.sections.0.essence.description');
 
-            if (heroDescriptionTitle && this.data.property?.name) {
+        // essenceData 객체가 없어도 업데이트 (빈 값이면 fallback 사용)
+        if (heroDescriptionTitle) {
+            const sanitizedTitle = this.sanitizeText(essenceTitle);
+            if (sanitizedTitle) {
+                heroDescriptionTitle.innerHTML = sanitizedTitle;
+            } else if (this.data.property?.name) {
+                // fallback: property.name
                 heroDescriptionTitle.innerHTML = this.data.property.name;
-            }
-
-            if (heroDescriptionBody && this.data.property?.description) {
-                heroDescriptionBody.innerHTML = this.data.property.description;
+            } else {
+                heroDescriptionTitle.innerHTML = '';
             }
         }
+
+        if (heroDescriptionBody) {
+            const sanitizedDesc = this.sanitizeText(essenceDesc);
+            if (sanitizedDesc) {
+                heroDescriptionBody.innerHTML = sanitizedDesc;
+            } else if (this.data.property?.description) {
+                // fallback: property.description
+                heroDescriptionBody.innerHTML = this.data.property.description;
+            } else {
+                heroDescriptionBody.innerHTML = '';
+            }
+        }
+
 
         // Hero slider 동적 생성
         const heroSliderContainer = this.safeSelect('.index-hero-slider-wrapper');
@@ -69,6 +76,7 @@ class IndexMapper extends BaseDataMapper {
             heroSliderContainer.innerHTML = '';
 
             // hero 이미지 데이터만 수집
+            const heroData = this.safeGet(this.data, 'homepage.customFields.pages.index.sections.0.hero');
             const heroImages = (heroData && Array.isArray(heroData.images)) ? heroData.images : [];
 
             // hero 이미지에 대해서만 슬라이드 생성
@@ -145,20 +153,20 @@ class IndexMapper extends BaseDataMapper {
     mapEssenceSection() {
         if (!this.isDataLoaded) return;
 
-        // 새로운 구조: homepage.customFields.pages.index.sections[0].essence
-        const essenceData = this.safeGet(this.data, 'homepage.customFields.pages.index.sections.0.essence');
+        // heroDescription 영역의 essence 데이터 매핑
+        const heroDescriptionTitle = this.safeSelect('[data-homepage-customFields-pages-index-sections-0-essence-title]');
+        const heroDescriptionBody = this.safeSelect('[data-homepage-customFields-pages-index-sections-0-essence-description]');
 
-        if (essenceData) {
-            // heroDescription 영역의 essence 데이터 매핑
-            const heroDescriptionTitle = this.safeSelect('[data-homepage-customFields-pages-index-sections-0-essence-title]');
-            if (heroDescriptionTitle && essenceData.title) {
-                heroDescriptionTitle.innerHTML = essenceData.title;
-            }
+        const essenceTitle = this.safeGet(this.data, 'homepage.customFields.pages.index.sections.0.essence.title');
+        const essenceDesc = this.safeGet(this.data, 'homepage.customFields.pages.index.sections.0.essence.description');
 
-            const heroDescriptionBody = this.safeSelect('[data-homepage-customFields-pages-index-sections-0-essence-description]');
-            if (heroDescriptionBody && essenceData.description) {
-                heroDescriptionBody.innerHTML = essenceData.description;
-            }
+        // essenceData 객체가 없어도 업데이트 (빈 값이면 빈 문자열)
+        if (heroDescriptionTitle) {
+            heroDescriptionTitle.innerHTML = this.sanitizeText(essenceTitle);
+        }
+
+        if (heroDescriptionBody) {
+            heroDescriptionBody.innerHTML = this.sanitizeText(essenceDesc);
         }
     }
 
@@ -428,29 +436,18 @@ class IndexMapper extends BaseDataMapper {
         }
     }
 
-    mapReservationSection() {
-        const reservationHero = this.safeGet(this.data, 'homepage.customFields.pages.reservation.sections.0.hero');
-        if (!reservationHero) return;
+    /**
+     * Closing 섹션 매핑 (하단 배너)
+     * @private
+     */
+    mapClosingSection() {
+        const closingData = this.safeGet(this.data, 'homepage.customFields.pages.index.sections.0.closing');
+        if (!closingData) return;
 
-        const titleEl = this.safeSelect('[data-index-reservation-title]');
-        if (titleEl && reservationHero.title) {
-            titleEl.textContent = reservationHero.title;
-        }
-
-        const descriptionEl = this.safeSelect('[data-index-reservation-description]');
-        if (descriptionEl && reservationHero.description) {
-            descriptionEl.innerHTML = reservationHero.description.replace(/\n/g, '<br>');
-        }
-
-        const heroTextEl = this.safeSelect('[data-index-reservation-hero]');
-        if (heroTextEl && reservationHero.description) {
-            heroTextEl.innerHTML = reservationHero.description.replace(/\n/g, '<br>');
-        }
-
-        const bannerEl = this.safeSelect('[data-homepage-customFields-pages-reservation-sections-0-hero-images-0]');
+        const bannerEl = this.safeSelect('[data-homepage-customFields-pages-index-sections-0-closing-images-0]');
         if (bannerEl) {
             // 선택된 이미지 중 첫 번째 사용
-            const selectedImages = reservationHero.images?.filter(img => img.isSelected) || [];
+            const selectedImages = closingData.images?.filter(img => img.isSelected) || [];
             const heroImage = selectedImages[0] || null;
             const imageUrl = heroImage?.url || ImageHelpers.EMPTY_IMAGE_WITH_ICON;
 
@@ -468,7 +465,7 @@ class IndexMapper extends BaseDataMapper {
             } else {
                 bannerEl.classList.remove('empty-image-placeholder');
                 // Add the actual URL as a data attribute for reference
-                bannerEl.setAttribute('data-homepage-customFields-pages-reservation-sections-0-hero-images-0-url', heroImage.url);
+                bannerEl.setAttribute('data-homepage-customFields-pages-index-sections-0-closing-images-0-url', heroImage.url);
             }
         }
     }
@@ -490,7 +487,7 @@ class IndexMapper extends BaseDataMapper {
         this.mapEssenceSection();
         this.mapSpecialsSection();
         this.mapRoomsSection();
-        this.mapReservationSection();
+        this.mapClosingSection();
 
         // 메타 태그 업데이트
         this.updateMetaTags(this.data.property);

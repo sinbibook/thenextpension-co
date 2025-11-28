@@ -173,9 +173,7 @@ class HeaderFooterMapper extends BaseDataMapper {
             submenu.innerHTML = ''; // 기존 하드코딩된 내용 제거
 
             if (facilityData && Array.isArray(facilityData) && facilityData.length > 0) {
-                // 최대 3개까지만 표시
-                const displayFacilities = facilityData.slice(0, 3);
-                displayFacilities.forEach((facility, index) => {
+                facilityData.forEach((facility, index) => {
                     const li = document.createElement('li');
                     const a = document.createElement('a');
                     a.href = `facility.html?id=${facility.id}`;
