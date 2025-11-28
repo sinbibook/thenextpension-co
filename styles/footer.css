@@ -25,11 +25,11 @@ footer {
 }
 
 .footer-section h3 {
-    color: #2c3e50;
     margin-top: 1rem;
     margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 26px;
+    color: #666;
+    font-weight: normal;
 }
 
 .footer-section p {

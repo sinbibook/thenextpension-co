@@ -188,14 +188,18 @@ class DirectionsMapper extends BaseDataMapper {
         const titleEl = this.safeSelect('[data-directions-notice-title]');
         const descriptionEl = this.safeSelect('[data-property-directions-notice-description]');
 
+        const sanitizedTitle = this.sanitizeText(title);
+        const sanitizedDesc = this.sanitizeText(description);
+
+        // 빈 문자열('')도 업데이트하여 이전 값 제거
         if (titleEl) {
-            titleEl.textContent = title || '';
+            titleEl.textContent = sanitizedTitle;
         }
         if (descriptionEl) {
-            descriptionEl.textContent = description || '';
+            descriptionEl.textContent = sanitizedDesc;
         }
 
-        if (title || description) {
+        if (sanitizedTitle || sanitizedDesc) {
             noticeSection.style.display = 'block';
         } else {
             noticeSection.style.display = 'none';

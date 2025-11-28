@@ -11,16 +11,18 @@ class MainMapper extends BaseDataMapper {
         if (!this.isDataLoaded) return;
 
         // Map hero title and description from customFields
-        const heroData = this.safeGet(this.data, 'homepage.customFields.pages.main.sections.0.hero');
-
         const heroTitleEl = this.safeSelect('[data-homepage-customFields-pages-main-sections-0-hero-title]');
-        if (heroTitleEl && heroData?.title) {
-            heroTitleEl.textContent = heroData.title;
+        if (heroTitleEl) {
+            const heroTitle = this.safeGet(this.data, 'homepage.customFields.pages.main.sections.0.hero.title');
+            // heroData 객체가 없어도 빈 값으로 업데이트
+            heroTitleEl.textContent = this.sanitizeText(heroTitle);
         }
 
         const heroDescriptionEl = this.safeSelect('[data-homepage-customFields-pages-main-sections-0-hero-description]');
-        if (heroDescriptionEl && heroData?.description) {
-            heroDescriptionEl.innerHTML = this._formatTextWithLineBreaks(heroData.description);
+        if (heroDescriptionEl) {
+            const heroDesc = this.safeGet(this.data, 'homepage.customFields.pages.main.sections.0.hero.description');
+            // heroData 객체가 없어도 빈 값으로 업데이트
+            heroDescriptionEl.innerHTML = this._formatTextWithLineBreaks(heroDesc);
         }
     }
 

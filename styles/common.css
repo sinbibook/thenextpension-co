@@ -1,5 +1,6 @@
 @charset "utf-8";
 /* @font-face는 config.js에서 동적으로 생성됨 */
+
 /*default*/
 * {
   margin: 0; padding: 0; box-sizing: border-box;     font-family: 'GowoonDodum' !important;
@@ -311,7 +312,7 @@ body.mobile-menu-open #scrollToTop {
   }
 }
 
-@media all and (min-width: 1200px) {
+@media all and (min-width: 1500px) {
   .mainWrap > main > .mainTitleGrp .heroSlider,
   .mainWrap > main > .fBanner {
     width: var(--layout-max);
@@ -503,7 +504,14 @@ input, button, a {
   transform: rotate(180deg);
 }
 .header.on .logo {
-  font-family: 'abigail'; color: #666; font-weight: 400; font-size: 26px;text-align: center; margin-top: -5px; opacity: 1; display: block
+  font-family: 'GowoonDodum', sans-serif !important;
+  color: #666;
+  font-weight: 400;
+  font-size: 26px;
+  text-align: center;
+  margin-top: -5px;
+  opacity: 1;
+  display: block;
 }
 .header.on .logo img {
   width: 140px; margin-top: -15px;margin-left: 14px
@@ -959,20 +967,25 @@ input, button, a {
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-end;
   pointer-events: none;
   text-align: center;
   padding: clamp(1.5rem, 4vw, 3rem);
   z-index: 10;
   border-radius: inherit;
   flex-direction: column;
+  margin-left: 4rem;
+  margin-bottom: 2rem;
 }
 .heroHeading {
-  font-size: clamp(2.6rem, 7vw, 3em);
+  font-family: 'GowoonDodum', sans-serif !important;
+  font-size: clamp(2rem, 4.5vw, 2.7rem);
   color: #fff;
   text-transform: uppercase;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-weight: normal;
+  letter-spacing: 2px;
 }
 .heroHeadingSub {
   font-size: clamp(0.8rem, 4vw, 1.4em) !important;
@@ -1169,8 +1182,8 @@ table {
 }
 
 .footer-logo {
-  font-family: "GowoonDodum", sans-serif;
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-family: 'GowoonDodum', sans-serif !important;
+  font-size: 26px;
   color: #1f2937;
   margin-bottom: 1rem;
   font-weight: 600;
@@ -1255,10 +1268,7 @@ table {
   }
   .heroHeading {
     letter-spacing: 0.1em;
-    font-size: clamp(2.2rem, 7vw, 3.6rem);
-  }
-  .heroOverlay {
-    padding: clamp(1.25rem, 4vw, 2.5rem);
+    font-size: clamp(1.8rem, 5vw, 2.4rem);
   }
   .heroSlider .prev,
   .heroSlider .next {
@@ -1332,7 +1342,10 @@ table {
     display: none
   }
   .header .logo {
-    opacity: 1; top: -30px; font-size: 28px
+    opacity: 1;
+    top: -30px;
+    font-size: 26px;
+    font-family: 'GowoonDodum', sans-serif !important;
   }
   .header h1 {
     left: 0%; margin-left: 30px
@@ -1818,8 +1831,13 @@ table {
     letter-spacing: 0.06em;
     font-size: clamp(1.9rem, 7vw, 3rem);
   }
-  .heroOverlay {
+  .mainWrap .heroSlider .heroOverlay {
     padding: clamp(1rem, 3vw, 2rem);
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 0;
+    margin-bottom: 3rem;
+    text-align: center;
   }
   .heroSlider .prev,
   .heroSlider .next {
@@ -2054,7 +2072,10 @@ table {
   }
 
   .header .logo {
-    left: -20px; top: -10px; font-size: 22px
+    left: -20px;
+    top: -10px;
+    font-size: 26px;
+    font-family: 'GowoonDodum', sans-serif !important;
   }
 }
 
