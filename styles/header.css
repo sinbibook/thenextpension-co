@@ -12,7 +12,7 @@
   height: 44px;
   cursor: pointer;
   transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-  color: #1f2937;
+  color: var(--color-secondary);
   z-index: 5000;
   position: relative;
 }
@@ -30,7 +30,7 @@
 }
 
 .mobile-toggle:focus-visible {
-  outline: 2px solid #4d7959;
+  outline: 2px solid var(--color-secondary);
   outline-offset: 3px;
 }
 
@@ -54,6 +54,29 @@
   display: block;
 }
 
+/* Close button inside mobile menu */
+.mobile-toggle--close {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  color: var(--color-secondary);
+  background: transparent;
+  border: none;
+  z-index: 10001;
+  pointer-events: all !important;
+}
+
+.mobile-toggle--close #close-icon {
+  display: block !important;
+}
+
+.mobile-toggle--close:hover {
+  opacity: 0.7;
+}
+
 .mobile-menu {
   position: fixed;
   inset: 0;
@@ -61,9 +84,9 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 0;
-  background: #fff;
+  background: var(--color-primary);
   backdrop-filter: blur(14px);
-  color: #f9fafb;
+  color: var(--color-secondary);
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
@@ -72,16 +95,23 @@
   overflow: hidden;
 }
 
+
 .mobile-menu.is-open {
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
+  display: flex !important;
 }
 
+.mobile-menu:not(.is-open) {
+  display: none;
+}
+
+
 .mobile-menu.is-open a {
-  pointer-events: auto !important;
-  cursor: pointer !important;
-  touch-action: manipulation !important;
+  pointer-events: auto;
+  cursor: pointer;
+  touch-action: manipulation;
 }
 
 .mobile-menu.is-open .mobile-menu-title {
@@ -93,6 +123,7 @@
 .mobile-menu-scrollable {
   flex: 1;
   overflow-y: auto;
+  padding-top: 1rem;
 }
 
 .mobile-menu-grid {
@@ -106,7 +137,7 @@
 }
 
 .mobile-menu-section {
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 1px solid var(--color-secondary);
 }
 
 .mobile-menu-section:last-child {
@@ -114,10 +145,10 @@
 }
 
 .mobile-menu-title {
-  font-family: 'GowoonDodum', sans-serif;
+  font-family: var(--font-ko-main);
   font-size: 1.1rem;
   letter-spacing: 0.05em;
-  color: #333;
+  color: var(--color-secondary);
   padding: 1rem 1.2rem;
   margin: 0;
   cursor: pointer;
@@ -127,15 +158,12 @@
   transition: background 0.2s ease;
 }
 
-.mobile-menu-title:hover {
-  background: rgba(0,0,0,0.02);
-}
 
 .mobile-menu-title::after {
   content: '+';
   font-size: 1.3rem;
   font-weight: 300;
-  color: #666;
+  color: #444;
   transition: transform 0.3s ease;
 }
 
@@ -165,10 +193,10 @@
   width: 100%;
   padding: 0.8rem 1rem;
   border: none;
-  background: rgba(0,0,0,0.06);
-  color: #666;
+  background: color-mix(in srgb, var(--color-secondary) 5%, transparent);
+  color: #444;
   font-size: 0.95rem;
-  font-family: 'GowoonDodum', sans-serif;
+  font-family: var(--font-ko-main);
   cursor: pointer;
   transition: background 0.2s ease, padding-left 0.2s ease;
   border-radius: 8px;
@@ -178,26 +206,26 @@
 
 .mobile-sub-item:hover,
 .mobile-sub-item:focus-visible {
-  background: rgba(0,0,0,0.1);
+  background: color-mix(in srgb, var(--color-secondary) 10%, transparent);
   padding-left: 1.3rem;
 }
 
 /* Highlight current page */
 .mobile-sub-item.current-page {
-  background: rgba(77, 121, 89, 0.1);
-  color: #4d7959;
+  background: rgba(139, 158, 189, 0.1);
+  color: var(--color-secondary);
   font-weight: 600;
 }
 
 .mobile-sub-empty {
   font-size: 0.95rem;
-  color: rgba(249,250,251,0.6);
+  color: #444;
 }
 
 .mobile-menu-footer {
   position: sticky;
   bottom: 0;
-  background: #fff;
+  background: color-mix(in srgb, var(--color-secondary) 5%, transparent);
   box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
   padding: 1rem;
   display: flex;
@@ -216,10 +244,11 @@
   padding: 1rem 1.5rem;
   border: none;
   border-radius: 999px;
-  background: #8b9ebd;
+  background: var(--color-secondary);
   color: #fff;
   font-size: 1.05rem;
   font-weight: 600;
+  font-family: var(--font-ko-sub);
   box-shadow: 0 22px 48px rgba(163, 168, 177, 0.32);
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -270,12 +299,12 @@ body.mobile-menu-open {
   padding: 20px 0;
   margin-top: 0 !important;
   transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
-  background: rgba(255,255,255,0);
+  background: transparent;
   box-shadow: none;
 }
 
 .header.scrolled {
-  background: rgba(255,255,255,0.8);
+  background: var(--color-primary);
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
   backdrop-filter: blur(12px);
 }
@@ -290,7 +319,7 @@ body.mobile-menu-open {
   position: fixed; left: 50%; transform: translateX(-50%); top: 20px; z-index: 3001; margin: 0;
 }
 .header.on {
-  background: rgba(240,241,243,0.8)
+  background: var(--color-primary)
 }
 .headerSub.on {
   top: 0px
@@ -311,13 +340,13 @@ body.mobile-menu-open {
   width: 1260px
 }
 .header .mainMenu:hover li > a {
-  color: #666
+  color: #444
 }
 .header .mainMenu > li {
   float: left; width: 114px
 }
 .header .mainMenu > li > a {
-  line-height: 40px; text-align: center; color: #666; font-size: 16px; font-weight: 100; font-family: "GowoonDodum", sans-serif; transition: 0.8s
+  line-height: 40px; text-align: center; color: var(--color-secondary); font-size: 16px; font-weight: 100; transition: 0.8s
 }
 .header .mainMenu > li::after {
   display: table; content: ""; clear: both
@@ -336,7 +365,7 @@ body.mobile-menu-open {
   transform: translate(-50%, -6px);
   min-width: 180px;
   padding: 16px 22px;
-  background: rgba(255,255,255,0.9);
+  background: var(--color-primary);
   border-radius: 14px;
   box-shadow: 0 18px 44px rgba(0,0,0,0.12);
   backdrop-filter: blur(6px);
@@ -355,10 +384,10 @@ body.mobile-menu-open {
   gap: 10px;
 }
 .header .mainMenu > li.is-open > a {
-  color: #333;
+  color: var(--color-secondary);
 }
 .header .mainMenu .subMenu a {
-  line-height: 30px; font-size: 13px; color: #666; font-family: 'Proxima'; transition: 0.5s
+  line-height: 30px; font-size: 13px; color: #444; transition: 0.5s
 }
 .header .mainMenu .subMenu a:hover {
   font-weight: 600
@@ -367,11 +396,11 @@ body.mobile-menu-open {
   font-size: 10px; margin-left: 8px
 }
 .header.on .logo {
-  font-family: 'abigail'; color: #666; font-weight: 400; font-size: 26px;text-align: center; margin-top: 10px; opacity: 1
+  font-family: var(--font-en-main); color: var(--color-secondary); font-weight: 400; font-size: 26px;text-align: center; margin-top: 10px; opacity: 1
 }
 .header .logo {
-  font-family: 'GowoonDodum', sans-serif !important;
-  color: #666;
+  font-family: var(--font-ko-main) !important;
+  color: var(--color-secondary);
   font-weight: 400;
   font-size: 26px;
   text-align: center;
@@ -382,7 +411,7 @@ body.mobile-menu-open {
   text-align: left; position: relative; transition: 0.5s;top: -80px; left: 20px
 }
 .logoSub a {
-  position: absolute; font-family: 'abigail'; color: #666; font-weight: 400; font-size: 28px
+  position: absolute; font-family: var(--font-en-main); color: var(--color-secondary); font-weight: 400; font-size: 28px
 }
 .logoSub img {
   width: 140px; margin-top: -10px
@@ -396,7 +425,7 @@ body.mobile-menu-open {
 }
 
 .header.on .logo {
-  font-family: 'abigail'; color: #666; font-weight: 400; font-size: 26px;text-align: center; opacity: 1; display: block
+  font-family: var(--font-en-main); color: var(--color-secondary); font-weight: 400; font-size: 26px;text-align: center; opacity: 1; display: block
 }
 .header.on .logo img {
   width: 140px; margin-top: -15px;margin-left: 14px
@@ -414,7 +443,7 @@ body.mobile-menu-open {
   margin-right: 3px; font-size: 15px
 }
 .header .sns li a {
-  font-family: "GowoonDodum", sans-serif ; color: #666; font-size: 14px
+  color: var(--color-secondary); font-size: 14px
 }
 .header .sns li:nth-child(2) a img {
   width: 14px; margin-right: 3px; float: left
@@ -445,16 +474,16 @@ body.mobile-menu-open {
   left: 0;
   z-index: 3000;
   padding: 16px 0;
-  background: rgba(255,255,255,0);
+  background: color-mix(in srgb, var(--color-secondary) 5%, transparent);
   backdrop-filter: blur(0);
   border-bottom: 1px solid transparent;
   transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease;
 }
 .mHd.scrolled {
-  background: rgba(255,255,255,0.85);
+  background: var(--color-primary);
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
   backdrop-filter: blur(12px);
-  border-bottom-color: rgba(255,255,255,0.35);
+  border-bottom-color: var(--color-secondary);
 }
 .mHd .logo {
   position: static;
@@ -470,7 +499,7 @@ body.mobile-menu-open {
   text-align: left;
 }
 .mHd.on {
-  background: rgba(240,241,243,0.98);
+  background: var(--color-primary);
 }
 .mHd .gnb {
   position: static;
@@ -489,10 +518,9 @@ body.mobile-menu-open {
   align-items: center;
   line-height: 1.4;
   text-align: left;
-  color: #2c2c2c;
+  color: var(--color-secondary);
   font-size: 1rem;
-  font-family: "GowoonDodum", sans-serif;
-  transition: color 0.3s ease;
+    transition: color 0.3s ease;
 }
 .mHd .mainMenu > li::after {
   display: none;
@@ -523,10 +551,10 @@ body.mobile-menu-open {
   gap: 0.5rem;
 }
 .mHd .mainMenu > li.is-open > a {
-  color: #333;
+  color: var(--color-secondary);
 }
 .mHd .mainMenu .subMenu a {
-  line-height: 1.6; font-size: 0.95rem; color: #505050
+  line-height: 1.6; font-size: 0.95rem; color: #444
 }
 .mHd .mainMenu>li>a i {
   font-size: 12px; margin-left: 8px; transition: transform 0.3s ease
@@ -536,7 +564,7 @@ body.mobile-menu-open {
 }
 
 .mHd .logo {
-  font-family: 'abigail'; color: #6e5c42; font-weight: 400; font-size: 26px; text-align: center; display: block; width: 100%; margin-top: 10px; opacity: 1;
+  font-family: var(--font-ko-sub); color: var(--color-secondary); font-weight: 400; font-size: 26px; text-align: center; display: block; width: 100%; margin-top: 10px; opacity: 1;
 }
 .mMainTitleGrp {
   display: none
@@ -545,7 +573,7 @@ body.mobile-menu-open {
 /*header media queries*/
 @media all and (max-width:1024px) {
   .header {
-    padding: 50px 0 40px 0;background: #f0f1f3
+    padding: 50px 0 40px 0;background: var(--color-primary)
   }
   .header .mainMenu {
     width: 100%
@@ -566,7 +594,7 @@ body.mobile-menu-open {
     left: 50%; transform: translateX(-50%);
   }
   .mHd {
-    padding: 50px 0 40px 0;background: rgba(240,241,243,0.8);
+    padding: 50px 0 40px 0;background: var(--color-primary);
   }
   .mHd .mainMenu {
     width: 100%
@@ -622,9 +650,8 @@ body.mobile-menu-open {
   .mHd {
     display: block;
     padding: clamp(14px, 4vw, 24px) 0;
-    background: rgba(240,241,243,0.95);
+    background: var(--color-primary);
     backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(255,255,255,0.35);
   }
   .mHd .logo,
   .mHd .logo.mMainLogo {
@@ -636,7 +663,8 @@ body.mobile-menu-open {
     text-align: left !important;
     left: auto !important;
     font-size: 1.3rem !important;
-    color: #333 !important;
+    color: var(--color-secondary) !important;
+    font-family: var(--font-ko-sub) !important;
   }
   .mHd .logo img {
     width: clamp(70px, 24vw, 110px);
@@ -658,7 +686,7 @@ body.mobile-menu-open {
     position: static;
     width: 100%;
     margin-top: clamp(52px, 14vw, 72px);
-    background: rgba(255,255,255,0.95);
+    background: color-mix(in srgb, var(--color-secondary) 5%, transparent);
     border-radius: 18px;
     padding: clamp(1rem, 4vw, 2rem);
     box-shadow: 0 16px 44px rgba(0,0,0,0.12);
@@ -685,7 +713,7 @@ body.mobile-menu-open {
     align-items: center;
     font-size: 1rem;
     line-height: 1.4;
-    color: #2c2c2c;
+    color: var(--color-secondary);
   }
   .mHd .mainMenu .gnbSub {
     position: static;

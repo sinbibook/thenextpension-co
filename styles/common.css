@@ -3,19 +3,26 @@
 
 /*default*/
 * {
-  margin: 0; padding: 0; box-sizing: border-box;     font-family: 'GowoonDodum' !important;
+  margin: 0; padding: 0; box-sizing: border-box;
 }
 html, body {
-  color: #343434; -webkit-text-size-adjust: antialiased;-moz-osx-font-smoothing: grayscale;background: #f0f1f3
+  color: #444; -webkit-text-size-adjust: antialiased;-moz-osx-font-smoothing: grayscale;background: var(--color-primary);
+  font-family: var(--font-ko-sub);
 }
-h1, h2, h3, h4, h5, p, a, li, th, td {
-  transform: skew(0.03deg); font-family: 'GowoonDodum' !important
+h1, h2, h3, h4, h5, h6 {
+  transform: skew(0.03deg);
+  font-family: var(--font-ko-main);
+  color: var(--color-secondary);
+}
+
+p, a, li, th, td {
+  transform: skew(0.03deg);
 }
 li {
   list-style: none
 }
 a {
-  color: #666; text-decoration: none; display: inline-block
+  color: #444; text-decoration: none; display: inline-block
 }
 button, input, a, label {
   border: none; outline: none; background-color: transparent; box-shadow: none
@@ -241,7 +248,7 @@ main > section {
   height: 44px;
   cursor: pointer;
   transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-  color: #1f2937;
+  color: var(--color-secondary);
   z-index: 4000;
 }
 
@@ -252,7 +259,7 @@ main > section {
 }
 
 .mobile-toggle:focus-visible {
-  outline: 2px solid #4d7959;
+  outline: 2px solid var(--color-secondary);
   outline-offset: 3px;
 }
 
@@ -338,7 +345,7 @@ input, button, a {
   margin: 0 auto; position: relative
 }
 .btnBorder {
-  border-bottom: 1px solid #ccc
+  border-bottom: 1px solid #444
 }
 .heroImgWrap {
   margin: 0 auto 6rem;
@@ -354,7 +361,7 @@ input, button, a {
   text-align: left; position: relative; transition: 0.5s;top: -80px; left: 20px
 }
 .logoSub a {
-  position: absolute; font-family: 'abigail'; color: #666; font-weight: 400; font-size: 28px
+  position: absolute; color: #444; font-weight: 400; font-size: 28px
 }
 .logoSub img {
   width: 140px; margin-top: -10px
@@ -412,18 +419,18 @@ input, button, a {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 3000;
+  z-index: 5000;
   padding: 16px 0;
-  background: rgba(255,255,255,0);
+  background: rgba(139,158,189,0.1);
   backdrop-filter: blur(0);
   border-bottom: 1px solid transparent;
   transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease;
 }
 .mHd.scrolled {
-  background: rgba(255,255,255,0.85);
+  background: var(--color-primary);
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
   backdrop-filter: blur(12px);
-  border-bottom-color: rgba(255,255,255,0.35);
+  border-bottom: 1px solid transparent;
 }
 .mHd .logo {
   position: static;
@@ -439,7 +446,7 @@ input, button, a {
   text-align: left;
 }
 .mHd.on {
-  background: rgba(240,241,243,0.98);
+  background: var(--color-primary);
 }
 .mHd .gnb {
   position: static;
@@ -458,9 +465,8 @@ input, button, a {
   align-items: center;
   line-height: 1.4;
   text-align: left;
-  color: #2c2c2c;
+  color: var(--color-secondary);
   font-size: 1rem;
-  font-family: "GowoonDodum", sans-serif;
   transition: color 0.3s ease;
 }
 .mHd .mainMenu > li::after {
@@ -492,10 +498,10 @@ input, button, a {
   gap: 0.5rem;
 }
 .mHd .mainMenu > li.is-open > a {
-  color: #333;
+  color: var(--color-secondary);
 }
 .mHd .mainMenu .subMenu a {
-  line-height: 1.6; font-size: 0.95rem; color: #505050
+  line-height: 1.6; font-size: 0.95rem; color: #444
 }
 .mHd .mainMenu>li>a i {
   font-size: 12px; margin-left: 8px; transition: transform 0.3s ease
@@ -504,8 +510,7 @@ input, button, a {
   transform: rotate(180deg);
 }
 .header.on .logo {
-  font-family: 'GowoonDodum', sans-serif !important;
-  color: #666;
+  color: var(--color-secondary);
   font-weight: 400;
   font-size: 26px;
   text-align: center;
@@ -517,7 +522,7 @@ input, button, a {
   width: 140px; margin-top: -15px;margin-left: 14px
 }
 .mHd .logo {
-  font-family: 'abigail'; color: #6e5c42; font-weight: 400; font-size: 26px; text-align: center; display: block; width: 100%; margin-top: 10px; opacity: 1;
+  font-family: var(--font-ko-sub); color: var(--color-secondary); font-weight: 400; font-size: 26px; text-align: center; display: block; width: 100%; margin-top: 10px; opacity: 1;
 }
 .mMainTitleGrp {
   display: none
@@ -533,10 +538,24 @@ input, button, a {
   box-sizing: border-box;
 }
 .con2 .titWrap {
-  margin-bottom: 30px; height: auto !important; color: #666
+  margin-bottom: 30px; height: auto !important; color: var(--color-secondary)
 }
 .titWrap {
-  color: #666
+  color: var(--color-secondary);
+  font-family: var(--font-ko-main);
+}
+
+.titWrap span,
+.titWrap p {
+  font-family: var(--font-ko-sub);
+  color: #444;
+}
+
+/* conTit - 영문 제목용 */
+.conTit {
+  font-family: var(--font-en-main);
+  font-weight: normal;
+  letter-spacing: 0.05em;
 }
 
 .con2Top {
@@ -604,16 +623,16 @@ input, button, a {
   width: 61%; margin: 0 auto; margin-right: 50px;
 }
 .con2Top .right .txtGrpTxt span {
-  font-family: "GowoonDodum", sans-serif ;color: #666
+  color: #444
 }
 .con2Top .right .txtGrpTxt h2 {
-  font-family: "GowoonDodum", sans-serif ;color: #666; font-weight: 400
+  font-family: var(--font-ko-main);color: var(--color-secondary); font-weight: 400
 }
 .con2Top .right .txtGrpTxt a {
-  font-family: "GowoonDodum", sans-serif ;color: #666;margin-top: 55px; position: relative; z-index: 1
+  color: var(--color-secondary);margin-top: 55px; position: relative; z-index: 1
 }
 .con2Top .right .txtGrpTxt a em {
-  background: #666; width: 35px; height: 1px; display: block; margin-top: -3px; transition: 0.5s
+  background: var(--color-secondary); width: 35px; height: 1px; display: block; margin-top: -3px; transition: 0.5s
 }
 .con2Top .right .txtGrpTxt a:hover em {
   animation: main_line 2s infinite
@@ -657,16 +676,16 @@ input, button, a {
   margin-left: 60px;
 }
 .con2Bottom .left .txtGrpTxt span {
-  font-family: "GowoonDodum", sans-serif ;color: #666
+  color: #444
 }
 .con2Bottom .left .txtGrpTxt h2 {
-  font-family: "GowoonDodum", sans-serif; color: #666; font-weight: 400
+  font-family: var(--font-ko-main); color: var(--color-secondary); font-weight: 400
 }
 .con2Bottom .left .txtGrpTxt a {
-  font-family: "GowoonDodum", sans-serif;color: #666;margin-top: 55px
+  color: var(--color-secondary);margin-top: 55px
 }
 .con2Bottom .left .txtGrpTxt a em {
-  background: #666; width: 35px; height: 1px; display: block; margin-top: -3px; transition: 0.5s
+  background: var(--color-secondary); width: 35px; height: 1px; display: block; margin-top: -3px; transition: 0.5s
 }
 .con2Bottom .left .txtGrpTxt a:hover em {
   animation: main_line 2s infinite
@@ -729,31 +748,31 @@ input, button, a {
   margin: 0 auto;
 }
 /* .con3 h3 {
-  font-family: "GowoonDodum", sans-serif; color: #666; font-weight: 400; text-align: center; opacity: 0.9; letter-spacing: 1.05px;font-size: 25px
+  font-family: "GowoonDodum", sans-serif; color: #444; font-weight: 400; text-align: center; opacity: 0.9; letter-spacing: 1.05px;font-size: 25px
 } */
 .con3 ul {
   margin-top: 97px
 }
 .con3 ul li {
-  position: relative; border-bottom: 1px solid rgba(144,130,111,0.2); padding-bottom: 40px
+  position: relative; border-bottom: 1px solid var(--color-secondary); padding-bottom: 40px
 }
 .con3 ul li span {
-  font-family: "GowoonDodum", sans-serif; color: #666;font-size: 14px;margin-top: 50px; display: inline-block
+  color: #444;font-size: 14px;margin-top: 50px; display: inline-block
 }
 .con3 ul li h4 {
-  font-family: "GowoonDodum", sans-serif; color: #666; font-weight: 400;  margin-top: 14px; font-size: 25px
+  font-family: var(--font-ko-main); color: var(--color-secondary); font-weight: 400;  margin-top: 14px; font-size: 25px
 }
 .con3 ul li img {
   transition: 0.5s
 }
 .con3 ul li em {
-  display: block;  width: 35px; height: 1px; background: #c3beb8;  margin-top: -3px; transition: 0.5s
+  display: block;  width: 35px; height: 1px; background: var(--color-secondary);  margin-top: -3px; transition: 0.5s
 }
 .con3 ul li .specialBtn:hover em {
   animation: line 1s infinite
 }
 .con3 ul li a {
-  font-family: "GowoonDodum", sans-serif; color: #666
+  color: var(--color-secondary)
 }
 .con3 ul li>a {
   width: 100%;    position: relative; z-index: 1
@@ -892,7 +911,7 @@ input, button, a {
   text-align: left;
   margin-top: 50px;
   padding: 30px 0;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--color-secondary);
 }
 
 .subNav.right {
@@ -934,7 +953,7 @@ input, button, a {
   object-fit: cover;
   aspect-ratio: 1 / 1;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
 .heroSlider {
@@ -945,7 +964,7 @@ input, button, a {
   overflow: hidden;
   position: relative;
   height: clamp(420px, 85vh, 720px);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
 }
 
 .heroSlider .slider,
@@ -979,7 +998,6 @@ input, button, a {
   margin-bottom: 2rem;
 }
 .heroHeading {
-  font-family: 'GowoonDodum', sans-serif !important;
   font-size: clamp(2rem, 4.5vw, 2.7rem);
   color: #fff;
   text-transform: uppercase;
@@ -998,7 +1016,7 @@ input, button, a {
 
 .heroSlider .prev,
 .heroSlider .next {
-  background: rgba(0, 0, 0, 0.35);
+  background: color-mix(in srgb, var(--color-secondary) 30%, transparent);
   width: 52px;
   height: 52px;
   opacity: 0.9;
@@ -1085,7 +1103,7 @@ input, button, a {
   background: rgba(0,0,0,0.25);
 }
 .prev, .next {
-  background: rgba(0,0,0,0.7);
+  background: color-mix(in srgb, var(--color-secondary) 70%, transparent);
   color: #fff;
   border: none;
   width: 38px;
@@ -1097,6 +1115,12 @@ input, button, a {
   font-size: 1.5rem;
   margin: 6px;
   transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .prev:hover, .next:hover {
   opacity: 1;
@@ -1106,10 +1130,10 @@ input, button, a {
   cursor: default;
 }
 .prev {
-  position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+  left: 0;
 }
 .next {
-  position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+  right: 0;
 }
 
 
@@ -1124,7 +1148,7 @@ input, button, a {
   margin-top: clamp(0.75rem, 2vw, 1.25rem);
 }
 .subListTt {
-  font-family: "GowoonDodum", sans-serif; color: #666; font-weight: 500; margin: 75px 0 37px 0
+  font-family: var(--font-ko-main); color: var(--color-secondary); font-weight: 500; margin: 75px 0 37px 0
 }
 /*sub6 reser*/
 table {
@@ -1137,10 +1161,10 @@ table {
 
 /* Footer - Modern Flexbox Layout */
 .address h3 {
-  font-family: "GowoonDodum", sans-serif; color: #666; font-size: 22px; font-weight: 400
+  font-family: var(--font-ko-main); color: var(--color-secondary); font-size: 22px; font-weight: 400
 }
 .address p {
-  font-family: "GowoonDodum", sans-serif; color: #666; font-size: 16px; line-height: 1.4
+  font-family: var(--font-ko-sub); color: #444; font-size: 16px; line-height: 1.4
 }
 .address p:last-child {
   margin-bottom: 50px
@@ -1149,20 +1173,20 @@ table {
   width: 18px
 }
 .address span {
-  font-family: 'Noto Sans KR', sans-serif;font-size: 15px
+  font-size: 15px
 }
 .address span a {
-  color: #666
+  color: #444
 }
 .address span a img {
   float: left; margin-top: 4px; margin-right: 3px; width: 15px; opacity: 0.5
 }
 .footer {
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid var(--color-secondary);
   width: 100%;
   max-width: var(--layout-max);
   margin: 50px auto 0;
-  background-color: #fafafa;
+  background-color: rgba(139,158,189,0.1);
 }
 
 .footer-container {
@@ -1182,9 +1206,8 @@ table {
 }
 
 .footer-logo {
-  font-family: 'GowoonDodum', sans-serif !important;
   font-size: 26px;
-  color: #1f2937;
+  color: var(--color-secondary);
   margin-bottom: 1rem;
   font-weight: 600;
 }
@@ -1216,14 +1239,14 @@ table {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #f3f4f6;
-  color: #6b7280;
+  background-color: rgba(139,158,189,0.1);
+  color: var(--color-secondary);
   transition: all 0.3s ease;
   text-decoration: none;
 }
 
 .social-links a:hover {
-  background-color: #3b82f6;
+  background-color: var(--color-secondary);
   color: white;
   transform: translateY(-2px);
 }
@@ -1235,10 +1258,10 @@ table {
 
 .footer-copyright {
   text-align: center;
-  color: #9ca3af;
+  color: #444;
   font-size: 0.75rem;
   padding-top: 1.5rem;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid var(--color-secondary);
 }
 /*animate*/
 .featureSubtitle {
@@ -1264,7 +1287,7 @@ table {
     margin: clamp(2.5rem, 7vw, 4.5rem) auto clamp(2rem, 6vw, 4rem);
     height: clamp(320px, 65vh, 520px);
     border-radius: clamp(16px, 5vw, 30px);
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
   }
   .heroHeading {
     letter-spacing: 0.1em;
@@ -1327,7 +1350,7 @@ table {
     width: 95%
   }
 .header {
-    padding: 50px 0 40px 0;background: #f0f1f3
+    padding: 50px 0 40px 0;background: var(--color-primary)
   }
   .header .mainMenu {
     width: 100%
@@ -1345,13 +1368,12 @@ table {
     opacity: 1;
     top: -30px;
     font-size: 26px;
-    font-family: 'GowoonDodum', sans-serif !important;
-  }
+    }
   .header h1 {
     left: 0%; margin-left: 30px
   }
   .mHd {
-    padding: 50px 0 40px 0;background: rgba(240,241,243,0.8);
+    padding: 50px 0 40px 0;background: var(--color-primary);
   }
   .mHd .mainMenu {
     width: 100%
@@ -1472,7 +1494,7 @@ table {
     display: inline;
   }
   .footer .left .address span a {
-    color: #666;
+    color: #444;
     font-size: 11px;
     font-weight: 400;
   }
@@ -1635,9 +1657,8 @@ table {
   .mHd {
     display: block;
     padding: clamp(14px, 4vw, 24px) 0;
-    background: rgba(240,241,243,0.95);
+    background: var(--color-primary);
     backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(255,255,255,0.35);
   }
   .mHd .logo {
     position: static;
@@ -1656,7 +1677,7 @@ table {
     position: static;
     width: 100%;
     margin-top: clamp(52px, 14vw, 72px);
-    background: rgba(255,255,255,0.95);
+    background: rgba(139,158,189,0.1);
     border-radius: 18px;
     padding: clamp(1rem, 4vw, 2rem);
     box-shadow: 0 16px 44px rgba(0,0,0,0.12);
@@ -1683,7 +1704,7 @@ table {
     align-items: center;
     font-size: 1rem;
     line-height: 1.4;
-    color: #2c2c2c;
+    color: var(--color-secondary);
   }
   .mHd .mainMenu .gnbSub {
     position: static;
@@ -1707,7 +1728,7 @@ table {
   .mHd .mainMenu .subMenu a {
     line-height: 1.6;
     font-size: 0.95rem;
-    color: #505050;
+    color: #444;
   }
   .mHd .mainMenu > li > a i {
     transition: transform 0.3s ease;
@@ -2075,8 +2096,7 @@ table {
     left: -20px;
     top: -10px;
     font-size: 26px;
-    font-family: 'GowoonDodum', sans-serif !important;
-  }
+    }
 }
 
 
@@ -2116,7 +2136,6 @@ table {
   right: 0;
   bottom: 0;
   padding: clamp(1rem, 2.8vw, 1.8rem);
-  font-family: "GowoonDodum", sans-serif;
   font-size: clamp(0.95rem, 2vw, 1.05rem);
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.95);
@@ -2140,23 +2159,22 @@ table {
   margin: clamp(3rem, 8vw, 5rem) auto;
 }
 .policyCard {
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(139, 158, 189, 0.1);
   border-radius: 24px;
   padding: clamp(2rem, 5vw, 3.2rem);
   box-shadow: 0 24px 50px rgba(17, 23, 39, 0.12);
-  border: 1px solid rgba(226, 232, 240, 0.55);
+  border: 1px solid var(--color-secondary);
 }
 .policyCard__header {
   margin-bottom: clamp(1.5rem, 4vw, 2.6rem);
 }
 .policyCard__title {
-  font-family: "GowoonDodum", sans-serif;
   font-size: clamp(1.5rem, 2.8vw, 2rem);
-  color: #333;
+  color: var(--color-secondary);
 }
 .policyCard__subtitle {
   margin-top: 0.6rem;
-  color: #666;
+  color: #444;
   font-size: clamp(0.9rem, 2vw, 1rem);
   line-height: 1.6;
 }
@@ -2173,25 +2191,25 @@ table {
   gap: 0.4rem;
   padding: clamp(1rem, 2vw, 1.4rem);
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(226, 232, 240, 0.6);
+  background: rgba(139, 158, 189, 0.1);
+  border: 1px solid var(--color-secondary);
   box-shadow: 0 16px 36px rgba(15, 23, 42, 0.06);
 }
 .policyList li strong {
   font-size: 0.95rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #333;
+  color: var(--color-secondary);
 }
 .policyList li span {
-  color: #555;
+  color: #444;
   font-size: clamp(0.95rem, 2vw, 1.05rem);
 }
 .policyNotice {
-  background: rgba(248, 250, 252, 0.9);
+  background: rgba(139, 158, 189, 0.1);
   padding: clamp(1.2rem, 2.5vw, 1.8rem);
   border-radius: 18px;
-  border: 1px solid rgba(226, 232, 240, 0.6);
+  border: 1px solid var(--color-secondary);
   color: #444;
   line-height: 1.7;
 }
@@ -2199,22 +2217,22 @@ table {
   margin-top: clamp(2rem, 4vw, 2.5rem);
   overflow: hidden;
   border-radius: 18px;
-  border: 1px solid rgba(226, 232, 240, 0.7);
+  border: 1px solid var(--color-secondary);
 }
 .policyTable {
   width: 100%;
   border-collapse: collapse;
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(139, 158, 189, 0.1);
 }
 .policyTable th,
 .policyTable td {
   padding: clamp(0.9rem, 2vw, 1.2rem);
   text-align: left;
-  border-bottom: 1px solid rgba(226, 232, 240, 0.7);
-  color: #333;
+  border-bottom: 1px solid var(--color-secondary);
+  color: var(--color-secondary);
 }
 .policyTable thead th {
-  background: rgba(243, 246, 249, 0.9);
+  background: rgba(139, 158, 189, 0.1);
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -2239,6 +2257,43 @@ table {
 
 
 
+/* Mobile reservation icon in header */
+.mobile-reservation-icon {
+  display: none;
+  position: absolute;
+  right: 65px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1001;
+}
+
+.mobile-reservation-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.mobile-reservation-icon:hover {
+  opacity: 0.7;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.mobile-reservation-icon:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+@media (max-width: 1024px) {
+  .mobile-reservation-icon {
+    display: flex;
+  }
+}
+
 /* Scroll to top button */
 .scroll-to-top,
 #scrollToTop {
@@ -2248,8 +2303,8 @@ table {
   width: 50px !important;
   height: 50px !important;
   border-radius: 50% !important;
-  background-color: rgba(240, 240, 240, 0.9) !important;
-  border: 2px solid #ccc !important;
+  background-color: rgba(139, 158, 189, 0.1) !important;
+  border: 2px solid var(--color-secondary) !important;
   cursor: pointer !important;
   display: flex !important;
   align-items: center !important;
@@ -2269,10 +2324,20 @@ table {
 
 .scroll-to-top:hover,
 #scrollToTop:hover {
-  background-color: rgba(230, 230, 230, 0.95) !important;
-  border-color: #999 !important;
+  background-color: var(--color-secondary) !important;
+  border-color: var(--color-secondary) !important;
   transform: translateY(-3px) !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+.scroll-to-top:hover .scroll-to-top-arrow,
+#scrollToTop:hover .scroll-to-top-arrow {
+  color: var(--color-primary) !important;
+}
+
+.scroll-to-top:hover .scroll-to-top-arrow path,
+#scrollToTop:hover .scroll-to-top-arrow path {
+  stroke: var(--color-primary) !important;
 }
 
 .scroll-to-top:active,
@@ -2284,12 +2349,12 @@ table {
 .scroll-to-top-arrow {
   width: 20px !important;
   height: 20px !important;
-  color: #666 !important;
+  color: var(--color-secondary) !important;
   display: block !important;
 }
 
 .scroll-to-top-arrow path {
-  stroke: #666 !important;
+  stroke: var(--color-secondary) !important;
 }
 
 /* Mobile responsive for scroll to top button */

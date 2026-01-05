@@ -15,13 +15,13 @@
   width: 50%; margin-top: -45px;    margin-bottom: 100px
 }
 .roomWrap .con2 .goRes {
-  width: 235px; height: 45px; text-align: center; line-height: 45px; margin: 30px auto; display: block; border: 1px solid #818181; color: #818181; font-size: 14px; position: relative
+  width: 235px; height: 45px; text-align: center; line-height: 45px; margin: 30px auto; display: block; border: 1px solid var(--color-secondary); color: var(--color-secondary); font-size: 14px; position: relative
 }
 .roomWrap .con2 .goRes .fal {
-  color: #818181; font-size: 16px;margin-right: 20px; margin-left: -20px
+  color: var(--color-secondary); font-size: 16px;margin-right: 20px; margin-left: -20px
 }
 .roomWrap .con2 .goRes span {
-  width: 40px; height: 1px; background-color: #818181; top: 22px; right: 10px; position: absolute; transform-origin: left
+  width: 40px; height: 1px; background-color: var(--color-secondary); top: 22px; right: 10px; position: absolute; transform-origin: left
 }
 .roomWrap .con2 .goRes:hover span {
   animation: line_res 1s linear
@@ -58,7 +58,7 @@
 }
 
 .con3Room .subListTt {
-  color: #666; margin: 75px 0 20px 0; padding: 15px 10px
+  color: #444; margin: 75px 0 20px 0; padding: 15px 10px
 }
 
 /*room hero image and slider*/
@@ -72,7 +72,7 @@
   aspect-ratio: 16 / 9;  /* 16:9 비율로 설정 - 일반적인 룸 사진 비율 */
   border-radius: 16px;
   overflow: hidden;
-  background-color: #f3f4f6;
+  background-color: var(--color-primary);
 }
 
 .roomHeroImgWrap.sliderContainer {
@@ -185,7 +185,7 @@
   transform: translateY(-50%);
   background: rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(0, 0, 0, 0.1);
-  color: #333;
+  color: var(--color-secondary);
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -306,7 +306,7 @@
 }
 
 .roomGalleryItem.is-active .roomGalleryThumb {
-  outline: 3px solid rgba(77, 121, 89, 0.85);
+  outline: 3px solid var(--color-secondary);
   outline-offset: 3px;
 }
 
@@ -315,9 +315,9 @@
   margin: clamp(2.5rem, 6vw, 2rem) 0;
 }
 .roomHighlightsTitle {
-  font-family: "GowoonDodum", sans-serif;
+  font-family: var(--font-ko-main);
   font-size: clamp(1.45rem, 2.4vw, 1.9rem);
-  color: #394150;
+  color: var(--color-secondary);
   margin-bottom: clamp(1.4rem, 2.8vw, 2.2rem);
 }
 .roomHighlightsGrid {
@@ -329,7 +329,7 @@
 }
 .roomHighlight {
   position: relative;
-  background: rgba(255, 255, 255, 0.7);
+  background: color-mix(in srgb, var(--color-secondary) 5%, transparent);
   border-radius: 10px;
   padding: clamp(1.2rem, 2.8vw, 1.8rem);
   display: flex;
@@ -356,10 +356,11 @@
 }
 .roomHighlightLabel,
 .roomGuideSection h4 {
+  font-family: var(--font-ko-main);
   font-size: 1.1rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #6b7a8f;
+  color: var(--color-secondary);
   font-weight: 600;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(107, 122, 143, 0.3);
@@ -368,12 +369,11 @@
 
 .roomHighlightValue {
   font-size: clamp(0.9rem, 2.2vw, 1rem);
-  color: #1f2937;
   line-height: 1.55;
 }
 
 .roomGuideSection {
-  background: rgba(255, 255, 255, 0.7);
+  background: color-mix(in srgb, var(--color-secondary) 5%, transparent);
   border-radius: 10px;
   padding: clamp(1.2rem, 2.8vw, 1.8rem);
   margin-bottom: 30px;

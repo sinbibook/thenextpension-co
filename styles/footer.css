@@ -1,7 +1,7 @@
 /* Footer Styles */
 footer {
-    background-color: #ffffff;
-    color: #333333;
+    background-color: transparent;
+    color: var(--color-secondary);
     padding: 3rem 0 2rem;
     margin-top: 4rem;
     width: 100%;
@@ -28,21 +28,21 @@ footer {
     margin-top: 1rem;
     margin-bottom: 1.5rem;
     font-size: 26px;
-    color: #666;
+    color: var(--color-secondary);
     font-weight: normal;
 }
 
 .footer-section p {
     margin-bottom: 0.8rem;
     line-height: 1.6;
-    color: #666666;
+    color: #444;
     font-size: 1rem;
 }
 
 .footer-section div {
     margin-bottom: 0.8rem;
     line-height: 1.6;
-    color: #666666;
+    color: #444;
     font-size: 1rem;
 }
 
@@ -54,7 +54,7 @@ footer {
 }
 
 .social-links a {
-    color: #666666;
+    color: var(--color-secondary);
     transition: color 0.3s ease, transform 0.3s ease;
     display: flex !important;
     align-items: center;
@@ -62,15 +62,15 @@ footer {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #f8f9fa;
-    border: 1px solid #e9ecef;
+    background-color: rgba(139,158,189,0.1);
+    border: 1px solid var(--color-secondary);
 }
 
 .social-links a:hover {
-    color: #4d7959;
+    color: var(--color-secondary);
     transform: translateY(-2px);
-    background-color: rgba(77, 121, 89, 0.1);
-    border-color: #4d7959;
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
 }
 
 .social-links a svg {
@@ -85,7 +85,7 @@ footer {
 
 .footer-bottom p {
     margin: 0;
-    color: #999999;
+    color: #444;
     font-size: 0.9rem;
 }
 

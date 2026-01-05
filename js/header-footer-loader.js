@@ -92,8 +92,6 @@ class HeaderFooterLoader {
                     headerScript.onload = () => {
                         // Setup event listeners after header.js loads
                         this.setupHeaderEventListeners();
-                        // Load mobile menu script after header is ready
-                        this.loadMobileMenuScript();
                         // Header 매핑을 event listener 설정 후에 실행
                         this.applyHeaderFooterMapping();
                     };
@@ -409,23 +407,6 @@ class HeaderFooterLoader {
     }
 
     // Load mobile menu script after header is ready
-    loadMobileMenuScript() {
-        if (!window.mobileMenuJsLoaded) {
-            window.mobileMenuJsLoaded = true;
-            const mobileMenuScript = document.createElement('script');
-            // GitHub Pages 지원: config.js의 경로 헬퍼 사용
-            const scriptPath = window.APP_CONFIG
-                ? window.APP_CONFIG.getResourcePath('js/common/mobile-menu.js')
-                : './js/common/mobile-menu.js';
-            mobileMenuScript.src = scriptPath + '?v=' + Date.now();
-            mobileMenuScript.onload = () => {
-                if (typeof initMobileMenu === 'function') {
-                    initMobileMenu();
-                }
-            };
-            document.body.appendChild(mobileMenuScript);
-        }
-    }
 
     // Setup resize handler to recalculate header padding
     setupResizeHandler() {

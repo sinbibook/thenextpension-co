@@ -15,47 +15,61 @@
 
 .reservationWrap .usageSection {
   margin-top: 0 !important;
-  background-color: rgba(255,255,255,0.6);
+  background-color: color-mix(in srgb, var(--color-secondary) 5%, transparent);
   border-radius: 10px;
   padding: 25px;
-  color: #666;
+  color: #444;
 }
 
 .reservationWrap .usageSection .sectionHeader {
   margin-bottom: 15px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--color-secondary);
+  padding-bottom: 15px;
+}
+
+.reservationWrap .reservationGuideSection {
+  margin-top: 20px !important;
+  background-color: color-mix(in srgb, var(--color-secondary) 5%, transparent);
+  border-radius: 10px;
+  padding: 25px;
+  color: #444;
+}
+
+.reservationWrap .reservationGuideSection .sectionHeader {
+  margin-bottom: 15px;
+  border-bottom: 1px solid var(--color-secondary);
   padding-bottom: 15px;
 }
 
 .reservationWrap .checkinCheckoutSection  {
   margin-top: 20px !important;
-  background-color: rgba(255,255,255,0.6);
+  background-color: color-mix(in srgb, var(--color-secondary) 5%, transparent);
   border-radius: 10px;
   padding: 25px;
-  color: #666;
+  color: #444;
 }
 
 .reservationWrap .checkinCheckoutSection .sectionHeader {
   margin-bottom: 15px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--color-secondary);
   padding-bottom: 15px;
 }
 
 .reservationWrap .refundSection {
   margin-top: 20px !important;
-  background-color: rgba(255,255,255,0.6);
+  background-color: color-mix(in srgb, var(--color-secondary) 5%, transparent);
   border-radius: 10px;
   padding: 25px;
-  color: #666;
+  color: #444;
 }
 
 .reservationWrap .refundSection .sectionHeader {
   margin-bottom: 15px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--color-secondary);
   padding-bottom: 15px;
 }
 
-.usageRules p, .checkinCheckoutRules p, .refundRules p {
+.usageRules p, .reservationGuideRules p, .checkinCheckoutRules p, .refundRules p {
   margin-bottom: 7px !important;
 }
 .reservationWrap .tableSection {
@@ -94,12 +108,12 @@
   padding: 16px 24px;
   font-weight: 600;
   font-size: 18px;
-  color: #444;
+  color: var(--color-secondary);
   text-align: left;
 }
 
 .reservationWrap .refundTable thead {
-  background: linear-gradient(90deg, rgba(77,121,89,0.12), rgba(77,121,89,0.26));
+  background: linear-gradient(90deg, color-mix(in srgb, var(--color-secondary) 12%, transparent), color-mix(in srgb, var(--color-secondary) 26%, transparent));
 }
 
 .reservationWrap .refundTable th,
@@ -113,12 +127,12 @@
 
 .reservationWrap .refundTable th {
   font-weight: 600;
-  color: #2a3a32;
+  color: var(--color-secondary);
   letter-spacing: 0.02em;
 }
 
 .reservationWrap .refundTable tbody tr:nth-child(even) {
-  background-color: rgba(240,241,243,0.6);
+  background-color: color-mix(in srgb, var(--color-secondary) 5%, transparent);
 }
 
 .reservationWrap .refundTable tbody tr:last-child td {
@@ -147,23 +161,23 @@
   margin: clamp(3rem, 8vw, 5rem) auto;
 }
 .policyCard {
-  background: rgba(255, 255, 255, 0.82);
+  background: color-mix(in srgb, var(--color-secondary) 5%, transparent);
   border-radius: 24px;
   padding: clamp(2rem, 5vw, 3.2rem);
   box-shadow: 0 24px 50px rgba(17, 23, 39, 0.12);
-  border: 1px solid rgba(226, 232, 240, 0.55);
+  border: 1px solid var(--color-secondary);
 }
 .policyCard__header {
   margin-bottom: clamp(1.5rem, 4vw, 2.6rem);
 }
 .policyCard__title {
-  font-family: "GowoonDodum", sans-serif;
+  font-family: var(--font-ko-main);
   font-size: clamp(1.5rem, 2.8vw, 2rem);
-  color: #333;
+  color: var(--color-secondary);
 }
 .policyCard__subtitle {
   margin-top: 0.6rem;
-  color: #666;
+  color: #444;
   font-size: clamp(0.9rem, 2vw, 1rem);
   line-height: 1.6;
 }
@@ -180,48 +194,48 @@
   gap: 0.4rem;
   padding: clamp(1rem, 2vw, 1.4rem);
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(226, 232, 240, 0.6);
+  background: color-mix(in srgb, var(--color-secondary) 5%, transparent);
+  border: 1px solid var(--color-secondary);
   box-shadow: 0 16px 36px rgba(15, 23, 42, 0.06);
 }
 .policyList li strong {
   font-size: 0.95rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #333;
+  color: var(--color-secondary);
 }
 .policyList li span {
-  color: #555;
+  color: #444;
   font-size: clamp(0.95rem, 2vw, 1.05rem);
 }
 .policyNotice {
-  background: rgba(248, 250, 252, 0.9);
+  background: color-mix(in srgb, var(--color-secondary) 5%, transparent);
   padding: clamp(1.2rem, 2.5vw, 1.8rem);
   border-radius: 18px;
-  border: 1px solid rgba(226, 232, 240, 0.6);
-  color: #444;
+  border: 1px solid var(--color-secondary);
+  color: var(--color-secondary);
   line-height: 1.7;
 }
 .policyTableWrapper {
   margin-top: clamp(2rem, 4vw, 2.5rem);
   overflow: hidden;
   border-radius: 18px;
-  border: 1px solid rgba(226, 232, 240, 0.7);
+  border: 1px solid var(--color-secondary);
 }
 .policyTable {
   width: 100%;
   border-collapse: collapse;
-  background: rgba(255, 255, 255, 0.96);
+  background: color-mix(in srgb, var(--color-secondary) 5%, transparent);
 }
 .policyTable th,
 .policyTable td {
   padding: clamp(0.9rem, 2vw, 1.2rem);
   text-align: left;
-  border-bottom: 1px solid rgba(226, 232, 240, 0.7);
-  color: #333;
+  border-bottom: 1px solid var(--color-secondary);
+  color: var(--color-secondary);
 }
 .policyTable thead th {
-  background: rgba(243, 246, 249, 0.9);
+  background: color-mix(in srgb, var(--color-secondary) 5%, transparent);
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -254,8 +268,8 @@
   .reservationWrap .refundTable tbody tr {
     display: flex;
     margin-bottom: 8px;
-    background-color: #fff;
-    border-bottom: 1px solid rgba(221,221,221,0.3);
+    background-color: var(--color-primary);
+    border-bottom: 1px solid var(--color-secondary);
   }
 
   .reservationWrap .refundTable tbody tr:last-child {
