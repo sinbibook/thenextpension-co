@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.4.0",
-    "generatedAt": "2025-11-28T06:56:38.204Z",
+    "version": "1.5.0",
+    "generatedAt": "2026-01-05T03:06:59.184Z",
     "templateType": "center_slider",
     "propertyId": "641d3328-82ac-420f-95d9-6a21f1e8d6bf",
     "homepageId": "1b2c1df0-f06c-47ec-a244-99aa070f7e7e"
@@ -382,7 +382,7 @@
   "rooms": [
     {
       "id": "6f208f60-3091-4da9-9075-bac5855fa592",
-      "name": "1호(독채, 애견동반, 신축)",
+      "name": "1호 독채 (애견동반,신축)",
       "description": "독채 복층형 : 1층(거실1+주방1+온돌룸2+화장실1) + 2층(침대룸1+화장실1+개별테라스2)",
       "roomInfo": "[인원추가(1박기준/현장결제)]\n24개월 이상 1인 20,000원 (1박기준/현장결제)\n- 24개월 미만은 무료이나 인원에는 포함\n\n",
       "group": null,
@@ -423,6 +423,7 @@
         "테라스",
         "패밀리룸"
       ],
+      "status": "active",
       "images": [
         {
           "thumbnail": [
@@ -591,7 +592,7 @@
     },
     {
       "id": "9c1774c2-feb7-4ac1-951b-0927806b5b0e",
-      "name": "2호(독채, 애견동반, 신축)",
+      "name": "2호 독채 (애견동반,신축)",
       "description": "독채 복층형 : 1층(거실1+주방1+온돌룸2+화장실1) + 2층(침대룸1+화장실1+개별테라스2)",
       "roomInfo": "[인원추가(1박기준/현장결제)]\n24개월 이상 1인 20,000원 (1박기준/현장결제)\n- 24개월 미만은 무료이나 인원에는 포함\n\n",
       "group": null,
@@ -631,6 +632,7 @@
         "독채",
         "테라스"
       ],
+      "status": "active",
       "images": [
         {
           "thumbnail": [
@@ -789,6 +791,102 @@
         }
       ],
       "displayOrder": 1
+    },
+    {
+      "id": "91df38ce-ba82-4f9d-93ed-5a005a77d268",
+      "name": "3호 독채 (신축)",
+      "description": "",
+      "roomInfo": "",
+      "group": null,
+      "size": 115,
+      "baseOccupancy": 4,
+      "maxOccupancy": 6,
+      "totalRoomCount": {
+        "bedroom": 3,
+        "bathroom": 2,
+        "livingRoom": 0
+      },
+      "bedTypes": [
+        "퀸 베드"
+      ],
+      "amenities": [
+        "무료 WiFi",
+        "스마트 TV",
+        "에어컨",
+        "침대",
+        "냉장고",
+        "헤어드라이어",
+        "전자레인지",
+        "전기포트",
+        "화장실",
+        "수건",
+        "샴푸",
+        "바디워시"
+      ],
+      "roomViews": [
+        "전망없음"
+      ],
+      "roomStructures": [
+        "독채",
+        "온돌"
+      ],
+      "status": "active",
+      "images": [
+        {
+          "thumbnail": [],
+          "interior": [],
+          "exterior": []
+        }
+      ],
+      "displayOrder": 2
+    },
+    {
+      "id": "00ed81e8-e460-4efb-bebd-d3934fe0ef49",
+      "name": "4호 독채 (애견동반,신축)",
+      "description": "",
+      "roomInfo": "",
+      "group": null,
+      "size": 115,
+      "baseOccupancy": 4,
+      "maxOccupancy": 6,
+      "totalRoomCount": {
+        "bedroom": 3,
+        "bathroom": 2,
+        "livingRoom": 0
+      },
+      "bedTypes": [
+        "퀸 베드"
+      ],
+      "amenities": [
+        "무료 WiFi",
+        "스마트 TV",
+        "에어컨",
+        "침대",
+        "냉장고",
+        "헤어드라이어",
+        "전자레인지",
+        "전기포트",
+        "화장실",
+        "수건",
+        "샴푸",
+        "바디워시"
+      ],
+      "roomViews": [
+        "전망없음"
+      ],
+      "roomStructures": [
+        "독채",
+        "온돌"
+      ],
+      "status": "active",
+      "images": [
+        {
+          "thumbnail": [],
+          "interior": [],
+          "exterior": []
+        }
+      ],
+      "displayOrder": 3
     }
   ],
   "homepage": {

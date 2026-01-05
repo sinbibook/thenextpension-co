@@ -8,17 +8,18 @@
   /* Common styles in common.css, override here if needed for index */
 }
 .mainTitleGrp>div>h1 {
-  font-family: 'abigail'; color: #666;font-weight: 400;font-size: 26px
+  font-family: 'abigail'; color: var(--color-secondary);font-weight: 400;font-size: 26px
 }
 .mainTitleGrp p {
-  font-family: "GowoonDodum", sans-serif; color: #444; font-weight: 500; font-size: 16px; opacity: 0.8
+  color: #444; font-weight: 500; font-size: 16px; opacity: 0.8
 }
 
 /* Essence title specific styling */
 .mainTitleGrp p[data-homepage-customFields-pages-index-sections-0-essence-title] {
   font-size: 26px;
   font-weight: 600;
-  font-family: "GowoonDodum", sans-serif; 
+  font-family: var(--font-ko-main);
+  color: var(--color-secondary);
 }
 
 /*con2 - index page specific overrides*/

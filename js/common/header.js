@@ -13,7 +13,6 @@
     const RESERVATION_URL = 'https://www.bookingplay.co.kr/booking/1/${realtimeBookingId}';
 
     // Initialize variables - will be populated after DOM is ready
-    let body;
     let headers;
     let mobileMenu;
     let mobileToggleButtons;
@@ -40,32 +39,21 @@
         });
     }
 
-    function setBodyScrollLock(locked) {
-        body.style.overflow = locked ? 'hidden' : '';
-    }
 
     function closeMobileMenu() {
         if (!isMobileMenuOpen) return;
         isMobileMenuOpen = false;
 
-        // Re-query DOM elements to ensure we have the latest references
-        const currentMobileMenu = document.getElementById('mobile-menu');
-        const currentMobileToggleButtons = document.querySelectorAll('.mobile-toggle');
+        mobileMenu?.classList.remove('is-open');
+        mobileMenu?.setAttribute('aria-hidden', 'true');
 
-        currentMobileMenu?.classList.remove('is-open');
-        currentMobileMenu?.setAttribute('aria-hidden', 'true');
-        currentMobileToggleButtons.forEach((btn) => {
+        document.querySelectorAll('.mobile-toggle').forEach(btn => {
             btn.classList.remove('is-active');
             btn.setAttribute('aria-expanded', 'false');
         });
 
-        if (body) {
-            body.style.overflow = '';
-            body.classList.remove('mobile-menu-open');
-        } else {
-            document.body.style.overflow = '';
-            document.body.classList.remove('mobile-menu-open');
-        }
+        document.body.style.overflow = '';
+        document.body.classList.remove('mobile-menu-open');
 
         if (allMenuGroups && allMenuGroups.length > 0) {
             allMenuGroups.forEach(closeAllMenuItems);
@@ -76,24 +64,16 @@
         if (isMobileMenuOpen) return;
         isMobileMenuOpen = true;
 
-        // Re-query DOM elements to ensure we have the latest references
-        const currentMobileMenu = document.getElementById('mobile-menu');
-        const currentMobileToggleButtons = document.querySelectorAll('.mobile-toggle');
+        mobileMenu?.classList.add('is-open');
+        mobileMenu?.setAttribute('aria-hidden', 'false');
 
-        currentMobileMenu?.classList.add('is-open');
-        currentMobileMenu?.setAttribute('aria-hidden', 'false');
-        currentMobileToggleButtons.forEach((btn) => {
+        document.querySelectorAll('.mobile-toggle').forEach(btn => {
             btn.classList.add('is-active');
             btn.setAttribute('aria-expanded', 'true');
         });
 
-        if (body) {
-            body.style.overflow = 'hidden';
-            body.classList.add('mobile-menu-open');
-        } else {
-            document.body.style.overflow = 'hidden';
-            document.body.classList.add('mobile-menu-open');
-        }
+        document.body.style.overflow = 'hidden';
+        document.body.classList.add('mobile-menu-open');
     }
 
     function toggleMobileMenu() {
@@ -175,10 +155,13 @@
     // Initialize DOM elements and event listeners
     function initializeHeader() {
         // Populate DOM element references
-        body = document.body;
         headers = Array.from(document.querySelectorAll('.header, .mHd'));
         mobileMenu = document.getElementById('mobile-menu');
         mobileToggleButtons = Array.from(document.querySelectorAll('.mobile-toggle'));
+
+        // Mobile reservation button will be handled by header-footer-mapper.js
+        // No need to initialize here as it uses the same mapping as other realtime booking links
+
         desktopMenuItems = Array.from(document.querySelectorAll('.header .mainMenu > li'));
         mobileHeaderItems = Array.from(document.querySelectorAll('.mHd .mainMenu > li'));
         allMenuGroups = [desktopMenuItems, mobileHeaderItems];
@@ -196,7 +179,7 @@
         allMenuGroups.forEach(syncAriaExpanded);
 
         // Setup mobile toggle buttons
-        mobileToggleButtons.forEach((btn) => {
+        mobileToggleButtons.forEach(btn => {
             btn.addEventListener('click', (event) => {
                 event.preventDefault();
                 event.stopPropagation();
@@ -210,7 +193,7 @@
 
             if (isMobileMenuOpen) {
                 const clickInsideMenu = mobileMenu?.contains(target);
-                const clickOnToggle = mobileToggleButtons.some((btn) => btn.contains(target));
+                const clickOnToggle = mobileToggleButtons?.some(btn => btn.contains(target));
                 if (!clickInsideMenu && !clickOnToggle) {
                     closeMobileMenu();
                 }
@@ -240,25 +223,27 @@
 
     // Mobile submenu toggle function
     function toggleMobileSubmenu(element) {
-        const menuItem = element.closest('li');
-        if (!menuItem) return;
+        const menuSection = element.closest('.mobile-menu-section');
+        if (!menuSection) return;
 
-        const isOpen = menuItem.classList.contains('is-open');
+        const isOpen = menuSection.classList.contains('is-open');
 
-        // Close all other mobile menu items
-        const mobileMenuItems = Array.from(document.querySelectorAll('#mobile-menu .mainMenu > li'));
-        mobileMenuItems.forEach((item) => {
-            if (item !== menuItem) {
-                item.classList.remove('is-open');
+        // Close all other mobile menu sections
+        const allSections = Array.from(document.querySelectorAll('.mobile-menu-section'));
+        allSections.forEach((section) => {
+            if (section !== menuSection) {
+                section.classList.remove('is-open');
             }
         });
 
-        // Toggle current menu item
-        menuItem.classList.toggle('is-open', !isOpen);
+        // Toggle current menu section
+        menuSection.classList.toggle('is-open', !isOpen);
     }
 
     // Expose global functions
     window.toggleMobileMenu = toggleMobileMenu;
+    window.closeMobileMenu = closeMobileMenu;
+    window.openMobileMenu = openMobileMenu;
     window.navigateTo = navigateTo;
     window.toggleMobileSubmenu = toggleMobileSubmenu;
     window.showSubMenus = () => {
@@ -277,4 +262,5 @@
         // DOM already loaded, initialize immediately
         initializeHeader();
     }
+
 })();

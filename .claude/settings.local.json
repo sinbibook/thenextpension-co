@@ -13,7 +13,8 @@
       "Bash(echo:*)",
       "Bash(else)",
       "Bash(fi)",
-      "Bash(done)"
+      "Bash(done)",
+      "Read(//Users/hyelynn/템플릿/template-center-slider/**)"
     ],
     "deny": [],
     "ask": []

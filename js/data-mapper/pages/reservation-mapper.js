@@ -70,6 +70,20 @@ class ReservationMapper extends BaseDataMapper {
     }
 
     /**
+     * 예약안내 섹션 매핑
+     */
+    mapReservationGuideSection() {
+        if (!this.isDataLoaded || !this.data.property) return;
+
+        const property = this.data.property;
+
+        // property.reservationGuide를 예약안내 규칙으로 매핑
+        if (property.reservationGuide) {
+            this.mapReservationGuideRules(property.reservationGuide);
+        }
+    }
+
+    /**
      * 체크인/체크아웃 섹션 매핑
      */
     mapCheckinCheckoutSection() {
@@ -114,6 +128,14 @@ class ReservationMapper extends BaseDataMapper {
     mapCheckinCheckout(checkInOutInfo) {
         const checkinRules = this.safeSelect('[data-property-checkInOutInfo]');
         this._mapTextRulesToContainer(checkinRules, checkInOutInfo);
+    }
+
+    /**
+     * 예약안내 규칙 매핑
+     */
+    mapReservationGuideRules(reservationGuide) {
+        const reservationRules = this.safeSelect('[data-property-reservationGuide]');
+        this._mapTextRulesToContainer(reservationRules, reservationGuide);
     }
 
     /**
@@ -190,6 +212,7 @@ class ReservationMapper extends BaseDataMapper {
         // 순차적으로 각 섹션 매핑
         this.mapHeroSection();
         this.mapUsageSection();
+        this.mapReservationGuideSection();
         this.mapCheckinCheckoutSection();
         this.mapRefundSection();
 
