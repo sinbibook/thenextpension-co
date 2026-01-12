@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.6.0",
-    "generatedAt": "2026-01-12T03:29:42.744Z",
+    "version": "1.7.0",
+    "generatedAt": "2026-01-12T03:33:32.760Z",
     "templateType": "center_slider",
     "propertyId": "641d3328-82ac-420f-95d9-6a21f1e8d6bf",
     "homepageId": "1b2c1df0-f06c-47ec-a244-99aa070f7e7e"
@@ -989,11 +989,18 @@
                 "title": "강릉 더 넥스트 독채펜션에 오신 것을 환영합니다.",
                 "images": [
                   {
-                    "id": "baa32f42-3bd0-42c7-8927-42464785a1e8",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_closing/1761286448223-d8pyfvcjcz7.jpg",
+                    "id": "1e7341a2-6581-4a59-a0ef-ce16ae8d47b9",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_closing/1768188730563-w27952vxxp.jpeg",
                     "sortOrder": 0,
                     "description": "",
                     "isSelected": true
+                  },
+                  {
+                    "id": "baa32f42-3bd0-42c7-8927-42464785a1e8",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_closing/1761286448223-d8pyfvcjcz7.jpg",
+                    "sortOrder": 1,
+                    "description": "",
+                    "isSelected": false
                   }
                 ],
                 "description": " "
@@ -1258,14 +1265,16 @@
                       "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/main_about/1761205870381-9882ufz3u8t.jpg",
                       "sortOrder": 0,
                       "description": "",
-                      "isSelected": true
+                      "isSelected": true,
+                      "blockId": "fb959239-ef45-49c3-a3b9-e0257046afcc"
                     },
                     {
                       "id": "a20e50ea-fe9b-45b8-9d5c-4b2be2886fb2",
                       "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/main_about/1761205870381-d3mxju567vi.jpg",
                       "sortOrder": 1,
                       "description": "",
-                      "isSelected": true
+                      "isSelected": true,
+                      "blockId": "fb959239-ef45-49c3-a3b9-e0257046afcc"
                     }
                   ],
                   "blockId": "fb959239-ef45-49c3-a3b9-e0257046afcc",
@@ -1279,14 +1288,16 @@
                       "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/main_about/1761030901895-u8z98k3eg6.jpg",
                       "sortOrder": 2,
                       "description": "",
-                      "isSelected": true
+                      "isSelected": true,
+                      "blockId": "4496f1eb-c5b2-4fe5-b19e-bbaa213df84e"
                     },
                     {
                       "id": "02bd5e0e-a664-4e8f-b171-e466efdf2ef5",
                       "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/main_about/1761030901895-3g3pmlfucgw.jpg",
                       "sortOrder": 3,
                       "description": "",
-                      "isSelected": true
+                      "isSelected": true,
+                      "blockId": "4496f1eb-c5b2-4fe5-b19e-bbaa213df84e"
                     }
                   ],
                   "blockId": "4496f1eb-c5b2-4fe5-b19e-bbaa213df84e",
