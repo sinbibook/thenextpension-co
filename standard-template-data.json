@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.10.0",
-    "generatedAt": "2026-01-27T01:47:35.080Z",
+    "version": "1.11.0",
+    "generatedAt": "2026-01-27T05:36:51.485Z",
     "templateType": "center_slider",
     "propertyId": "641d3328-82ac-420f-95d9-6a21f1e8d6bf",
     "homepageId": "1b2c1df0-f06c-47ec-a244-99aa070f7e7e"
@@ -391,7 +391,7 @@
     ],
     "nameEn": "Gangneung thenext pension",
     "domain": "thenextpension.co.kr",
-    "realtimeBookingId": "http://bookingplay.co.kr/partner/item/9596/calendar_main/",
+    "realtimeBookingId": "https://www.bookingplay.co.kr/booking/1/9596",
     "ybsId": "78787"
   },
   "rooms": [
@@ -2670,7 +2670,6 @@
           ]
         }
       ]
-    },
-    "id": "1b2c1df0-f06c-47ec-a244-99aa070f7e7e"
+    }
   }
 }

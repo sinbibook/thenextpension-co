@@ -10,7 +10,6 @@
         'reservation-info': 'reservation.html',
         room: 'room.html',
     };
-    const RESERVATION_URL = 'https://www.bookingplay.co.kr/booking/1/${realtimeBookingId}';
 
     // Initialize variables - will be populated after DOM is ready
     let headers;
@@ -89,9 +88,11 @@
 
         if (page === 'reservation-link') {
             // DOM에서 동적으로 생성된 예약 링크 URL 가져오기
-            const reservationLink = document.querySelector('[data-property-realtime-booking-id]');
-            const reservationUrl = reservationLink?.getAttribute('href') || RESERVATION_URL;
-            window.open(reservationUrl, '_blank');
+            const reservationLink = document.querySelector('[data-property-realtime-booking-url]');
+            const reservationUrl = reservationLink?.getAttribute('href');
+            if (reservationUrl) {
+                window.open(reservationUrl, '_blank');
+            }
             closeMobileMenu();
             return;
         }

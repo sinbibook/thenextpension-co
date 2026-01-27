@@ -342,15 +342,16 @@ class FacilityMapper extends BaseDataMapper {
      * 페이지 제목 업데이트
      */
     updatePageTitle(facility) {
-        const property = this.data.property;
+        // BaseMapper helper 사용: 숙소명 가져오기 (customFields 우선)
+        const propertyName = this.getPropertyName();
 
         // HTML title 업데이트
-        document.title = `${facility.name} - ${property.name}`;
+        document.title = `${facility.name} - ${propertyName}`;
 
         // page-title 엘리먼트 업데이트
         const pageTitleElement = this.safeSelect('#page-title');
         if (pageTitleElement) {
-            pageTitleElement.textContent = `${facility.name} - ${property.name}`;
+            pageTitleElement.textContent = `${facility.name} - ${propertyName}`;
         }
     }
 }

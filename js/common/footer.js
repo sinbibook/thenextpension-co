@@ -46,12 +46,22 @@ function initScrollToTop() {
     }
 }
 
+// Function to set copyright year
+function setCopyrightYear() {
+    const yearElement = document.getElementById('copyright-year');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+}
+
 // Initialize immediately if DOM is already loaded, otherwise wait
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
+        setCopyrightYear();
         setTimeout(initScrollToTop, 500);
     });
 } else {
     // DOM is already loaded, initialize after a short delay
+    setCopyrightYear();
     setTimeout(initScrollToTop, 500);
 }
