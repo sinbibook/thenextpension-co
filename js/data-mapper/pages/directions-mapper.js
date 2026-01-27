@@ -22,11 +22,10 @@ class DirectionsMapper extends BaseDataMapper {
     mapPropertyName() {
         if (!this.isDataLoaded || !this.data.property) return;
 
-        const property = this.data.property;
-
+        // BaseMapper helper 사용: 숙소명 가져오기 (customFields 우선)
         const nameEl = this.safeSelect('[data-property-name]');
-        if (nameEl && property.name) {
-            nameEl.textContent = property.name;
+        if (nameEl) {
+            nameEl.textContent = this.getPropertyName();
         }
     }
 
@@ -107,11 +106,14 @@ class DirectionsMapper extends BaseDataMapper {
             return;
         }
 
+        // BaseMapper helper 사용: 숙소명 가져오기 (customFields 우선)
+        const propertyName = this.getPropertyName();
+
         // 지도 생성 함수
         const createMap = () => {
             try {
                 // 검색 쿼리 및 URL 생성 (한 번만)
-                const searchQuery = property.address || property.name || '선택한 위치';
+                const searchQuery = property.address || propertyName || '선택한 위치';
                 const kakaoMapUrl = `https://map.kakao.com/?q=${encodeURIComponent(searchQuery)}`;
                 const openKakaoMap = () => window.open(kakaoMapUrl, '_blank');
 
@@ -142,7 +144,7 @@ class DirectionsMapper extends BaseDataMapper {
                 // 인포윈도우 콘텐츠 DOM 생성 및 이벤트 핸들러 연결
                 const infowindowContent = document.createElement('div');
                 infowindowContent.style.cssText = 'padding:5px; font-size:14px; cursor:pointer;';
-                infowindowContent.innerHTML = `${property.name}<br/><small style="color:#666;">클릭하면 카카오맵으로 이동</small>`;
+                infowindowContent.innerHTML = `${propertyName}<br/><small style="color:#666;">클릭하면 카카오맵으로 이동</small>`;
                 infowindowContent.addEventListener('click', openKakaoMap);
 
                 const infowindow = new kakao.maps.InfoWindow({
@@ -243,11 +245,11 @@ class DirectionsMapper extends BaseDataMapper {
      * 페이지 제목 업데이트
      */
     updatePageTitle() {
-        const property = this.data.property;
+        // BaseMapper helper 사용: 숙소명 가져오기 (customFields 우선)
         const htmlTitle = this.safeSelect('title');
 
-        if (htmlTitle && property?.name) {
-            htmlTitle.textContent = `오시는길 - ${property.name}`;
+        if (htmlTitle) {
+            htmlTitle.textContent = `오시는길 - ${this.getPropertyName()}`;
         }
     }
 }

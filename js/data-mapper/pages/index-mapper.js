@@ -22,8 +22,8 @@ class IndexMapper extends BaseDataMapper {
 
         // index.html 스타일 hero 섹션 매핑 (data 속성 사용)
         const brandTitle = this.safeSelect('[data-property-name]');
-        if (brandTitle && property.name) {
-            brandTitle.textContent = property.name;
+        if (brandTitle) {
+            brandTitle.textContent = this.getPropertyName();
         }
 
 
@@ -43,29 +43,15 @@ class IndexMapper extends BaseDataMapper {
         const essenceTitle = this.safeGet(this.data, 'homepage.customFields.pages.index.sections.0.essence.title');
         const essenceDesc = this.safeGet(this.data, 'homepage.customFields.pages.index.sections.0.essence.description');
 
-        // essenceData 객체가 없어도 업데이트 (빈 값이면 fallback 사용)
+        // essenceData 객체가 없어도 업데이트 (fallback: property.name, property.description)
         if (heroDescriptionTitle) {
-            const sanitizedTitle = this.sanitizeText(essenceTitle);
-            if (sanitizedTitle) {
-                heroDescriptionTitle.innerHTML = sanitizedTitle;
-            } else if (this.data.property?.name) {
-                // fallback: property.name
-                heroDescriptionTitle.innerHTML = this.data.property.name;
-            } else {
-                heroDescriptionTitle.innerHTML = '';
-            }
+            const title = this.sanitizeText(essenceTitle, this.safeGet(this.data, 'property.name', ''));
+            heroDescriptionTitle.innerHTML = this._formatTextWithLineBreaks(title);
         }
 
         if (heroDescriptionBody) {
-            const sanitizedDesc = this.sanitizeText(essenceDesc);
-            if (sanitizedDesc) {
-                heroDescriptionBody.innerHTML = sanitizedDesc;
-            } else if (this.data.property?.description) {
-                // fallback: property.description
-                heroDescriptionBody.innerHTML = this.data.property.description;
-            } else {
-                heroDescriptionBody.innerHTML = '';
-            }
+            const description = this.sanitizeText(essenceDesc, this.safeGet(this.data, 'property.description', ''));
+            heroDescriptionBody.innerHTML = this._formatTextWithLineBreaks(description);
         }
 
 
@@ -181,8 +167,8 @@ class IndexMapper extends BaseDataMapper {
 
         // Rooms 섹션 내의 property name 매핑
         const roomsSectionPropertyName = this.safeSelect('.con2.mobilemt [data-property-name]');
-        if (roomsSectionPropertyName && this.data.property && this.data.property.name) {
-            roomsSectionPropertyName.textContent = this.data.property.name;
+        if (roomsSectionPropertyName) {
+            roomsSectionPropertyName.textContent = this.getPropertyName();
         }
 
         // rooms 컨테이너 찾기
@@ -199,9 +185,11 @@ class IndexMapper extends BaseDataMapper {
             const roomNumber = String(index + 1).padStart(2, '0');
             const isEven = index % 2 === 0;
 
-            // 이미지 URL 가져오기 (interior만 사용) - isSelected 필터링 적용
-            const interiorImages = this.safeGet(room, 'images.0.interior') || [];
-            const selectedInteriorImages = ImageHelpers.filterSelectedImages(interiorImages);
+            // BaseMapper helper 사용: 객실명 가져오기 (customFields 우선)
+            const roomName = this.getRoomName(room);
+
+            // BaseMapper helper 사용: 객실 interior 이미지 가져오기
+            const selectedInteriorImages = this.getRoomImages(room, 'roomtype_interior');
             const interior0 = selectedInteriorImages[0] || null;
             const interior1 = selectedInteriorImages[1] || null;
 
@@ -220,7 +208,7 @@ class IndexMapper extends BaseDataMapper {
                         <aside class="left">
                             <div class="imgGrp imgGrp01"
                                  data-rooms-${index}-images-0-interior-0>
-                                <img data-src-placeholder="interior0-${index}" alt="${room.name || 'Room'}" class="imgGrpPic imgGrpPic01 ${interior0Class}" />
+                                <img data-src-placeholder="interior0-${index}" alt="${roomName}" class="imgGrpPic imgGrpPic01 ${interior0Class}" />
                             </div>
                         </aside>
                         <aside class="right">
@@ -231,12 +219,12 @@ class IndexMapper extends BaseDataMapper {
                                     </div>
                                     <div>
                                         <h2 class="featureSubtitle isActive" data-rooms-${index}-name>
-                                            ${room.name || 'Room'}
+                                            ${roomName}
                                         </h2>
                                     </div>
                                     <div>
                                         <span class="mt5 featureDescription" data-rooms-${index}-description>
-                                            ${room.description || ''}
+                                            ${this._formatTextWithLineBreaks(room.description || '')}
                                         </span>
                                     </div>
                                     <div>
@@ -247,7 +235,7 @@ class IndexMapper extends BaseDataMapper {
                                 </div>
                                 <div class="txtGrpImg txtGrpImg01"
                                      data-rooms-${index}-images-0-interior-1>
-                                    <img data-src-placeholder="interior1-${index}" alt="${room.name || 'Room'} Interior" class="${interior1Class}" />
+                                    <img data-src-placeholder="interior1-${index}" alt="${roomName}" class="${interior1Class}" />
                                 </div>
                             </div>
                         </aside>
@@ -280,12 +268,12 @@ class IndexMapper extends BaseDataMapper {
                                     </div>
                                     <div>
                                         <h2 class="featureSubtitle isActive" data-rooms-${index}-name>
-                                            ${room.name || 'Room'}
+                                            ${roomName}
                                         </h2>
                                     </div>
                                     <div>
                                         <span class="mt5 featureDescription" data-rooms-${index}-description>
-                                            ${room.description || ''}
+                                            ${this._formatTextWithLineBreaks(room.description || '')}
                                         </span>
                                     </div>
                                     <div>
@@ -296,14 +284,14 @@ class IndexMapper extends BaseDataMapper {
                                 </div>
                                 <div class="txtGrpImg txtGrpImg02"
                                      data-rooms-${index}-images-0-interior-0>
-                                    <img data-src-placeholder="interior0-odd-${index}" alt="${room.name || 'Room'} Interior" class="${interior0Class}" />
+                                    <img data-src-placeholder="interior0-odd-${index}" alt="${roomName}" class="${interior0Class}" />
                                 </div>
                             </div>
                         </aside>
                         <aside class="right">
                             <div class="imgGrp imgGrp02"
                                  data-rooms-${index}-images-0-interior-1>
-                                <img data-src-placeholder="interior1-odd-${index}" alt="${room.name || 'Room'}" class="imgGrpPic imgGrpPic02 ${interior1Class}" />
+                                <img data-src-placeholder="interior1-odd-${index}" alt="${roomName}" class="imgGrpPic imgGrpPic02 ${interior1Class}" />
                             </div>
                         </aside>
                     </div>
@@ -333,8 +321,8 @@ class IndexMapper extends BaseDataMapper {
     mapSpecialsSection() {
         // Specials 섹션 내의 property name 매핑
         const specialsSectionPropertyName = this.safeSelect('.specialsSection [data-property-name]');
-        if (specialsSectionPropertyName && this.data.property && this.data.property.name) {
-            specialsSectionPropertyName.textContent = this.data.property.name;
+        if (specialsSectionPropertyName) {
+            specialsSectionPropertyName.textContent = this.getPropertyName();
         }
 
         const slider = this.safeSelect('.specialsSection .slider');

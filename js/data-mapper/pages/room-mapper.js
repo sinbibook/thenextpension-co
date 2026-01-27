@@ -78,22 +78,26 @@ class RoomMapper extends BaseDataMapper {
         const roomIndex = this.getCurrentRoomIndex();
         if (!room || roomIndex === null) return;
 
+        // BaseMapper helper 사용: 객실명, 숙소명 가져오기
+        const roomName = this.getRoomName(room);
+        const propertyName = this.getPropertyName();
+
         // Room name 매핑
         const nameEl = this.safeSelect('[data-room-name]');
-        if (nameEl && room.name) {
-            nameEl.textContent = room.name;
+        if (nameEl) {
+            nameEl.textContent = roomName;
         }
 
         // Property name 매핑 (subNav 영역)
         const propertyNameEl = this.safeSelect('[data-property-name]');
-        if (propertyNameEl && this.data.property?.name) {
-            propertyNameEl.textContent = this.data.property.name;
+        if (propertyNameEl) {
+            propertyNameEl.textContent = propertyName;
         }
 
         // Room type 매핑 (subNav 영역)
         const roomTypeEl = this.safeSelect('[data-room-type]');
-        if (roomTypeEl && room.name) {
-            roomTypeEl.textContent = room.name;
+        if (roomTypeEl) {
+            roomTypeEl.textContent = roomName;
         }
 
         // Room hero title 매핑 (homepage.customFields.pages.room)
@@ -188,9 +192,8 @@ class RoomMapper extends BaseDataMapper {
             roomInfoEl.innerHTML = this._formatTextWithLineBreaks(room.roomInfo);
         }
 
-        // 객실 외관 이미지 동적 생성 (최대 4개, 아코디언) - isSelected 필터링 적용
-        const allExteriorImages = this.safeGet(room, 'images.0.exterior') || [];
-        const exteriorImages = ImageHelpers.filterSelectedImages(allExteriorImages);
+        // 객실 외관 이미지 동적 생성 (최대 4개, 아코디언) - BaseMapper helper 사용
+        const exteriorImages = this.getRoomImages(room, 'roomtype_exterior');
         const accordionContainer = this.safeSelect('#exteriorAccordionContainer');
 
         if (accordionContainer) {
@@ -250,10 +253,11 @@ class RoomMapper extends BaseDataMapper {
         const room = this.getCurrentRoom();
         if (!room) return;
 
-        // interior 이미지 배열 가져오기 - isSelected 필터링 적용
-        const allInteriorImages = this.safeGet(room, 'images.0.interior') || [];
-        const interiorImages = ImageHelpers.filterSelectedImages(allInteriorImages);
-        const roomName = room.name || '객실';
+        // BaseMapper helper 사용: 객실명 가져오기
+        const roomName = this.getRoomName(room);
+
+        // BaseMapper helper 사용: interior 이미지 배열 가져오기
+        const interiorImages = this.getRoomImages(room, 'roomtype_interior');
 
         // 1. 슬라이더 생성
         const slideWrapper = this.safeSelect('.room-slide-wrapper');
@@ -516,15 +520,17 @@ class RoomMapper extends BaseDataMapper {
      * 페이지 제목 업데이트
      */
     updatePageTitle(room) {
-        const property = this.data.property;
+        // BaseMapper helper 사용: 객실명, 숙소명 가져오기
+        const roomName = this.getRoomName(room);
+        const propertyName = this.getPropertyName();
 
         // HTML title 업데이트
-        document.title = `${room.name} - ${property.name}`;
+        document.title = `${roomName} - ${propertyName}`;
 
         // page-title 엘리먼트 업데이트
         const pageTitleElement = this.safeSelect('#page-title');
         if (pageTitleElement) {
-            pageTitleElement.textContent = `${room.name} - ${property.name}`;
+            pageTitleElement.textContent = `${roomName} - ${propertyName}`;
         }
     }
 }

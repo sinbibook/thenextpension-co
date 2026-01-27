@@ -19,29 +19,29 @@ class HeaderFooterMapper extends BaseDataMapper {
         if (!this.isDataLoaded || !this.data.property) return;
 
         const property = this.data.property;
+        // BaseMapper helper 사용: 숙소명 가져오기 (customFields 우선)
+        const propertyName = this.getPropertyName();
 
         // Header 로고 텍스트 매핑 (.logo-text)
         const logoText = this.safeSelect('.logo-text');
-        if (logoText && property.name) {
-            logoText.textContent = property.name;
+        if (logoText) {
+            logoText.textContent = propertyName;
         }
 
         // Property name 매핑 (data-property-name 속성)
         const propertyNameElements = this.safeSelectAll('[data-property-name]');
         propertyNameElements.forEach(element => {
-            if (element && property.name) {
-                element.textContent = property.name;
+            if (element) {
+                element.textContent = propertyName;
             }
         });
 
-        // realtime_booking_id 매핑 (예약 링크)
-        const realtimeBookingIdElements = this.safeSelectAll('[data-property-realtime-booking-id]');
-        realtimeBookingIdElements.forEach(element => {
+        // realtime_booking_url 매핑 (예약 링크 - 전체 URL 받음)
+        const realtimeBookingUrlElements = this.safeSelectAll('[data-property-realtime-booking-url]');
+        realtimeBookingUrlElements.forEach(element => {
             if (element && property.realtimeBookingId && property.realtimeBookingId.trim() !== '') {
-                const currentHref = element.getAttribute('href');
-                if (currentHref && currentHref.includes('${realtimeBookingId}')) {
-                    element.setAttribute('href', currentHref.replace('${realtimeBookingId}', property.realtimeBookingId));
-                }
+                // 전체 URL을 그대로 설정 (realtimeBookingId 값이 이제 전체 URL임)
+                element.setAttribute('href', property.realtimeBookingId);
             } else {
                 // realtimeBookingId가 없으면 링크를 숨겨 깨진 링크가 노출되지 않도록 합니다.
                 element.style.display = 'none';
@@ -130,11 +130,14 @@ class HeaderFooterMapper extends BaseDataMapper {
             submenu.innerHTML = ''; // 기존 하드코딩된 내용 제거
 
             if (roomData && Array.isArray(roomData) && roomData.length > 0) {
-                roomData.forEach((room, index) => {
+                roomData.forEach((room) => {
+                    // BaseMapper helper 사용: 객실명 가져오기 (customFields 우선)
+                    const roomName = this.getRoomName(room);
+
                     const li = document.createElement('li');
                     const a = document.createElement('a');
                     a.href = `room.html?id=${room.id}`;
-                    a.textContent = room.name || `객실${index + 1}`;
+                    a.textContent = roomName;
                     li.appendChild(a);
                     submenu.appendChild(li);
                 });
@@ -147,11 +150,14 @@ class HeaderFooterMapper extends BaseDataMapper {
             mobileSpacesContainer.innerHTML = ''; // 기존 내용 제거
 
             if (roomData && Array.isArray(roomData) && roomData.length > 0) {
-                roomData.forEach((room, index) => {
+                roomData.forEach((room) => {
+                    // BaseMapper helper 사용: 객실명 가져오기 (customFields 우선)
+                    const roomName = this.getRoomName(room);
+
                     const button = document.createElement('button');
                     button.className = 'mobile-sub-item';
                     button.type = 'button';
-                    button.textContent = room.name || `객실${index + 1}`;
+                    button.textContent = roomName;
                     button.addEventListener('click', () => {
                         window.location.href = `room.html?id=${room.id}`;
                     });
@@ -220,10 +226,10 @@ class HeaderFooterMapper extends BaseDataMapper {
             return;
         }
 
-        // 펜션명 (로고 텍스트) - 숙소명 우선 사용
+        // 펜션명 (로고 텍스트) - BaseMapper helper 사용
         const logoText = this.safeSelect('.footer-logo');
-        if (logoText && this.data.property.name) {
-            logoText.textContent = this.data.property.name;
+        if (logoText) {
+            logoText.textContent = this.getPropertyName();
         }
 
         // 전화번호 매핑 (기존 .footer-phone p는 비워둠)
@@ -265,12 +271,6 @@ class HeaderFooterMapper extends BaseDataMapper {
             ecommerceElement.textContent = `통신판매업신고번호 : ${ecommerceNumber}`;
         }
 
-        // 저작권 정보 매핑
-        const copyrightElement = this.safeSelect('.footer-copyright');
-        if (copyrightElement && businessInfo.businessName) {
-            const currentYear = new Date().getFullYear();
-            copyrightElement.textContent = `© ${currentYear} ${businessInfo.businessName}. All rights reserved.`;
-        }
 
         // 소셜미디어 링크 매핑
         this.mapSocialMediaLinks();
