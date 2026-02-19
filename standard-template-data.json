@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.11.0",
-    "generatedAt": "2026-01-27T05:36:51.485Z",
+    "version": "1.12.0",
+    "generatedAt": "2026-02-19T07:39:07.762Z",
     "templateType": "center_slider",
     "propertyId": "641d3328-82ac-420f-95d9-6a21f1e8d6bf",
     "homepageId": "1b2c1df0-f06c-47ec-a244-99aa070f7e7e"
@@ -50,10 +50,10 @@
       "businessNumber": "403-40-01276",
       "representativeName": "김보경",
       "businessAddress": "강원 강릉시 주문진읍 용소마을길 113-18",
-      "businessPhone": "",
-      "businessEmail": "",
-      "businessType": "",
-      "businessCategory": "",
+      "businessPhone": "010-6422-8828",
+      "businessEmail": "next8828@naver.com",
+      "businessType": "individual",
+      "businessCategory": "농어촌민박",
       "eCommerceRegistrationNumber": ""
     },
     "contractInfo": {
@@ -397,7 +397,7 @@
   "rooms": [
     {
       "id": "6f208f60-3091-4da9-9075-bac5855fa592",
-      "name": "1호 독채 (애견동반,신축)",
+      "name": "용소채 (애견동반,신축)",
       "description": "독채 복층형 : 1층(거실1+주방1+온돌룸2+화장실1) + 2층(침대룸1+화장실1+개별테라스2)",
       "roomInfo": "[인원추가(1박기준/현장결제)]\n24개월 이상 1인 20,000원 (1박기준/현장결제)\n- 24개월 미만은 무료이나 인원에는 포함\n\n",
       "group": null,
@@ -607,7 +607,7 @@
     },
     {
       "id": "9c1774c2-feb7-4ac1-951b-0927806b5b0e",
-      "name": "2호 독채 (애견동반,신축)",
+      "name": "주문진채 (애견동반,신축)",
       "description": "독채 복층형 : 1층(거실1+주방1+온돌룸2+화장실1) + 2층(침대룸1+화장실1+개별테라스2)",
       "roomInfo": "[인원추가(1박기준/현장결제)]\n24개월 이상 1인 20,000원 (1박기준/현장결제)\n- 24개월 미만은 무료이나 인원에는 포함\n\n",
       "group": null,
@@ -809,7 +809,7 @@
     },
     {
       "id": "91df38ce-ba82-4f9d-93ed-5a005a77d268",
-      "name": "3호 독채 (신축)",
+      "name": "강릉채 (신축)",
       "description": "",
       "roomInfo": "",
       "group": null,
@@ -986,7 +986,7 @@
     },
     {
       "id": "00ed81e8-e460-4efb-bebd-d3934fe0ef49",
-      "name": "4호 독채 (애견동반,신축)",
+      "name": "소돌채 (애견동반,신축)",
       "description": "",
       "roomInfo": "",
       "group": null,
@@ -2670,6 +2670,7 @@
           ]
         }
       ]
-    }
+    },
+    "id": "1b2c1df0-f06c-47ec-a244-99aa070f7e7e"
   }
 }
