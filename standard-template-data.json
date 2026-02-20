@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.13.0",
-    "generatedAt": "2026-02-20T09:01:15.459Z",
+    "version": "1.14.0",
+    "generatedAt": "2026-02-20T09:07:22.797Z",
     "templateType": "center_slider",
     "propertyId": "641d3328-82ac-420f-95d9-6a21f1e8d6bf",
     "homepageId": "1b2c1df0-f06c-47ec-a244-99aa070f7e7e"
@@ -293,6 +293,13 @@
             "isSelected": true
           },
           {
+            "id": "948240e0-36d9-4368-b61f-0903825ff523",
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/641d3328-82ac-420f-95d9-6a21f1e8d6bf/exterior/1761199333467-w7dirbr0sul.jpg",
+            "sortOrder": 8,
+            "description": "",
+            "isSelected": true
+          },
+          {
             "id": "6d0da43a-bce3-4660-bfbe-4631deff6db9",
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/641d3328-82ac-420f-95d9-6a21f1e8d6bf/exterior/1761199333467-x0yn1g4ikzr.jpg",
             "sortOrder": 5,
@@ -304,7 +311,7 @@
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/641d3328-82ac-420f-95d9-6a21f1e8d6bf/exterior/1761199333466-qbp96vebblt.jpg",
             "sortOrder": 0,
             "description": "",
-            "isSelected": true
+            "isSelected": false
           },
           {
             "id": "277c73d7-e9fd-498e-aed8-2f491029cbb6",
@@ -317,13 +324,6 @@
             "id": "ed8035b0-dbaf-44c5-ade7-8a8265d48998",
             "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/641d3328-82ac-420f-95d9-6a21f1e8d6bf/exterior/1761199333467-cp3i21h4u8w.jpg",
             "sortOrder": 7,
-            "description": "",
-            "isSelected": true
-          },
-          {
-            "id": "948240e0-36d9-4368-b61f-0903825ff523",
-            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/property/641d3328-82ac-420f-95d9-6a21f1e8d6bf/exterior/1761199333467-w7dirbr0sul.jpg",
-            "sortOrder": 8,
             "description": "",
             "isSelected": true
           },
@@ -392,7 +392,7 @@
     "nameEn": "Gangneung thenext pension",
     "domain": "thenextpension.co.kr",
     "realtimeBookingId": "https://www.bookingplay.co.kr/booking/1/9596",
-    "ybsId": "78787"
+    "ybsId": ""
   },
   "rooms": [
     {
@@ -641,7 +641,7 @@
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_hero/1768187740726-6ehhwhukwnv.jpeg",
                     "sortOrder": 0,
                     "description": "",
-                    "isSelected": true
+                    "isSelected": false
                   },
                   {
                     "id": "e6e726ab-4435-4bda-b189-c1eef7c4b0bc",
@@ -697,7 +697,7 @@
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_hero/1768187740726-xw687gppw7.jpeg",
                     "sortOrder": 8,
                     "description": "",
-                    "isSelected": true
+                    "isSelected": false
                   }
                 ],
                 "description": "더 넥스트 독채 펜션에 오신 것을 환영합니다."
@@ -842,14 +842,14 @@
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/main_hero/1768189240522-2lti4krhh6b.jpeg",
                     "sortOrder": 0,
                     "description": "",
-                    "isSelected": true
+                    "isSelected": false
                   },
                   {
                     "id": "8ebc432b-c557-48f4-b621-0eb6dd4269c6",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/main_hero/1768189023822-xpgoyemnjp.jpeg",
                     "sortOrder": 1,
                     "description": "",
-                    "isSelected": true
+                    "isSelected": false
                   },
                   {
                     "id": "88ff96b1-bbb3-4582-a599-81ffd6cec939",
@@ -870,7 +870,7 @@
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/main_hero/1768189240523-hliiwm5obo6.jpg",
                     "sortOrder": 4,
                     "description": "",
-                    "isSelected": true
+                    "isSelected": false
                   },
                   {
                     "id": "8f9e2eb5-0fd8-4807-a431-00d618487e60",
