@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "version": "1.16.0",
-    "generatedAt": "2026-02-23T08:54:29.204Z",
-    "templateType": "center_slider",
+    "version": "1.17.0",
+    "generatedAt": "2026-03-05T07:53:33.314Z",
+    "templateType": "full_banner_slider_flat",
     "propertyId": "641d3328-82ac-420f-95d9-6a21f1e8d6bf",
     "homepageId": "1b2c1df0-f06c-47ec-a244-99aa070f7e7e"
   },
@@ -400,6 +400,7 @@
       "name": "용소채 (애견동반,신축)",
       "description": "독채 복층형 : 1층(거실1+주방1+온돌룸2+화장실1) + 2층(침대룸1+화장실1+개별테라스2)",
       "roomInfo": "[인원추가(1박기준/현장결제)]\n24개월 이상 1인 20,000원 (1박기준/현장결제)\n- 24개월 미만은 무료이나 인원에는 포함\n\n",
+      "usageGuide": "[인원추가(1박기준/현장결제)]\n24개월 이상 1인 20,000원 (1박기준/현장결제)\n- 24개월 미만은 무료이나 인원에는 포함",
       "group": null,
       "size": 115,
       "baseOccupancy": 4,
@@ -608,13 +609,13 @@
   ],
   "homepage": {
     "domain": "thenextpension.co.kr",
-    "templateType": "center_slider",
+    "templateType": "full_banner_slider_flat",
     "images": [
       {
         "logo": [
           {
-            "id": "d4363de3-2531-4b00-9723-b14703f116b0",
-            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/logo/1761027412545-ez83xt1my3.png",
+            "id": "da496a80-1804-4123-a841-3870bbf1dcdc",
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/logo/1772694909648-d347838u9ho.png",
             "sortOrder": 0,
             "description": "",
             "isSelected": true
@@ -637,11 +638,11 @@
                 "title": "지친 일상의 휴식처가 되는 곳",
                 "images": [
                   {
-                    "id": "e653d795-8245-49f0-b841-22b5072f3a22",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_hero/1768187740726-6ehhwhukwnv.jpeg",
+                    "id": "724e3f17-3a59-4f89-9e55-9bfc26de1e1b",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_hero/1768187740726-xw687gppw7.jpeg",
                     "sortOrder": 0,
                     "description": "",
-                    "isSelected": false
+                    "isSelected": true
                   },
                   {
                     "id": "e6e726ab-4435-4bda-b189-c1eef7c4b0bc",
@@ -651,53 +652,39 @@
                     "isSelected": true
                   },
                   {
-                    "id": "c481b590-dd5f-436a-902c-6d5f976aa626",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_hero/1761277599339-281sp13nmwd.jpg",
-                    "sortOrder": 2,
-                    "description": "",
-                    "isSelected": false
-                  },
-                  {
-                    "id": "10d90bfe-0cbf-42ee-82ed-6189e4e8260a",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_hero/1761277599339-08fcvqffwhn.jpg",
-                    "sortOrder": 3,
-                    "description": "",
-                    "isSelected": false
-                  },
-                  {
                     "id": "baa4d455-8f2b-4a2f-aaa0-636348ebbc56",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_hero/1761622412927-hm12o3nsuym.jpg",
-                    "sortOrder": 4,
+                    "sortOrder": 2,
                     "description": "",
                     "isSelected": true
                   },
                   {
                     "id": "1a6fc525-44a6-4560-8713-6dc1897b5f73",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_hero/1761622308733-91zipy21vgs.jpg",
-                    "sortOrder": 5,
+                    "sortOrder": 3,
                     "description": "",
                     "isSelected": true
                   },
                   {
                     "id": "73b304db-d44b-4e2a-a904-f59e7f754904",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_hero/1761622308733-78wj0dtavsy.jpg",
-                    "sortOrder": 6,
+                    "sortOrder": 4,
                     "description": "",
                     "isSelected": true
                   },
                   {
                     "id": "5439856e-0e14-49dd-98bd-1e01e7251963",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_hero/1768187740726-yoc6iesxb6.jpg",
-                    "sortOrder": 7,
+                    "sortOrder": 5,
                     "description": "",
                     "isSelected": true
                   },
                   {
-                    "id": "724e3f17-3a59-4f89-9e55-9bfc26de1e1b",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_hero/1768187740726-xw687gppw7.jpeg",
-                    "sortOrder": 8,
+                    "id": "e653d795-8245-49f0-b841-22b5072f3a22",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_hero/1768187740726-6ehhwhukwnv.jpeg",
+                    "sortOrder": 6,
                     "description": "",
-                    "isSelected": false
+                    "isSelected": true
                   }
                 ],
                 "description": "더 넥스트 독채 펜션에 오신 것을 환영합니다."
@@ -711,19 +698,12 @@
                     "sortOrder": 0,
                     "description": "",
                     "isSelected": true
-                  },
-                  {
-                    "id": "baa32f42-3bd0-42c7-8927-42464785a1e8",
-                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_closing/1761286448223-d8pyfvcjcz7.jpg",
-                    "sortOrder": 1,
-                    "description": "",
-                    "isSelected": false
                   }
                 ],
                 "description": " "
               },
               "essence": {
-                "title": "The Next",
+                "title": "힐링 가득한 하루를 보낼 수 있는 곳",
                 "images": [
                   {
                     "id": "adfdba13-d041-420b-8c97-e2ebd1c5440c",
@@ -731,39 +711,46 @@
                     "sortOrder": 0,
                     "description": "",
                     "isSelected": true
+                  },
+                  {
+                    "id": "f548bd52-3f5b-4483-9bfe-3348ff8aa9b9",
+                    "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_essence/1772696298459-6u8tgqrwvak.jpg",
+                    "sortOrder": 1,
+                    "description": "",
+                    "isSelected": true
                   }
                 ],
-                "description": "힐링 가득한 하루를 보낼 수 있는 곳"
+                "description": "The Next"
               },
               "gallery": {
-                "title": "쉼과 힐링이 있는 더 넥스트",
+                "title": "Preview",
                 "images": [
                   {
                     "id": "00821455-b957-4e6f-a58d-3ebcc39dcadb",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_gallery/1761286448222-yfsru5iu9p.jpg",
                     "sortOrder": 0,
-                    "description": "",
+                    "description": " ",
                     "isSelected": true
                   },
                   {
                     "id": "52f56e99-16af-4f96-9a82-54df4613aadf",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_gallery/1761286448222-x7l58vawaza.jpg",
                     "sortOrder": 1,
-                    "description": "",
+                    "description": " ",
                     "isSelected": true
                   },
                   {
                     "id": "1a511b65-0b03-4590-ac17-5fcc351b3e99",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_gallery/1761286448222-qxo94oudgpb.jpg",
                     "sortOrder": 2,
-                    "description": "",
+                    "description": " ",
                     "isSelected": true
                   },
                   {
                     "id": "73d8de75-680e-485e-bcd5-31e83c123292",
                     "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/homepage/1b2c1df0-f06c-47ec-a244-99aa070f7e7e/index_gallery/1761286448223-o6wj7eapz6j.jpg",
                     "sortOrder": 3,
-                    "description": "",
+                    "description": " ",
                     "isSelected": true
                   }
                 ],
@@ -827,6 +814,10 @@
                     "isSelected": false
                   }
                 ]
+              },
+              "notice": {
+                "title": " 🚌 대중교통 이용 방법",
+                "description": "주문진 버스터미널 도착 후\n🚕 택시 약 7~10분 소요 (약 3~4km)"
               }
             }
           ]
@@ -1222,6 +1213,29 @@
           ]
         }
       },
+      "theme": {
+        "font": {
+          "koSub": {
+            "cdn": "https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.min.css",
+            "key": "pretendard",
+            "woff2": null,
+            "family": "Pretendard"
+          },
+          "enMain": {
+            "cdn": "https://use.typekit.net/vll4umt.css",
+            "key": "amandine",
+            "woff2": null,
+            "family": "amandine"
+          },
+          "koMain": {
+            "cdn": "https://fonts.cdnfonts.com/css/noto-serif-kr",
+            "key": "notoserifKR",
+            "woff2": null,
+            "family": "Noto Serif KR"
+          }
+        },
+        "color": null
+      },
       "popup": {
         "popups": []
       },
@@ -1561,7 +1575,6 @@
           ]
         }
       ]
-    },
-    "id": "1b2c1df0-f06c-47ec-a244-99aa070f7e7e"
+    }
   }
 }
