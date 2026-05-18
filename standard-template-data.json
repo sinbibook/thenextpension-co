@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.22.0",
-    "generatedAt": "2026-05-06T09:11:31.357333342Z",
+    "version": "1.23.0",
+    "generatedAt": "2026-05-18T04:58:57.991614745Z",
     "templateType": "full_banner_slider_flat",
     "propertyId": "641d3328-82ac-420f-95d9-6a21f1e8d6bf",
     "homepageId": "1b2c1df0-f06c-47ec-a244-99aa070f7e7e"
@@ -425,7 +425,7 @@
     ],
     "nameEn": "Gangneung thenext pension",
     "domain": "thenextpension.co.kr",
-    "realtimeBookingId": "https://www.bookingplay.co.kr/booking/1/9596",
+    "realtimeBookingId": "https://map.naver.com/p/entry/place/2062168707",
     "ybsId": "78787"
   },
   "rooms": [
@@ -451,6 +451,7 @@
         "온돌",
         "이불"
       ],
+      "bedConfigs": null,
       "amenities": [
         "무료 WiFi",
         "스마트 TV",
