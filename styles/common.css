@@ -513,9 +513,9 @@ body {
 
 /* Empty Image Placeholder - 모든 페이지 공통 */
 .empty-image-placeholder {
-    border: 2px dashed color-mix(in srgb, var(--color-secondary) 40%, var(--color-primary)) !important;
+    border: 2px dashed #9ca3af !important;
     border-radius: 0.75rem !important;
-    background: color-mix(in srgb, var(--color-secondary) 20%, var(--color-primary)) !important;
+    background: #d1d5db !important;
 }
 
 /* Mobile Floating Book Now Button */

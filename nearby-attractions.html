@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>강릉 더넥스트 독채펜션 - 오시는길</title>
+    <title>강릉 더넥스트 독채펜션</title>
     <meta name="description" content="주문진 해수욕장 인근에 위치한 신축 독채 펜션입니다.">
     <meta name="keywords" content="강릉펜션,애견동반펜션,독채펜션,강릉애견동반펜션,강릉독채펜션,애견동반강릉펜션,애견동반독채펜션,독채강릉펜션,독채애견동반펜션,강릉애견동반독채펜션,강릉독채애견동반펜션,애견동반강릉독채펜션,애견동반독채강릉펜션,독채강릉애견동반펜션,독채애견동반강릉펜션,주문진펜션,주문진애견동반펜션,주문진독채펜션,애견동반주문진펜션,애견동반독채펜션,독채주문진펜션,독채애견동반펜션,주문진애견동반독채펜션,주문진독채애견동반펜션,애견동반주문진독채펜션,애견동반독채주문진펜션,독채주문진애견동반펜션,독채애견동반주문진펜션,가족펜션,주문진가족펜션,주문진독채펜션,가족주문진펜션,가족독채펜션,독채주문진펜션,독채가족펜션,주문진가족독채펜션,주문진독채가족펜션,가족주문진독채펜션,가족독채주문진펜션,독채주문진가족펜션,독채가족주문진펜션,단체펜션,주문진단체펜션,단체주문진펜션,강릉가족펜션,강릉독채펜션,가족강릉펜션,가족독채펜션,독채강릉펜션,독채가족펜션,강릉가족독채펜션,강릉독채가족펜션,가족강릉독채펜션,가족독채강릉펜션,독채강릉가족펜션,독채가족강릉펜션,강릉펜션,단체펜션,독채펜션,강릉단체펜션,강릉독채펜션,단체강릉펜션,단체독채펜션,독채강릉펜션,독채단체펜션,강릉단체독채펜션,강릉독채단체펜션,단체강릉독채펜션,단체독채강릉펜션,독채강릉단체펜션,독채단체강릉펜션,강릉숙소,애견동반숙소,독채숙소,강릉애견동반숙소,강릉독채숙소,애견동반강릉숙소,애견동반독채숙소,독채강릉숙소,독채애견동반숙소,강릉애견동반독채숙소,강릉독채애견동반숙소,애견동반강릉독채숙소,애견동반독채강릉숙소,독채강릉애견동반숙소,독채애견동반강릉숙소,가족숙소,강릉가족숙소,강릉독채숙소,가족강릉숙소,독채가족숙소,강릉가족독채숙소,강릉독채가족숙소,가족강릉독채숙소,가족독채강릉숙소,독채강릉가족숙소,독채가족강릉숙소,주문진숙소">
-    <link rel="stylesheet" href="styles/theme.css">
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles/common.css" as="style">
+    <link rel="preload" href="styles/nearby-attractions.css" as="style">
     <link rel="stylesheet" href="styles/common.css">
-    <link rel="stylesheet" href="styles/directions.css">
+    <link rel="stylesheet" href="styles/nearby-attractions.css">
+    <link rel="stylesheet" href="styles/theme.css">
 
   <!-- Open Graph Meta Tags for Social Media -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="강릉 더넥스트 독채펜션 - 오시는길" />
+  <meta property="og:title" content="강릉 더넥스트 독채펜션" />
   <meta property="og:description" content="강릉 자연과 함께 힐링할 수 있는 신축 독채펜션 더넥스트입니다." />
   <meta property="og:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/08/07/Zcktbu8oUKIh.jpg" />
   <meta property="og:url" content="https://thenextpension.co.kr" />
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="강릉 더넥스트 독채펜션 - 오시는길" />
+  <meta name="twitter:title" content="강릉 더넥스트 독채펜션" />
   <meta name="twitter:description" content="강릉 자연과 함께 힐링할 수 있는 신축 독채펜션 더넥스트입니다." />
   <meta name="twitter:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/08/07/Zcktbu8oUKIh.jpg" />
 </head>
@@ -27,83 +30,67 @@
     <!-- Include Header -->
     <div id="header-placeholder"></div>
 
-    <!-- 메인 소개 섹션 히어로 0번째 이미지-->
+    <!-- Hero Section -->
     <section class="hero-section">
-        <div class="hero-background">
-            <img src="" alt="오시는길 배경" data-customfield-directions-hero-image-0>
-            <div class="hero-overlay"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-text-center">
-                <h1 class="hero-title" data-directions-hero-title>LOCATION</h1>
+            <div class="hero-background">
+                <!-- Custom-field: homepage.customFields.pages.nearbyAttractions.sections[0].hero.images -->
+                <img src="" alt="주변관광지 배경" data-nearby-hero-image>
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-text-center">
+                    <!-- 하드코딩 fixed -->
+                    <h1 class="hero-title">주변 관광지</h1>
+                </div>
+            </div>
+
+            <!-- Scroll Down Indicator -->
+            <div class="hero-scroll-down" onclick="scrollToNextSection()">
+                <svg class="scroll-arrow" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                </svg>
+            </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <main class="attractions-container">
+        <div class="attractions-intro-section">
+            <div class="attractions-intro-content">
+                <div class="attractions-label">
+                    <!-- 하드코딩 fixed -->
+                    <span class="attractions-number">NEARBY ATTRACTIONS</span>
+                </div>
+                <!-- Custom-field: homepage.customFields.pages.nearbyAttractions.sections[0].hero.title -->
+                <h2 class="attractions-title" data-nearby-attractions-about-title></h2>
+                <!-- Custom-field: homepage.customFields.pages.nearbyAttractions.sections[0].hero.description -->
+                <p class="attractions-description" data-nearby-attractions-about-description></p>
             </div>
         </div>
+        <!-- Custom-field: homepage.customFields.pages.nearbyAttractions.sections[0].about[].images, about[].title, about[].description -->
+        <div class="attractions-grid" id="attractions-grid-container">
+        </div>
+    </main>
 
-        <!-- Scroll Down Indicator -->
-        <div class="hero-scroll-down" onclick="scrollToNextSection()">
-            <svg class="scroll-arrow" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-            </svg>
+    <!-- Closing Section -->
+    <section class="attractions-closing">
+        <!-- Custom-field: property.images[0].exterior[0] (first exterior image) -->
+        <div class="attractions-closing-bg" style="background-size: cover; background-position: center;" data-nearby-closing-image-bg></div>
+        <div class="attractions-closing-overlay">
+            <div class="attractions-closing-content">
+                <!-- Custom-field: property logo (ImageHelpers.extractLogoUrl) -->
+                <img src="" alt="로고" class="closing-logo" data-closing-logo="">
+            </div>
         </div>
     </section>
 
-    <!-- Location Info Section -->
-    <section class="location-info-section">
-        <div class="directions-content-container">
-        <!-- Facility Introduction Section -->
-        <div class="facility-intro-section">
-            <div class="facility-intro-content">
-                <div class="facility-label">
-                    <span class="facility-number" data-directions-title>LOCATION</span>
-                </div>
-                <p class="facility-description" data-directions-description>
-                    오시는 길 안내입니다.
-                </p>
-            </div>
-        </div>
-
-        <!-- Banner Image Section 히어로 1번째 이미지 -->
-        <div class="directions-banner-section">
-            <div class="container">
-                <img src="" alt="오시는길 배너" class="directions-banner-image" data-customfield-directions-hero-image-1>
-            </div>
-        </div>
-
-        <!-- 지도 섹션 -->
-        <section class="map-section main-content-fade-in">
-            <div class="container">
-                <div class="address-section">
-                    <p>
-                        <svg class="location-icon" viewBox="0 0 24 24">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                        <span data-directions-address></span>
-                    </p>
-                    <!-- 안내사항  -->
-                     <div class="notice-wrap">
-                        <h4 data-customfield-directions-notice-title>안내사항</h4>
-                        <p data-customfield-directions-notice-description>안내사항 1</p>
-                     </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="map-container">
-                    <div id="kakao-map"></div>
-                </div>
-            </div>
-        </section>
-        </div> <!-- directions-content-container -->
-
-    <!-- Kakao Map SDK -->
-    <script type="text/javascript" src="js/kakao-maps-sdk.js"></script>
+    <!-- Include Footer -->
+    <div id="footer-placeholder"></div>
 
     <!-- Include ImageWithFallback script -->
     <script src="js/image-with-fallback.js"></script>
 
-    <!-- Common JavaScript -->
-    <script src="js/common.js"></script>
+    <!-- Common Slider Module -->
+    <script src="js/common/slider.js"></script>
 
     <!-- Image Helpers -->
     <script src="js/image-helpers.js"></script>
@@ -111,20 +98,20 @@
     <!-- Base Data Mapper -->
     <script src="js/data-mapper/core/base-mapper.js"></script>
 
-    <!-- Directions Page Mapper -->
-    <script src="js/data-mapper/pages/directions-mapper.js"></script>
+    <!-- Header Footer Mapper -->
+    <script src="js/data-mapper/pages/header-footer-mapper.js"></script>
+
+    <!-- Nearby Attractions Mapper -->
+    <script src="js/data-mapper/pages/nearby-attractions-mapper.js"></script>
 
     <!-- Preview Handler for Admin Integration -->
     <script src="js/preview-handler.js"></script>
-
-    <!-- Header Footer Mapper -->
-    <script src="js/data-mapper/pages/header-footer-mapper.js"></script>
 
     <!-- Header and Footer Loader -->
     <script src="js/header-footer-loader.js"></script>
 
     <!-- Page-specific script -->
-    <script src="js/pages/directions.js"></script>
+    <script src="js/pages/nearby-attractions.js"></script>
 
 </body>
 </html>
