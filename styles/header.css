@@ -13,10 +13,9 @@
     padding: 20px 0;
 }
 
-/* Scrolled state */
+/* Scrolled state - 크기 축소 없이 배경/그림자만 변경 (스크롤 시 영역·로고 크기 유지) */
 .header.scrolled {
     background: color-mix(in srgb, var(--color-secondary) 70%, transparent);
-    padding: 15px 0;
     box-shadow: 0 2px 20px color-mix(in srgb, var(--color-secondary) 5%, transparent);
 }
 
@@ -46,23 +45,13 @@
 }
 
 .logo-icon {
-    width: 150px;
+    width: 200px;
     height: auto;
     transition: all 0.3s ease;
 }
 
-.header.scrolled .logo-icon {
-    width: 120px;
-    max-width: 120px;
-}
-
 @media (max-width: 480px) {
     .logo-icon {
-        width: 100px;
-        max-width: 100px;
-    }
-
-    .header.scrolled .logo-icon {
         width: 100px;
         max-width: 100px;
     }
@@ -223,7 +212,7 @@
     background: transparent;
     color: white;
     border: 1px solid color-mix(in srgb, white 30%, transparent);
-    font-family: var(--font-en-main);
+    font-family: 'Pretendard', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -278,9 +267,9 @@
     background: transparent;
     color: white;
     border: 1px solid color-mix(in srgb, white 30%, transparent);
-    font-family: var(--font-en-main);
-    font-size: 0.9rem;
-    font-weight: 400;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     cursor: pointer;
@@ -502,7 +491,7 @@ body.mobile-menu-open {
 }
 
 .mobile-accordion-content.active {
-    max-height: 500px;
+    max-height: 2000px;
 }
 
 
@@ -533,7 +522,7 @@ body.mobile-menu-open {
     background: white;
     border: none;
     color: var(--color-secondary);
-    font-family: var(--font-en-main);
+    font-family: 'Pretendard', sans-serif;
     font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -575,9 +564,9 @@ body.mobile-menu-open {
     background: white;
     border: none;
     color: var(--color-secondary);
-    font-family: var(--font-en-main);
-    font-size: 0.8rem;
-    font-weight: 400;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
     letter-spacing: 0.1em;
     border-radius: 0;
     margin: 0;
@@ -622,7 +611,7 @@ body.mobile-menu-open {
         padding: 0;
     }
 
-    .header.scrolled { 
+    .header.scrolled {
         padding: 0 0 10px 0;
     }
     .header-content {
@@ -641,7 +630,7 @@ body.mobile-menu-open {
     .mobile-toggle {
         position: fixed !important;
         right: 15px !important;
-        top: 15px !important;
+        top: 10px !important;
         transform: none !important;
         margin: 0 !important;
         z-index: 1002 !important;

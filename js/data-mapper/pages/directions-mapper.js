@@ -53,9 +53,9 @@ class DirectionsMapper extends BaseDataMapper {
 
         const images = directionsHeroData?.images;
 
-        // sortOrder로 정렬
+        // 노출(isSelected) 이미지만 필터링 후 sortOrder로 정렬
         const sortedImages = images && images.length > 0
-            ? images.sort((a, b) => (a.sortOrder || 0) - (b.sortOrder || 0))
+            ? images.filter(img => img.isSelected).sort((a, b) => (a.sortOrder || 0) - (b.sortOrder || 0))
             : [];
 
         // 0번째 이미지 매핑 (hero 배경)

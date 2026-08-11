@@ -285,9 +285,8 @@ class RoomMapper extends BaseDataMapper {
         // 체크인/체크아웃 정보 매핑
         const roomCheckinCheckout = this.safeSelect('[data-room-checkin-checkout]');
         if (roomCheckinCheckout) {
-            const checkinTime = this.data.property?.checkinTime || '15:00';
-            const checkoutTime = this.data.property?.checkoutTime || '11:00';
-            roomCheckinCheckout.textContent = `체크인 ${checkinTime} / 체크아웃 ${checkoutTime}`;
+            const ts = room.timeSettings;
+            roomCheckinCheckout.textContent = `체크인 ${ts?.checkin || '-'} / 체크아웃 ${ts?.checkout || '-'}`;
         }
 
         // 객실 구조 매핑 (현재 room의 roomStructures 배열의 모든 구조 표시)
@@ -358,9 +357,8 @@ class RoomMapper extends BaseDataMapper {
         }
 
         // 체크인/체크아웃
-        const checkinTime = this.data.property?.checkinTime || '15:00';
-        const checkoutTime = this.data.property?.checkoutTime || '11:00';
-        infoLines.push(`체크인: ${checkinTime} / 체크아웃: ${checkoutTime}`);
+        const ts = room.timeSettings;
+        infoLines.push(`체크인: ${ts?.checkin || '-'} / 체크아웃: ${ts?.checkout || '-'}`);
 
         roomInfoElement.innerHTML = infoLines.join('<br>');
     }

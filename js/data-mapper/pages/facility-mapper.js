@@ -213,6 +213,16 @@ class FacilityMapper extends BaseDataMapper {
         const facility = this.getCurrentFacility();
         if (!facility) return;
 
+        // SPECIAL 넘버링 매핑 (메뉴와 동일하게 displayOrder 정렬 순서 기준)
+        const facilityNumber = this.safeSelect('#facility-number');
+        if (facilityNumber) {
+            const facilities = this.safeGet(this.data, 'property.facilities') || [];
+            const sortedFacilities = [...facilities].sort((a, b) => (a.displayOrder ?? 0) - (b.displayOrder ?? 0));
+            const orderIndex = sortedFacilities.findIndex(f => f.id === facility.id);
+            const number = orderIndex >= 0 ? orderIndex : 0;
+            facilityNumber.textContent = `SPECIAL ${String(number + 1).padStart(2, '0')}`;
+        }
+
         // 시설명 매핑
         const facilityName = this.safeSelect('[data-facility-name]');
         if (facilityName) {
