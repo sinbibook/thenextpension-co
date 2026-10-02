@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.28.0",
-    "generatedAt": "2026-09-01T02:48:04.460195699Z",
+    "version": "1.29.0",
+    "generatedAt": "2026-10-02T02:58:23.799683734Z",
     "templateType": "full_banner_slider_flat",
     "propertyId": "641d3328-82ac-420f-95d9-6a21f1e8d6bf",
     "homepageId": "1b2c1df0-f06c-47ec-a244-99aa070f7e7e"
@@ -22,7 +22,7 @@
     "checkin": "15:00",
     "checkout": "11:00",
     "checkInOutInfo": "[입퇴실안내]\n- 입실: 15시 00분\n- 퇴실: 11시 00분\n- 입실 마감시간: 22시 00분\n※ 22시 이후 입실 시 사전 문의 필수\n※ 입/퇴실 시간은 꼭 지켜주세요 (원활한 청소 시간을 위함)\n※ 얼리 체크인은 불가합니다.\n※ 레이트 체크아웃 시 시간 당 30,000원의 비용이 발생합니다.",
-    "usageGuide": "[공지사항]\n- 실 금액은 기준인원에 대한 금액으로 기준 인원 초과 시 추가요금이 발생합니다. 예약 시 예약인원을 꼭 확인해주세요.\n- 당일 예약 후 당일 바로 이용하는 경우(오후 10시 이후 입실의 경우) 확정 예약이 아니오니 꼭 업체에 사전 문의 후 결제해주세요.\n- 인원추가 및 애견동반 시 예약 후 업체 연락 필요\n\n[입퇴실안내]\n- 입실: 15시 00분\n- 퇴실: 11시 00분\n- 입실 마감시간: 22시 00분\n※ 22시 이후 입실 시 사전 문의 필수\n※ 입/퇴실 시간은 꼭 지켜주세요 (원활한 청소 시간을 위함)\n※ 얼리 체크인은 불가합니다.\n※ 레이트 체크아웃 시 시간 당 30,000원의 비용이 발생합니다.\n\n[인원추가정보]\n[연령기준]\n- 성인: 8세 이상\n- 아동: 24개월 이상~8세 미만\n- 유아: 24개월 미만\n\n[추가요금]\n- 결제방법: 후결제(현장결제)\n※ 1박기준/현장결제\n※ 기준 인원 초과 시 추가요금이 발생합니다. 예약 시 예약 인원을 꼭 확인해주세요.\n※ 최대 인원 초과 시 입실 불가하며, 이로 인한 환불은 불가입니다. (유아, 어린이 포함)\n※ 현장 추가 요금은 숙소 측에 사전 확인 바랍니다.\n※ 인원 추가 시 예약 후 업체 연락 필요합니다.\n\n[개별바베큐]\n- 바베큐 형태: 전기그릴\n- 이용 요금: 1개당 20,000원 (1박기준/현장결제)\n- 이용 시간: 17:00 ~ 23:00\n※ 실내 육류, 생선, 새우 등 조리 불가\n※ 야외 셀프 그릴 바베큐(펜션 유선 문의 필수)\n\n[애견동반]\n- 이용 객실: 용소채, 주문진채, 향호채 \n- 이용 요금: 1마리당 20,000원 (1박기준/현장결제)\n- 제한 무게: 8kg 이하\n- 제한 마릿수: 객실당 2마리\n- 애견 비품: 애견 패드, 애견 식기, 애견 하우스\n※ 애견 동반 시 예약 후 업체 연락 필요합니다.\n※ 안전에 유의해주시기 바랍니다.\n\n[편의 및 주변 시설]\n- 와이파이 보유\n\n[주차장]\n- 주차장 보유\n\n[교통편]\n[ 네비게이션에 주소 검색 ]\n- 강원 강릉시 주문진읍 주문리 1580",
+    "usageGuide": "- 실 금액은 기준인원에 대한 금액으로 기준 인원 초과 시 추가요금이 발생합니다. 예약 시 예약인원을 꼭 확인해주세요.\n- 당일 예약 후 당일 바로 이용하는 경우(오후 10시 이후 입실의 경우) 확정 예약이 아니오니 꼭 업체에 사전 문의 후 결제해주세요.\n- 인원추가 및 애견동반 시 예약 후 업체 연락 필요\n\n[입퇴실안내]\n- 입실: 15시 00분\n- 퇴실: 11시 00분\n- 입실 마감시간: 22시 00분\n※ 22시 이후 입실 시 사전 문의 필수\n※ 입/퇴실 시간은 꼭 지켜주세요 (원활한 청소 시간을 위함)\n※ 얼리 체크인은 불가합니다.\n※ 레이트 체크아웃 시 시간 당 30,000원의 비용이 발생합니다.\n\n[인원추가정보]\n[연령기준]\n- 성인: 8세 이상\n- 아동: 24개월 이상~8세 미만\n- 유아: 24개월 미만\n\n[추가 요금]\n- 전객실\n- 요금: 성인 1인 20,000원, 아동 1인 20,000원, 유아 무료\n(1박기준/현장결제)\n※ 1박기준/현장결제\n※ 기준 인원 초과 시 추가요금이 발생합니다. 예약 시 예약 인원을 꼭 확인해주세요.\n※ 최대 인원 초과 시 입실 불가하며, 이로 인한 환불은 불가입니다. (유아, 어린이 포함)\n※ 현장 추가 요금은 숙소 측에 사전 확인 바랍니다.\n※ 인원 추가 시 예약 후 업체 연락 필요합니다.\n\n[개별바베큐]\n- 바베큐 형태: 전기그릴\n- 이용 요금: 1개당 20,000원 (1박기준/현장결제)\n- 이용 시간: 17:00 ~ 23:00\n※ 실내 육류, 생선, 새우 등 조리 불가\n※ 야외 셀프 그릴 바베큐(펜션 유선 문의 필수)\n\n[애견동반]\n- 이용 객실: 용소채, 주문진채, 강릉채, 향호채\n- 이용 요금: 1마리당 20,000원 (1박기준/현장결제)\n- 제한 무게: 8kg 이하\n- 제한 마릿수: 객실당 2마리\n- 애견 비품: 애견 패드, 애견 식기, 애견 하우스\n※ 애견 동반 시 예약 후 업체 연락 필요합니다.\n※ 안전에 유의해주시기 바랍니다.\n\n[편의 및 주변 시설]\n- 와이파이 보유\n\n[주차장]\n- 주차장 보유\n\n[교통편]\n[ 네비게이션에 주소 검색 ]\n- 강원 강릉시 주문진읍 주문리 1580",
     "reservationGuide": "- 실 금액은 기준인원에 대한 금액으로 기준 인원 초과 시 추가요금이 발생합니다. 예약 시 예약인원을 꼭 확인해주세요.\n- 당일 예약 후 당일 바로 이용하는 경우(오후 10시 이후 입실의 경우) 확정 예약이 아니오니 꼭 업체에 사전 문의 후 결제해주세요.\n- 인원추가 및 애견동반 시 예약 후 업체 연락 필요",
     "province": "강원특별자치도",
     "city": "강릉시",
@@ -111,7 +111,7 @@
       {
         "id": "48096135-fc37-4848-8a8d-adb954a2e5b3",
         "name": "반려견 동반",
-        "description": "사랑하는 반려견과 함께 이용 가능합니다.\n ",
+        "description": "사랑하는 반려견과 함께 이용 가능합니다.",
         "usageGuide": "[애견동반 안내]\n- 이용 객실: 용소채, 주문진채, 소돌채 \n- 이용 요금: 1마리당 20,000원 (1박기준/현장결제)\n- 제한 무게: 8kg 이하\n- 제한 마릿수: 객실당 2마리\n- 애견 비품: 애견 패드, 애견 식기, 애견 하우스\n※ 애견 동반 시 예약 후 업체 연락 필요합니다.\n※ 안전에 유의해주시기 바랍니다.",
         "displayOrder": 1,
         "images": [
@@ -349,7 +349,10 @@
         "surrounding": [ ],
         "commonArea": [ ]
       }
-    ]
+    ],
+    "tripPropertyId": "9596",
+    "partnerType": "distributor_b",
+    "tripProviderName": "(주)신비서"
   },
   "rooms": [
     {
@@ -465,7 +468,7 @@
         {
           "thumbnail": [
             {
-              "id": "3ea57f3a-e9a4-4ddb-876e-7cf0088959ec",
+              "id": "ad7fbddd-1607-458c-b5fe-7290d5595688",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2025/10/23/KSlTFpZAiBEL.jpg",
               "sortOrder": 1,
               "description": "",
@@ -475,7 +478,7 @@
           ],
           "interior": [
             {
-              "id": "773d3c9a-bb34-433a-a7fc-80919befa38e",
+              "id": "02cd5d8f-f93a-4275-8b37-d78a19960f23",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2026/08/07/mpDZ3VjgaY8f.jpg",
               "sortOrder": 2,
               "description": "",
@@ -483,7 +486,7 @@
               "blockId": null
             },
             {
-              "id": "10ea9ce6-d464-4d96-b8cf-fb654c725dae",
+              "id": "73daab29-0c37-422a-ae5c-706b804b6d61",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2025/10/23/0NzR56bwqX3B.jpg",
               "sortOrder": 3,
               "description": "",
@@ -491,7 +494,7 @@
               "blockId": null
             },
             {
-              "id": "f0120cb0-3f3b-4e46-9da4-05c401421b16",
+              "id": "cb2658e6-0ae8-424c-a9cb-234f7dfda712",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2025/10/23/DYtTnsPh45CS.jpg",
               "sortOrder": 4,
               "description": "",
@@ -499,7 +502,7 @@
               "blockId": null
             },
             {
-              "id": "34dfe0e2-d838-454e-9538-f86ccf84754a",
+              "id": "347308e4-197b-47d5-8f81-a85ad773e3de",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2025/10/23/pNJiyxu4DznY.jpg",
               "sortOrder": 5,
               "description": "",
@@ -507,7 +510,7 @@
               "blockId": null
             },
             {
-              "id": "e1e3100c-10d1-4fe1-81ae-3182ecc61780",
+              "id": "55619620-86a2-4cbd-900e-8e4cb954a748",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2025/10/23/1Rbwf6HkvFLM.jpg",
               "sortOrder": 6,
               "description": "",
@@ -515,7 +518,7 @@
               "blockId": null
             },
             {
-              "id": "fa9d6f74-5ab1-4e1c-a3b9-61516bce4f5f",
+              "id": "3633f571-2d0c-47e6-85b3-a53fe0cf500b",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2025/10/23/qhiL4MyAobrG.jpg",
               "sortOrder": 7,
               "description": "",
@@ -523,7 +526,7 @@
               "blockId": null
             },
             {
-              "id": "9054ce3a-7524-4290-a94d-f37ecf85ff20",
+              "id": "ddea52f3-504b-468d-ba6a-b221ebfe64ef",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2025/10/23/6dSr0FuygHpX.jpg",
               "sortOrder": 8,
               "description": "",
@@ -531,7 +534,7 @@
               "blockId": null
             },
             {
-              "id": "904d3635-0acb-4de8-8da4-1504484378e7",
+              "id": "e4657f8a-34dd-42aa-bc08-b224fb58bea4",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2025/10/23/uQEwId1Fa90J.jpg",
               "sortOrder": 9,
               "description": "",
@@ -539,7 +542,7 @@
               "blockId": null
             },
             {
-              "id": "6677171f-a1d6-4176-8ff9-29557ce81b38",
+              "id": "1cc3d49c-ee8f-49fa-bf39-ddf191c9dfa5",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2025/10/23/szg6P0bx47UL.jpg",
               "sortOrder": 10,
               "description": "",
@@ -547,7 +550,7 @@
               "blockId": null
             },
             {
-              "id": "3dfd546f-5ead-4bcd-8511-bb5072b48be1",
+              "id": "cec7185f-ef88-4b9b-a37e-dddab4eea1eb",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2025/10/23/EoVp8dFKOjax.jpg",
               "sortOrder": 11,
               "description": "",
@@ -555,7 +558,7 @@
               "blockId": null
             },
             {
-              "id": "10f1e760-a34f-4989-b26f-5f2f6f400dd8",
+              "id": "5555a289-5b98-48fb-a119-591596c11e7e",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2025/10/23/2ti4mLzqbE1v.jpg",
               "sortOrder": 12,
               "description": "",
@@ -563,7 +566,7 @@
               "blockId": null
             },
             {
-              "id": "4d92059e-9da1-4f61-9656-d70eb1ed1969",
+              "id": "d885cfb1-5773-4aff-a9b0-371b3533c538",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2025/10/23/o7WsH4CMqFlI.jpg",
               "sortOrder": 13,
               "description": "",
@@ -571,7 +574,7 @@
               "blockId": null
             },
             {
-              "id": "ff630864-4ea4-4f0a-ac9b-cd6b31baefd8",
+              "id": "ba4bca2b-e590-4de6-bcb0-820ee31d14dd",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2025/10/23/Ug5OFzX3kQ7y.jpg",
               "sortOrder": 14,
               "description": "",
@@ -579,7 +582,7 @@
               "blockId": null
             },
             {
-              "id": "0d545537-0c51-4e2d-af0a-0d2527915661",
+              "id": "24d081e8-399c-46d7-872b-be926c6e2592",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2025/10/23/VaYSBdElwZGW.jpg",
               "sortOrder": 15,
               "description": "",
@@ -587,7 +590,7 @@
               "blockId": null
             },
             {
-              "id": "1a1f2f51-d9c1-499e-b92f-90304e685434",
+              "id": "79acade3-e953-46de-be2e-f1a924006145",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2025/10/23/ImLUZAC9NGTQ.jpg",
               "sortOrder": 16,
               "description": "",
@@ -595,7 +598,7 @@
               "blockId": null
             },
             {
-              "id": "29eaf22a-c28f-4fe1-9176-91a971f1c627",
+              "id": "3439e24d-f09d-4bd4-b923-33e11043ee4a",
               "url": "https://bookingplay-media.s3.amazonaws.com/room_images/2025/10/23/McP5uQ1eUb7E.jpg",
               "sortOrder": 17,
               "description": "",
